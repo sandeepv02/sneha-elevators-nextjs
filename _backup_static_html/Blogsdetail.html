@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/single-logo.png" type="image/png">
+    <link rel="shortcut icon" href="img/single-logo.png" type="image/png">
+    <title>Blog Detail - My Website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/common.js"></script>
+
+    <style>
+        .section-titlee {
+            font-weight: 400 !important;
+            margin-bottom: 20px;
+            padding-left: 0px !important;
+            margin-top: 30px;
+        }
+        /* .blog-detail-body h1,h2,h3,h4,h5,h6{
+   font-size: 26px;
+} */
+        h6 { color: #222222 !important; font-size: 22px !important; }
+
+        .sticky-enquire {
+            position: fixed;    
+            right: -50px;
+            top: 50%;
+            transform: translateY(-50%) rotate(90deg);
+            z-index: 1000;
+        }
+        .enquire-sticky-btn {
+            display: inline-block;
+            background-color: #dc3545;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-family: 'DM Sans', sans-serif;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: background-color 0.3s;
+        }
+        .enquire-sticky-btn:hover { background-color: #c82333; color: white; }
+        @media (max-width: 768px) { .sticky-enquire { display: none; } }
+
+        ul.job-list {
+            margin-bottom: 16px;
+            font-family: "DM Sans", sans-serif !important;
+        }
+        ol, ul { padding-left: 1rem; }
+
+        /* ── Loading skeleton ── */
+        @keyframes shimmer {
+            0%   { background-position: -800px 0; }
+            100% { background-position:  800px 0; }
+        }
+        .skel {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e4e4e4 50%, #f0f0f0 75%);
+            background-size: 800px 100%;
+            animation: shimmer 1.4s infinite linear;
+            border-radius: 6px;
+            display: block;
+        }
+        .skel-title  { height: 40px; max-width: 70%; margin-bottom: 16px; }
+        .skel-meta   { height: 14px; width: 200px; margin-bottom: 24px; }
+        .skel-img    { height: 420px; width: 100%; margin-bottom: 28px; border-radius: 12px; }
+        .skel-excerpt{ height: 80px; margin-bottom: 28px; }
+        .skel-h      { height: 22px; width: 40%; margin: 28px 0 14px; }
+        .skel-p      { height: 14px; margin-bottom: 8px; }
+        .skel-p.s80  { width: 80%; }
+        .skel-p.s60  { width: 60%; }
+
+        /* ── Error state ── */
+        .detail-error {
+            text-align: center;
+            padding: 80px 20px;
+            font-family: 'DM Sans', sans-serif;
+            color: #888;
+        }
+        .detail-error i { font-size: 3rem; color: #ccc; display: block; margin-bottom: 16px; }
+        .detail-error a { color: #dc3545; text-decoration: none; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div id="siteLoader" class="site-loader" aria-hidden="true">
+        <div class="spinner" role="status" aria-label="Loading"></div>
+    </div>
+    <header class="main-header" id="mainHeader">
+        <nav class="navbar navbar-expand-lg">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <div class="logo-container">
+                       <img src="img/full-logo.png" alt="Logo" class="header-logo">
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="aboutus.html">ABOUT</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" onclick="if(window.innerWidth>=992)">PRODUCT</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="VLseries.html">VL Series</a></li>
+                                <li><a class="dropdown-item" href="SLseries.html">SL Series</a></li>
+                                <li><a class="dropdown-item" href="RMGseries.html">RMG Series</a></li>
+                            </ul>
+                        </li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="projects.html">PROJECTS</a></li> -->
+                        <li class="nav-item"><a class="nav-link" href="services.html">SERVICES</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="blogs.html">BLOGS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT US</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <script>
+        window.addEventListener('load', function () {
+            const mainHeader = document.getElementById('mainHeader');
+            if (mainHeader) mainHeader.classList.add('fade-in');
+        });
+    </script>
+
+    <div class="page-width">
+        <section class="container-fluid blogs-detail">
+            <!-- All content injected by JS below -->
+            <div class="blog-detail" id="blogDetailRoot">
+                <!-- Skeleton shown while loading -->
+                <span class="skel skel-title"></span>
+                <span class="skel skel-meta"></span>
+                <span class="skel skel-img"></span>
+                <span class="skel skel-excerpt"></span>
+                <span class="skel skel-h"></span>
+                <span class="skel skel-p"></span>
+                <span class="skel skel-p s80"></span>
+                <span class="skel skel-p s60"></span>
+                <span class="skel skel-h"></span>
+                <span class="skel skel-p"></span>
+                <span class="skel skel-p s80"></span>
+            </div>
+        </section>
+    </div>
+
+    <section class="explore-blogs-section container-fluid" id="exploreSection" style="display:none;">
+        <div class="page-width">
+            <div class="explore-blogs-header">
+                <p class="explore-blogs-tagline">
+                    <span class="section-2-dot" aria-hidden="true"></span>Explore More Blogs
+                </p>
+                <h2 class="explore-blogs-heading">Expert Views on Elevators</h2>
+            </div>
+            <div class="row g-4 explore-blogs-grid" id="relatedBlogsGrid"></div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container-fluid page-width">
+            <div class="row">
+                <div class="col-12 text-center footer-logo-section">
+                    <img src="img/full-logo.png" alt="Sneha Elev8r" class="footer-logo">
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-wrapper">
+                <div class="row footer-content">
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-4">
+                        <h5 class="footer-heading">Reach us</h5>
+                        <div class="footer-contact">
+                            <div class="contact-item">
+                                <i class="fas fa-phone-alt fa-flip-horizontal"></i>
+                                <span><a href="tel:+919100812345">+91 91008 12345</a></span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div class="contact-emails">
+                                    <span><a href="mailto:sales@snehaelev8r.com">sales@snehaelev8r.com</a></span>
+                                    <span><a href="mailto:info@snehaelev8r.com">info@snehaelev8r.com</a></span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                              <span> D.No : 2-40/30/1, Road No. 5,<br> Jubilee Gardens, Kondapur,<br> Hyderabad -
+                                    500084, Telangana, India.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 mb-4">
+                        <h5 class="footer-heading">Company</h5>
+                        <ul class="footer-links">
+                            <li><a href="aboutus.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="blogs.html">Blogs</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 mb-4">
+                        <h5 class="footer-heading">Legal</h5>
+                        <ul class="footer-links">
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 mb-4">
+                        <h5 class="footer-heading">Quick Links</h5>
+                        <ul class="footer-links">
+                            <!-- <li><a href="Careers.html">Careers</a></li> -->
+                            <li><a href="services.html">Services</a></li>
+                            <!-- <li><a href="projects.html">Projects</a></li> -->
+                        </ul>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-12 mb-4">
+                        <div class="contact-form-wrapper">
+                            <h5 class="footer-heading">Contact us</h5>
+                            <form class="footer-contact-form">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="tel" class="form-control" placeholder="Phone number" required>
+                                </div>
+                                <button type="submit" class="btn btn-submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/common.js"></script>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         BLOG DETAIL DYNAMIC SCRIPT
+    ════════════════════════════════════════════════════════════════ -->
+    <script>
+    (function () {
+        const API_BASE     = 'https://sneha.dev.redmattertech.com/api';
+        const IMG_BASE     = 'https://sneha.dev.redmattertech.com/api';
+        const RELATED_MAX  = 3;
+
+        const root         = document.getElementById('blogDetailRoot');
+        const exploreSection = document.getElementById('exploreSection');
+        const relatedGrid  = document.getElementById('relatedBlogsGrid');
+
+        // ── Helpers ──────────────────────────────────────────────
+        function getSlug() {
+            const querySlug = new URLSearchParams(window.location.search).get('slug');
+            if (querySlug) return querySlug;
+
+            const parts = window.location.pathname.split('/').filter(Boolean);
+            return parts.pop() || '';
+        }
+
+        function imgSrc(path) {
+            if (!path) return 'img/image-23.jpg';
+            return path.startsWith('http') ? path : IMG_BASE + path;
+        }
+
+        function formatDate(iso) {
+            if (!iso) return '';
+            return new Date(iso).toLocaleDateString('en-GB', {
+                day: 'numeric', month: 'long', year: 'numeric'
+            });
+        }
+
+        function escHTML(str) {
+            const d = document.createElement('div');
+            d.textContent = str || '';
+            return d.innerHTML;
+        }
+
+        // ── Build body HTML from API data ────────────────────────
+        // Handles: blog.content (HTML string), blog.sections (array), blog.body
+        function buildBodyHTML(blog) {
+            // 1. Raw HTML content field
+            if (blog.content && typeof blog.content === 'string') {
+                return blog.content;
+            }
+
+            // 2. Structured sections array
+            if (Array.isArray(blog.sections) && blog.sections.length) {
+                return blog.sections.map(s => {
+                    let out = '';
+                    if (s.heading) out += `<h6 class="section-titlee">${escHTML(s.heading)}</h6>`;
+                    if (s.body)    out += `<p class="blog-detail-content-p">${escHTML(s.body)}</p>`;
+                    if (Array.isArray(s.listItems) && s.listItems.length) {
+                        out += '<ul class="job-list">' +
+                            s.listItems.map(li => `<li>${escHTML(li)}</li>`).join('') +
+                            '</ul>';
+                    }
+                    return out;
+                }).join('');
+            }
+
+            // 3. Plain body string
+            if (blog.body && typeof blog.body === 'string') {
+                return `<p class="blog-detail-content-p">${blog.body}</p>`;
+            }
+
+            return '';
+        }
+
+        // ── Build FAQ HTML ───────────────────────────────────────
+        function buildFaqHTML(faqs) {
+            if (!Array.isArray(faqs) || !faqs.length) return '';
+            let html = `<h6 class="section-titlee">Frequently Asked Questions</h6>`;
+            faqs.forEach(faq => {
+                html += `<p class="blog-detail-content-p"><strong>${escHTML(faq.question)}</strong></p>
+                         <p class="blog-detail-content-p">${escHTML(faq.answer)}</p>`;
+            });
+            return html;
+        }
+
+        // ── Render the main detail ───────────────────────────────
+        function renderDetail(blog) {
+            document.title = `${blog.title} - My Website`;
+
+            // Update meta tags for SEO
+            if (blog.meta?.description) {
+                let metaDesc = document.querySelector('meta[name="description"]');
+                if (!metaDesc) {
+                    metaDesc = document.createElement('meta');
+                    metaDesc.name = 'description';
+                    document.head.appendChild(metaDesc);
+                }
+                metaDesc.content = blog.meta.description;
+            }
+
+            const bodyHTML   = buildBodyHTML(blog);
+            const faqHTML    = buildFaqHTML(blog.frequentlyAskedQuestions);
+            const hasContent = bodyHTML || faqHTML;
+
+            root.innerHTML = `
+              <h1 class="blog-detail-title">${escHTML(blog.title)}</h1>
+
+              <div class="blog-detail-meta-row">
+                <span class="blog-detail-category">${escHTML(blog.category || '')}</span>
+                <span class="blog-detail-date">${formatDate(blog.datePosted || blog.createdAt)}</span>
+              </div>
+
+              <div class="blog-detail-image-wrap">
+                <img
+                  src="${imgSrc(blog.featuredImage)}"
+                  alt="${escHTML(blog.title)}"
+                  class="blog-detail-image"
+                 onerror="this.src='img/image-20.png'"
+                />
+              </div>
+
+              ${blog.excerpt ? `
+              <div class="blog-detail-excerpt-box">
+                <p>${escHTML(blog.excerpt)}</p>
+              </div>` : ''}
+
+              ${hasContent ? `<div class="blog-detail-body">${bodyHTML}${faqHTML}</div>` : ''}
+            `;
+        }
+
+        // ── Render related / explore blogs ───────────────────────
+        function renderRelated(blogs, currentSlug) {
+            const related = blogs
+                .filter(b => (b.slug || b.blogUrl) !== currentSlug)
+                .slice(0, RELATED_MAX);
+
+            if (!related.length) return;
+
+            relatedGrid.innerHTML = related.map(b => `
+              <div class="col-lg-4 col-md-6">
+                <article class="explore-blog-card">
+                  <a href="Blogsdetail.html?slug=${b.slug || b.blogUrl}" class="explore-blog-link">
+                    <div class="explore-blog-image-wrap">
+                      <img
+                        src="${imgSrc(b.featuredImage)}"
+                        alt="${escHTML(b.title)}"
+                        class="explore-blog-image"
+                        loading="lazy"
+                        onerror="this.src='img/image-23.jpg'"
+                      />
+                    </div>
+                    <div class="explore-blog-content">
+                      <div class="explore-blog-meta">
+                        <span>${escHTML(b.category || '')}</span>
+                        <span>${formatDate(b.datePosted || b.createdAt)}</span>
+                      </div>
+                      <h3 class="explore-blog-title">${escHTML(b.title)}</h3>
+                      <p class="explore-blog-desc">${escHTML(b.excerpt || '')}</p>
+                      <span class="explore-blog-read">Read More...</span>
+                    </div>
+                  </a>
+                </article>
+              </div>`).join('');
+
+            exploreSection.style.display = '';
+        }
+
+        // ── Show error state ─────────────────────────────────────
+        function showError(message) {
+            root.innerHTML = `
+              <div class="detail-error">
+                <i class="fas fa-exclamation-circle"></i>
+                <p>${message}</p>
+                <a href="blogs.html">← Back to Blogs</a>
+              </div>`;
+        }
+
+        // ── Main fetch logic ─────────────────────────────────────
+        async function init() {
+            const slug = getSlug();
+            if (!slug) { window.location.href = 'blogs.html'; return; }
+
+            let blog     = null;
+            let allBlogs = [];
+
+            // Strategy 1: GET /blogs/:slug (direct endpoint)
+            try {
+                const res = await fetch(`${API_BASE}/blogs/${slug}`);
+                if (res.ok) {
+                    const data = await res.json();
+                    // API may return { blog: {...} } or the object directly
+                    blog = data.blog || (data._id ? data : null);
+                }
+            } catch (_) { /* fall through */ }
+
+            // Strategy 2: Fetch full list and filter (fallback)
+            if (!blog) {
+                try {
+                    const res  = await fetch(`${API_BASE}/blogs?limit=100`);
+                    const data = await res.json();
+                    allBlogs   = data.blogs || [];
+                    blog = allBlogs.find(b =>
+                        b.slug === slug || b.blogUrl === slug
+                    );
+                } catch (err) {
+                    showError('Failed to load blog. Please try again later.');
+                    return;
+                }
+            }
+
+            if (!blog) {
+                showError('Blog not found. It may have been moved or deleted.');
+                return;
+            }
+
+            // Render main content
+            renderDetail(blog);
+
+            // Fetch / use list for related blogs
+            if (allBlogs.length) {
+                renderRelated(allBlogs, slug);
+            } else {
+                fetch(`${API_BASE}/blogs?limit=10`)
+                    .then(r => r.json())
+                    .then(d => renderRelated(d.blogs || [], slug))
+                    .catch(() => {}); // related is non-critical
+            }
+        }
+
+        init();
+    })();
+    </script>
+
+    <div class="sticky-enquire">
+        <a href="contact.html" class="enquire-sticky-btn">Enquire Now</a>
+    </div>
+    <script src="js/loader.js"></script>
+</body>
+</html>

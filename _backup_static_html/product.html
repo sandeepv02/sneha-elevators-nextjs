@@ -1,0 +1,624 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/single-logo.png" type="image/png">
+    <link rel="shortcut icon" href="img/single-logo.png" type="image/png">
+    <title>Products - My Website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts - Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Google Fonts - Mosvita -->
+    <link href="https://fonts.googleapis.com/css2?family=Mosvita:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts - DM Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- GSAP ScrollTrigger (for scroll-based animations) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis (smooth scrolling) -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/common.js"></script>
+    <style>
+        .product-hero-title {
+            color: white;
+        }
+.sticky-enquire {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: center;
+    z-index: 1000;
+}
+
+.enquire-sticky-btn {
+    background-color: #ff0000;
+    color: #ffffff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px 5px 0 0;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.enquire-sticky-btn:hover {
+    background-color: #cc0000;
+}
+
+@media (max-width: 768px) {
+    .sticky-enquire {
+        display: none;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <div id="siteLoader" class="site-loader" aria-hidden="true">
+        <div class="spinner" role="status" aria-label="Loading"></div>
+    </div>
+    <header class="main-header" id="mainHeader">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                    <div class="logo-container">
+                        <img src="img/logo.png" alt="Logo" class="header-logo">
+                    </div>
+                </a>
+
+                <!-- Mobile Toggle Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation Menu -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.html">ABOUT</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"  role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"
+                                onclick="if(window.innerWidth>=992)">PRODUCT</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="VLseries.html">VL Series</a></li>
+                                <li><a class="dropdown-item" href="SLseries.html">SL Series</a></li>
+                                <li><a class="dropdown-item" href="RMGseries.html">RMG Series</a></li>
+                            </ul>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="projects.html">PROJECTS</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">SERVICES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blogs.html">BLOGS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">CONTACT US</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <!-- Product Hero Section -->
+    <section class="product-hero-section">
+        <img src="img/image-14.jpg" alt="Product Background" class="product-hero-bg" id="productHeroBg">
+        <div class="product-hero-content" id="productHeroContent">
+            <h1 class="product-hero-title" id="productHeroTitle">RM SERIES</h1>
+            <!-- <p class="product-hero-tagline text-white" id="productHeroTagline">Reliable. Practical. Built for Everyday
+                Use.</p> -->
+            <div class="product-hero-cta" id="productHeroCta">
+                <a href="#" class="product-cta-btn">Get a Quote</a>
+                <a href="contact.html" class="product-cta-link">Book a Free Consultation <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose RM Series Header Section -->
+    <section class="why-choose-rm-header-section">
+        <div class=" container">
+            <div class="why-choose-rm-header-wrapper">
+                <p class="section-2-tagline"><span class="section-2-dot" aria-hidden="true"></span>Key Highlights</p>
+
+                <h2 class="why-choose-rm-heading" id="whyChooseRmHeading">Smooth Performance Meets Long-term Savings
+</h2>
+                <p class="why-choose-rm-description" id="whyChooseRmDescription">
+                   The RM Series caters to low to medium-rise buildings, where efficiency and long-term value are essential. It features a room machine gearless elevator that combines traction technology with modern control systems for a smooth experience.
+One of the top choices for projects in South India, the RM Series is a trusted choice for Room machine gearless elevators in Hyderabad projects where performance and economy go hand in hand. It is equally suitable for projects seeking a Room machine gearless elevator in Bangalore, delivering consistent operation even under demanding usage conditions.
+The RM Series is ideal for homeowners, builders, and developers looking for a Room machine gearless elevator that balances cost efficiency with dependable performance. Its adaptability has made it a reliable option for both Room machine gearless elevator in Hyderabad and Room machine gearless elevator in Bangalore developments alike.
+
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose RM Series Section -->
+    <section class="why-choose-rm-section container">
+        <div class="why-choose container">
+            <div class="why-choose-rm-wrapper">
+                <div class="row">
+                    <!-- Left Column: Features -->
+                    <div class="col-lg-3">
+                        <div class="rm-feature-block" id="rmFeature1">
+
+                            <div class="rm-feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+
+
+                            <h3 class="rm-feature-title">Smooth & quiet ride</h3>
+                            <p class="rm-feature-description">Advanced traction technology ensures silent, jerk-free
+                                travel every time.</p>
+                        </div>
+
+                        <div class="rm-feature-block" id="rmFeature2">
+                            <div class="rm-feature-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <h3 class="rm-feature-title">Durable & low maintenance</h3>
+                            <p class="rm-feature-description">Engineered to reduce wear and tear, minimizing downtime
+                                and service needs.</p>
+                        </div>
+                    </div>
+
+                    <!-- Center Column: Image -->
+                    <div class="col-lg-6">
+                        <div class="rm-image-container" id="rmImageContainer">
+                            <img src="img/image-15.png" alt="RM Series Elevator" class="rm-center-image"
+                                id="rmCenterImage">
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Features -->
+                    <div class="col-lg-3">
+                        <div class="rm-feature-block" id="rmFeature3">
+                            <div class="rm-feature-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <h3 class="rm-feature-title">Cost Effective Solutions</h3>
+                            <p class="rm-feature-description">An economical elevator choice offering long-term savings
+                                on operation and spares.</p>
+                        </div>
+
+                        <div class="rm-feature-block" id="rmFeature4">
+                            <div class="rm-feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="rm-feature-title">Safety Compliant</h3>
+                            <p class="rm-feature-description">Built with essential safety systems that meet industry
+                                standards for daily use.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Product Specifications Section -->
+    <section class="product-specs-section" id="productSpecsSection">
+        <div class="container">
+            <div class="specs-wrapper" id="specsWrapper">
+                <div class="spec-item">
+                    <h3 class="spec-title">Capacity</h3>
+                    <p class="spec-value">150 Kgs</p>
+                </div>
+                <div class="spec-item">
+                    <h3 class="spec-title">Speed</h3>
+                    <p class="spec-value">0.5 km/hr</p>
+                </div>
+                <div class="spec-item">
+                    <h3 class="spec-title">Door Type</h3>
+                    <p class="spec-value">Telescopic</p>
+                </div>
+                <div class="spec-item">
+                    <h3 class="spec-title">Power</h3>
+                    <p class="spec-value">xx KW</p>
+                </div>
+                <div class="spec-item">
+                    <h3 class="spec-title">Shaft Size</h3>
+                    <p class="spec-value">XX M</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brochure Section -->
+    <section class="brochure-section" id="brochureSection">
+        <div class="brochure-background">
+            <img src="img/image-16.jpg" alt="Brochure Background" class="brochure-bg-image">
+            <div class="brochure-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="brochure-wrapper">
+                <div class="brochure-content" id="brochureContent">
+                    <h2 class="brochure-heading" id="brochureHeading">Brochure</h2>
+                    <p class="brochure-description" id="brochureDescription">For more details about the RM Series, click to download the brochure.
+</p>
+
+                    <a href="#" class="brochure-download-btn" id="brochureDownloadBtn">
+                        <i class="fas fa-download"></i> Download Brochure
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Built for These Spaces Section -->
+    <section class="built-for-spaces-section" id="builtForSpacesSection">
+        <div class="container-fluid">
+            <div class="built-for-spaces-wrapper">
+                <div class="built-for-spaces-header">
+                    <p class="section-2-tagline"><span class="section-2-dot" aria-hidden="true"></span>RM Series
+                        Applications</p>
+
+                    <h2 class="built-for-spaces-heading" id="builtForSpacesHeading">Fits Seamlessly Into These Spaces
+</h2>
+
+                </div>
+
+                <div class="built-for-spaces-scroll-container" id="builtForSpacesScrollContainer">
+                    <div class="built-for-spaces-scroll-wrapper" id="builtForSpacesScrollWrapper">
+                        <div class="space-card">
+                            <div class="space-image-container">
+                                <img src="img/image-17.png" alt="Independent homes" class="space-image">
+                                <div class="space-tag">Independent homes</div>
+                            </div>
+                        </div>
+                        <div class="space-card">
+                            <div class="space-image-container">
+                                <img src="img/image-17.png" alt="Apartments" class="space-image">
+                                <div class="space-tag">Apartments</div>
+                            </div>
+                        </div>
+                        <div class="space-card">
+                            <div class="space-image-container">
+                                <img src="img/image-17.png" alt="Commercial Buildings" class="space-image">
+                                <div class="space-tag">Commercial Buildings</div>
+                            </div>
+                        </div>
+                        <div class="space-card">
+                            <div class="space-image-container">
+                                <img src="img/image-17.png" alt="Hospitals" class="space-image">
+                                <div class="space-tag">Hospitals</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="builtForSpacesMobileCarousel" class="carousel slide built-for-spaces-mobile-carousel"
+                    data-bs-touch="true" data-bs-ride="false">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="space-card is-active">
+                                <div class="space-image-container">
+                                    <img src="img/image-17.png" alt="Independent homes" class="space-image">
+                                    <div class="space-tag">Independent homes</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="space-card is-active">
+                                <div class="space-image-container">
+                                    <img src="img/image-17.png" alt="Apartments" class="space-image">
+                                    <div class="space-tag">Apartments</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="space-card is-active">
+                                <div class="space-image-container">
+                                    <img src="img/image-17.png" alt="Commercial Buildings" class="space-image">
+                                    <div class="space-tag">Commercial Buildings</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="space-card is-active">
+                                <div class="space-image-container">
+                                    <img src="img/image-17.png" alt="Hospitals" class="space-image">
+                                    <div class="space-tag">Hospitals</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#builtForSpacesMobileCarousel" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#builtForSpacesMobileCarousel" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#builtForSpacesMobileCarousel" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#builtForSpacesMobileCarousel" data-bs-slide-to="3"
+                            aria-label="Slide 4"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Personalisation Choices Section -->
+    <section class="personalisation-choices-section container">
+        <div class="personalisation-choices container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="personalisation-header">
+                        <p class="section-2-tagline"><span class="section-2-dot"
+                                aria-hidden="true"></span>Personalisation Choices</p>
+
+                        <h2 class="section-title">Tailored To Match<br /> Your Architecture</h2>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <p class="section-description">
+                        With the RM Series, you donâ€™t just choose an elevator, you shape it. Select from a range of
+                        cabin materials, textures, lighting styles, and panel finishes to match your space perfectly. We
+                        work closely with you to ensure your <strong>room machine gearless elevator</strong> blends beautifully with your
+                        building while delivering dependable performance.
+
+                    </p>
+                </div>
+            </div>
+
+            <!-- Carousel -->
+            <div id="personalisationCarousel" class="carousel slide personalisation-carousel" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <a href="#" class="choice-link">
+                            <div class="choice-card">
+                                <div class="image-wrapper">
+                                    <img src="img/image-21.png" alt="Cabin finishes" class="choice-img">
+                                </div>
+                                <p class="choice-title">Stainless steel or mild steel (MS) cabin finishes</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#" class="choice-link">
+                            <div class="choice-card">
+                                <div class="image-wrapper">
+                                    <img src="img/image-21.png" alt="Door configuration" class="choice-img">
+                                </div>
+                                <p class="choice-title">Automatic or manual door configurations</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#" class="choice-link">
+                            <div class="choice-card">
+                                <div class="image-wrapper">
+                                    <img src="img/image-21.png" alt="Lighting options" class="choice-img">
+                                </div>
+                                <p class="choice-title">Functional and aesthetic lighting options</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#" class="choice-link">
+                            <div class="choice-card">
+                                <div class="image-wrapper">
+                                    <img src="img/image-21.png" alt="Cabin finishes" class="choice-img">
+                                </div>
+                                <p class="choice-title">Stainless steel or mild steel (MS) cabin finishes</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#" class="choice-link">
+                            <div class="choice-card">
+                                <div class="image-wrapper">
+                                    <img src="img/image-21.png" alt="Door configuration" class="choice-img">
+                                </div>
+                                <p class="choice-title">Automatic or manual door configurations</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#" class="choice-link">
+                            <div class="choice-card">
+                                <div class="image-wrapper">
+                                    <img src="img/image-21.png" alt="Lighting options" class="choice-img">
+                                </div>
+                                <p class="choice-title">Functional and aesthetic lighting options</p>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#personalisationCarousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#personalisationCarousel" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#personalisationCarousel" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#personalisationCarousel" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#personalisationCarousel" data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#personalisationCarousel" data-bs-slide-to="5"
+                        aria-label="Slide 6"></button>
+                    <button type="button" data-bs-target="#personalisationCarousel" data-bs-slide-to="6"
+                        aria-label="Slide 7"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Features Section -->
+    <section class="safety-trust-section container">
+        <div class="container">
+            <div class="safety-trust-grid">
+                <div class="safety-trust-intro">
+                    <p class="section-2-tagline"><span class="section-2-dot"></span>Safety Features</p>
+                    <h2>Safety At <br />Every Level
+                    </h2>
+                </div>
+
+                <article class="safety-trust-card safety-card-1">
+                    <div class="safety-trust-icon"><i class="bi bi-people-fill"></i></div>
+                    <h3>Sensor Based Doors</h3>
+                    <p>Prevents door closure when an obstruction is detected, ensuring safe entry and exit.</p>
+                </article>
+
+                <article class="safety-trust-card safety-card-2">
+                    <div class="safety-trust-icon"><i class="bi bi-people-fill"></i></div>
+                    <h3>Automatic Rescue Device</h3>
+                    <p>Safely moves the elevator to the nearest floor and opens doors during power failure.</p>
+                </article>
+
+                <article class="safety-trust-card safety-card-3">
+                    <div class="safety-trust-icon"><i class="bi bi-people-fill"></i></div>
+                    <h3>Emergency Alarm System</h3>
+                    <p>Allows passengers to alert for assistance in case of an emergency.</p>
+                </article>
+
+                <article class="safety-trust-card safety-card-4">
+                    <div class="safety-trust-icon"><i class="bi bi-people-fill"></i></div>
+                    <h3>Overload Protection</h3>
+                    <p>Prevents elevator operation when load limits are exceeded, enhancing safety.</p>
+                </article>
+
+                <article class="safety-trust-card safety-card-5">
+                    <div class="safety-trust-icon"><i class="bi bi-people-fill"></i></div>
+                    <h3>Power Failure Safety</h3>
+                    <p>Ensures controlled operation and passenger safety during electrical interruptions.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="site-footer">
+        <div class="container-fluid page-width">
+            <div class="row">
+                <div class="col-12 text-center footer-logo-section">
+                    <img src="img/full-logo.png" alt="Sneha Elev8r" class="footer-logo">
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="footer-wrapper">
+                <div class="row footer-content">
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-4">
+                        <h5 class="footer-heading">Reach us</h5>
+                        <div class="footer-contact">
+                            <div class="contact-item">
+                                <i class="fas fa-phone-alt fa-flip-horizontal"></i>
+                                <span>+91 91008 12345</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div class="contact-emails">
+                                    <span><a href="mailto:sales@snehaelev8r.com">sales@snehaelev8r.com</a></span>
+                                    <span><a href="mailto:info@snehaelev8r.com">info@snehaelev8r.com</a></span>
+                                </div>
+                            </div>
+                            <!-- Reach us link removed -->
+                           <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span> D.No : 2-40/30/1, Road No. 5,<br> Jubilee Gardens, Kondapur,<br> Hyderabad -
+                                    500084, Telangana, India.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 mb-4">
+                        <h5 class="footer-heading">Company</h5>
+                        <ul class="footer-links">
+                            <li><a href="aboutus.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="blogs.html">Blogs</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 mb-4">
+                        <h5 class="footer-heading">Legal</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Services</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 mb-4">
+                        <h5 class="footer-heading">Quick Links</h5>
+                        <ul class="footer-links">
+                            <!-- <li><a href="Careers.html">Careers</a></li> -->
+                            <li><a href="services.html">Services</a></li>
+                            <!-- <li><a href="projects.html">Projects</a></li> -->
+                        </ul>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-3 col-md-12 mb-4">
+                        <div class="contact-form-wrapper">
+                            <h5 class="footer-heading">Contact us</h5>
+                            <form class="footer-contact-form">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="tel" class="form-control" placeholder="Phone number" required>
+                                </div>
+                                <button type="submit" class="btn btn-submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        //  Show header on page load
+        window.addEventListener('load', function () {
+            const mainHeader = document.getElementById('mainHeader');
+            if (mainHeader) {
+                mainHeader.classList.add('fade-in');
+            }
+        });
+    </script>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/common.js"></script>
+<div class="sticky-enquire"><a href="contact.html" class="enquire-sticky-btn">Enquire Now</a></div>
+    <script src="js/loader.js"></script>
+</body>
+
+</html>

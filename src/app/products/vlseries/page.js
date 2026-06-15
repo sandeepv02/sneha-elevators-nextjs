@@ -1,0 +1,88 @@
+import ProductSeriesTemplate from "@/components/ProductSeriesTemplate";
+
+export const metadata = {
+  title: "VL SERIES Home Lifts Manufacturers, Suppliers in Hyderabad | Sneha Elev8r",
+  description: "VL Series (Machine Room Less Lift Manufacturers & suppliers in Hyderabad, India) - Sneha elevator is One of the Top leading company MRL Lift services in India.",
+};
+
+const vlFeatures = [
+  {
+    icon: "/img/product-icon-1.png",
+    title: "Smooth & quiet ride",
+    description: "Smooth acceleration & deceleration with precise floor levelling, ensuring a comfortable ride."
+  },
+  {
+    icon: "/img/product-icon-2.png",
+    title: "Energy-efficient drive system",
+    description: "The advanced gearless elevator machine in the VL series consumes less power, requires lower starting current, and operates without oil, making it cost-effective & eco-friendly."
+  },
+  {
+    icon: "/img/product-icon-3.png",
+    title: "Cost Effective Solutions",
+    description: "Customised fitting, making the design efficient, reducing extra civil work."
+  },
+  {
+    icon: "/img/product-icon-4.png",
+    title: "Refined cabin experience",
+    description: "Aesthetically designed cabins with LED lighting."
+  },
+  {
+    centerImage: "/img/vl-series-block.png"
+  }
+];
+
+const vlSpecifications = [
+  { title: "Capacity", value: "4 - 30 Pax (272-2040kg)" },
+  { title: "Speed", value: "0.5 m/sec to 2.5 m/sec" },
+  { title: "PIT", value: "Min 1000 mm" },
+  { title: "Overhead", value: "3000 mm" },
+  { title: "No. Of Stops", value: "25 stops" }
+];
+
+const vlSpaces = [
+  { image: "/img/vl-High-rise-building.png", title: "High rise building" },
+  { image: "/img/vl-Boutique.png", title: "Boutique" },
+  { image: "/img/vl-Office.png", title: "Office" },
+  { image: "/img/vl-upscale-homes.png", title: "Upscale homes" }
+];
+
+const vlPersonalisation = [
+  { image: "/img/stainless.png", title: "Stainless steel or mild steel (MS) cabin finishes" },
+  { image: "/img/automatic.png", title: "Convert manual lifts to auto lifts." },
+  { image: "/img/funtional.png", title: "Functional and aesthetic lighting options" }
+];
+
+const vlSafetyFeatures = [
+  {
+    icon: "/img/overload-icon.png",
+    title: "Emergency Alarm System",
+    description: "1-hour fire-rated doors for fire protection."
+  },
+  {
+    icon: "/img/sensor-icon.png",
+    title: "Sensor Based Doors",
+    description: "Automatic doors with light curtains for added safety."
+  },
+  {
+    icon: "/img/emergency-icon.png",
+    title: "Automatic Rescue Device",
+    description: "Automatic rescue device for user safety in case of a power outage."
+  }
+];
+
+export default function VLSeriesPage() {
+  return (
+    <ProductSeriesTemplate
+      seriesName="VL SERIES"
+      heroImage="/img/vl-series-home-banner.png"
+      highlightsTitle="Smart, space-efficient elevators for modern buildings"
+      highlightsDescription="VL Series, especially designed for low-rise residential and commercial buildings where space management, comfort & energy efficiency are key requirements. Built as a machine room less elevator, it eliminates the need for a separate machine room, reducing civil work & utilising space efficiently."
+      features={vlFeatures}
+      specifications={vlSpecifications}
+      spaces={vlSpaces}
+      personalisationChoices={vlPersonalisation}
+      safetyIntroText="With its compact design, energy-conscious functioning, and trustworthy performance, the VL Series stands out as a dependable machine room with gearless drive elevator solution engineered for long-term value."
+      safetyFeatures={vlSafetyFeatures}
+    />
+  );
+}

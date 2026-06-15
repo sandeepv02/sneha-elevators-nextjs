@@ -1,0 +1,581 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/single-logo.png" type="image/png">
+    <link rel="shortcut icon" href="img/single-logo.png" type="image/png">
+    <title>Job Description - Sneha Elev8r</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts - Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Google Fonts - Mosvita -->
+    <link href="https://fonts.googleapis.com/css2?family=Mosvita:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts - DM Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- GSAP ScrollTrigger (for scroll-based animations) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis (smooth scrolling) -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/common.js"></script>
+    <script src="js/revealHeading.js"></script>
+    <style>
+       
+        .section-titlee {
+            font-weight: 400 !important;
+            margin-bottom:20px;
+        }
+
+        h6 {
+            color: #222222 !important;
+            font-size: 22px !important;
+        }
+
+        #applyNowModal .modal-dialog {
+            max-width: 540px;
+        }
+.modal-title {
+    font-size: 25px;
+    margin-bottom: 0;
+    line-height: var(--bs-modal-title-line-height);
+}
+
+        body.modal-open {
+            padding-right: 0 !important;
+        }
+
+        body.modal-open .main-header {
+            padding-right: 0 !important;
+        }
+
+        #applyNowModal {
+            padding-right: 0 !important;
+        }
+
+        #applyNowModal .modal-body {
+            padding: 0.85rem;
+         
+        }
+
+        #applyNowModal .form-label {
+            margin-bottom: 0.2rem;
+            font-size: 13px;
+        }
+
+        #applyNowModal .form-control {
+            padding: 0.35rem 0.6rem;
+            font-size: 14px;
+        }
+
+        #applyNowModal textarea.form-control {
+            min-height: 64px;
+        }
+
+        @media (max-width: 576px) {
+            #applyNowModal .modal-dialog {
+                width: calc(100% - 1rem);
+                max-width: 540px;
+                margin: 0.5rem auto;
+            }
+    .job-card {
+        background: #f5f5f5;
+        border-radius: 10px;
+        padding: 20px 20px;
+        position: sticky;
+        top: 30px;
+        max-width: 100%;
+    }
+    .text-muted {
+        font-size: 16px;
+        text-align: center !important;
+        display: flex;
+        align-content: flex-start;
+        justify-content: center;
+        align-items: center;
+        gap: 26px;
+    }
+    .section-titlee {
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding-left: 1rem;
+    text-align: center;
+}
+.job-des {
+    padding:0px !important;
+}
+            #applyNowModal .modal-header {
+                padding: 0.55rem 0.75rem;
+            }
+
+            #applyNowModal .modal-title {
+                font-size: 18px;
+            }
+
+            #applyNowModal .modal-body {
+                padding: 0.65rem;
+            }
+
+            #applyNowModal .row.g-2 {
+                --bs-gutter-y: 0.35rem;
+                --bs-gutter-x: 0.5rem;
+            }
+
+            #applyNowModal .form-label {
+                font-size: 12px;
+                margin-bottom: 0.12rem;
+            }
+
+            #applyNowModal .form-control {
+                padding: 0.24rem 0.5rem;
+                font-size: 13px;
+            }
+
+            #applyNowModal textarea.form-control {
+                min-height: 52px;
+            }
+
+            #applyNowModal .mt-3.text-end {
+                margin-top: 1rem !important;
+            }
+            
+            .job-applying{
+                padding:10px;
+            }
+        }
+
+        .section-job{
+            text-align: left;
+            padding-left: 1rem;
+            font-weight: 400;
+        }
+
+        @media (max-width: 575.98px) {
+    .job-description-container {
+        max-width: 94%;
+        padding: 24px;
+    }
+    .social-icons {
+    display: flex;
+    gap: 5px;
+    justify-content: center !important;
+}
+h6 {
+    color: #222222 !important;
+    font-size: 20px !important;
+}
+    .section-titlee {
+        font-size: 20px !important;
+    }
+
+}
+.sticky-enquire {
+    position: fixed;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    z-index: 1000;
+}
+
+.enquire-sticky-btn {
+    display: inline-block;
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: 'DM Sans', sans-serif;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: background-color 0.3s;
+}
+
+.enquire-sticky-btn:hover {
+    background-color: #c82333;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .sticky-enquire {
+        display: none;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <div id="siteLoader" class="site-loader" aria-hidden="true">
+        <div class="spinner" role="status" aria-label="Loading"></div>
+    </div>
+    <header class="main-header" id="mainHeader">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                    <div class="logo-container">
+                        <img src="img/logo.png" alt="Sneha Elev8r logo" class="header-logo">
+                    </div>
+                </a>
+
+                <!-- Mobile Toggle Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation Menu -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.html">ABOUT</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"  role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"
+                                onclick="if(window.innerWidth>=992)">PRODUCT</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="VLseries.html">VL Series</a></li>
+                                <li><a class="dropdown-item" href="SLseries.html">SL Series</a></li>
+                                <li><a class="dropdown-item" href="RMGseries.html">RMG Series</a></li>
+                            </ul>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="projects.html">PROJECTS</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">SERVICES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blogs.html">BLOGS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">CONTACT US</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="container job-description-container">
+        <!-- CENTER TITLE -->
+        <div class="text-center mb-5">
+            <h2 class="job-title reveal-heading">Electrical Engineer</h2>
+            <p class="text-job  reveal-heading">Job Type: Full Time &nbsp; | &nbsp; No of Vacancies: 02</p>
+        </div>
+
+        <!-- MAIN ROW -->
+        <div class="row gx-5">
+
+            <!-- LEFT CONTENT -->
+            <div class="col-lg-7 order-2 order-lg-1 job-des">
+
+                <h6 class="section-job  reveal-heading">Who Are We Looking For</h6>
+                <ul class="job-list  reveal-heading">
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Nullam dictum ligula a gravida porta.</li>
+                    <li>Nam pellentesque orci ut odio blandit.</li>
+                    <li>Vivamus semper magna suscipit leo malesuada.</li>
+                    <li>Vestibulum porta libero nec aliquet blandit.</li>
+                </ul>
+
+                <h6 class="section-job  reveal-heading">What You Will Be Doing</h6>
+                <ul class="job-list  reveal-heading">
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>Nullam dictum ligula a gravida porta.</li>
+                    <li>Nam pellentesque orci ut odio blandit.</li>
+                    <li>Vestibulum porta libero nec aliquet blandit.</li>
+                </ul>
+
+                <h6 class="section-job  reveal-heading">Bonus Points for Familiarity with</h6>
+                <ul class="job-list  reveal-heading">
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Nullam dictum ligula a gravida porta.</li>
+                    <li>Vivamus semper magna suscipit.</li>
+                </ul>
+
+                <h6 class="section-job  reveal-heading">Salary</h6>
+                <ul class="job-list  reveal-heading">
+                    <li>30,000 - 35,000 BDT (Depends on Skill and Experience)</li>
+                    <li>Salary Review: Yearly</li>
+                </ul>
+
+                <h6 class="section-job  reveal-heading">Application Process</h6>
+                <ul class="job-list  reveal-heading">
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Nullam dictum ligula a gravida porta.</li>
+                    <li>Vivamus semper magna suscipit.</li>
+                </ul>
+
+            </div>
+
+            <!-- RIGHT CARD -->
+            <div class="col-lg-5 order-1 order-lg-2 align-text-start  reveal-heading job-applying">
+                <div class="job-card" >
+                    <center>
+    <button class="apply-btn mb-4" type="button" data-bs-toggle="modal" data-bs-target="#applyNowModal">Apply Now</button>
+                    </center>
+                
+                     <h6 class="section-titlee">Job Summary</h6>
+                    <div class="job-meta ">
+                        <div class="icon-job">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <div>
+                            <p class="job-meta-p">Location</p>
+                            <p class="job-meta span">Shouth Breeze Center, Banani</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="job-meta">
+                        <div class="icon-job">
+                            <i class="fa-solid fa-briefcase"></i>
+
+                        </div>
+                        <div>
+                            <p class="job-meta-p">Job Type</p>
+                            <p class="job-meta span">Full Time</p>
+                        </div>
+                    </div>
+
+                    <div class="job-meta">
+                        <div class="icon-job">
+                            <i class="bi bi-calendar2-event"></i>
+
+                        </div>
+                        <div>
+                            <p class="job-meta-p">Date posted</p>
+                            <p class="job-meta span">posted 1 month ago</p>
+                        </div>
+                    </div>
+                    <div class="job-meta">
+                        <div class="icon-job">
+                            <i class="bi bi-book"></i>
+
+                        </div>
+                        <div>
+                            <p class="job-meta-p">Experience</p>
+                            <p class="job-meta span">1-3 years</p>
+                        </div>
+                    </div>
+                    <div class="job-meta">
+                        <div class="icon-job">
+                            <i class="bi bi-clock"></i>
+                        </div>
+                        <div>
+                            <p class="job-meta-p">Working Hours</p>
+                            <p class="job-meta span">9 AM - 6 PM</p>
+                        </div>
+                    </div>
+                    <div class="job-meta">
+                        <div class="icon-job">
+                            <i class="bi bi-calendar-check"></i>
+                        </div>
+                        <div>
+                            <p class="job-meta-p">Working Days</p>
+                            <p class="job-meta span">Weekly: 5 days<br>Weekend: Saturday, Sunday</p>
+                        </div>
+                    </div>
+
+                    <div class="job-meta">
+                        <div class="icon-job">
+                          <i class="fa-solid fa-chair"></i>
+                        </div>
+                        <div>
+                            <p class="job-meta-p">Vacancy</p>
+                            <p class="job-meta span">No of Vacancy: 3</p>
+                        </div>
+                    </div>
+                   
+
+                    <a href="Careers.html" class="text-danger small">View all jobs</a>
+
+
+                </div>
+                <div class="mt-4 text-muted">
+                    <small class="text-muted">Share this on</small>
+
+                    <div class="social-icons mt-2">
+                        <a href="https://www.facebook.com/SnehaElev8r" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/snehaelev8r" class="twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/sneha-elev8r/" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/snehaelev8r/" class="instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <div class="modal fade" id="applyNowModal" tabindex="-1" aria-labelledby="applyNowModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="applyNowModalLabel">Apply Now</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row g-2">
+                            <div class="col-md-6">
+                                <label for="fullName" class="form-label">Fullname</label>
+                                <input type="text" class="form-control" id="fullName" name="fullname" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="emailAddress" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="emailAddress" name="email" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phoneNumber" class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="phoneNumber" name="phone" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="experienceYears" class="form-label">Experience Years</label>
+                                <input type="number" class="form-control" id="experienceYears" name="experienceYears" min="0" step="1" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="preferredRole" class="form-label">Preferred Role</label>
+                                <input type="text" class="form-control" id="preferredRole" name="preferredRole" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="2" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <label for="resume" class="form-label">Resume</label>
+                                <input type="file" class="form-control" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                            </div>
+                        </div>
+                        <div class="mt-3 text-end">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-danger">Submit Application</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container-fluid page-width">
+            <div class="row">
+                <div class="col-12 text-center footer-logo-section">
+                    <img src="img/full-logo.png" alt="Sneha Elev8r" class="footer-logo">
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="footer-wrapper">
+                <div class="row footer-content">
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-4">
+                        <h5 class="footer-heading">Reach us</h5>
+                        <div class="footer-contact">
+                            <div class="contact-item">
+                                <i class="fas fa-phone-alt fa-flip-horizontal"></i>
+                                <span><a href="tel:+919100812345">+91 91008 12345</a></span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div class="contact-emails">
+                                    <span><a href="mailto:sales@snehaelev8r.com">sales@snehaelev8r.com</a></span>
+                                    <span><a href="mailto:info@snehaelev8r.com">info@snehaelev8r.com</a></span>
+                                </div>
+                            </div>
+                            <!-- Reach us link removed -->
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                               <span> D.No : 2-40/30/1, Road No. 5,<br> Jubilee Gardens, Kondapur,<br> Hyderabad -
+                                    500084, Telangana, India.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 mb-4">
+                        <h5 class="footer-heading">Company</h5>
+                        <ul class="footer-links">
+                            <li><a href="aboutus.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="blogs.html">Blogs</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 mb-4">
+                        <h5 class="footer-heading">Legal</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Services</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 mb-4">
+                        <h5 class="footer-heading">Quick Links</h5>
+                        <ul class="footer-links">
+                            <!-- <li><a href="Careers.html">Careers</a></li> -->
+                            <li><a href="services.html">Services</a></li>
+                            <!-- <li><a href="projects.html">Projects</a></li> -->
+                        </ul>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-3 col-md-12 mb-4">
+                        <div class="contact-form-wrapper">
+                            <h5 class="footer-heading">Contact us</h5>
+                            <form class="footer-contact-form">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="tel" class="form-control" placeholder="Phone number" required>
+                                </div>
+                                <button type="submit" class="btn btn-submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script>
+    //  Show header on page load
+     window.addEventListener('load', function() {
+        const mainHeader = document.getElementById('mainHeader');
+        if (mainHeader) {
+            mainHeader.classList.add('fade-in');
+        }
+    });
+</script>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/common.js"></script>
+<div class="sticky-enquire"><a href="contact.html" class="enquire-sticky-btn">Enquire Now</a></div>
+    <script src="js/loader.js"></script>
+</body>
+
+</html>

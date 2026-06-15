@@ -1,0 +1,691 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/single-logo.png" type="image/png">
+    <link rel="shortcut icon" href="img/single-logo.png" type="image/png">
+    <title>About Us - Sneha Elev8r</title>
+    <meta name="description" content="Sneha Elev8r is engaged in the development, manufacture, sale and service of Elevators. Our products strike the perfect balance between Money and technology.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts - Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Google Fonts - Mosvita -->
+    <link href="https://fonts.googleapis.com/css2?family=Mosvita:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts - DM Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- GSAP ScrollTrigger (for scroll-based animations) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis (smooth scrolling) -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/common.js"></script>
+    <script src="js/revealHeading.js"></script>
+    <style>
+        @media (max-width: 768px) {
+            .about-company-stats {
+                gap: 0;
+            }
+
+
+            .about-company-stats .about-stat {
+                flex: 0 0 100%;
+                max-width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 16px;
+                /* padding: 18px 0; */
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            .about-company-stats .about-stat:last-child {
+                border-bottom: none;
+            }
+
+            .about-company-stats .about-stat-number {
+                font-size: 32px;
+                display: flex;
+                align-items: baseline;
+                gap: 4px;
+            }
+
+            .about-company-stats .about-stat-label {
+                flex: 1;
+                text-align: end;
+                font-size: 15px;
+                line-height: 1.4;
+                margin: 0;
+            }
+        }
+
+        /* Sticky Enquire Now Button */
+        .sticky-enquire {
+            position: fixed;
+            right: -50px;
+            top: 50%;
+            transform: translateY(-50%) rotate(90deg);
+            z-index: 1000;
+        }
+
+        .enquire-sticky-btn {
+            display: inline-block;
+            background-color: #dc3545; /* Red background */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-family: 'DM Sans', sans-serif;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: background-color 0.3s;
+        }
+
+        .enquire-sticky-btn:hover {
+            background-color: #c82333; /* Darker red on hover */
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .sticky-enquire {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="siteLoader" class="site-loader" aria-hidden="true">
+        <div class="spinner" role="status" aria-label="Loading"></div>
+    </div>
+    <header class="main-header" id="mainHeader">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                    <div class="logo-container">
+                        <img src="img/full-logo.png" alt="Logo" class="header-logo">
+                    </div>
+                </a>
+
+                <!-- Mobile Toggle Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation Menu -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.html">ABOUT</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" onclick="if(window.innerWidth>=992)">PRODUCT</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="vlseries.html">VL Series</a></li>
+                                <li><a class="dropdown-item" href="slseries.html">SL Series</a></li>
+                                <li><a class="dropdown-item" href="rmgseries.html">RMG Series</a></li>
+                            </ul>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="projects.html">PROJECTS</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">SERVICES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blogs.html">BLOGS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">CONTACT US</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- 
+  Show header on page load -->
+
+
+    <div class="page-width">
+        <!-- About Us Hero Section -->
+        <section class="about-us-hero-section">
+            <div class="container-fluid">
+                <!-- Match homepage section spacing (same as Services wrapper) -->
+                <div class="elevator-services-wrapper about-us-hero-wrapper">
+                    <div class="row align-items-start">
+                        <!-- Left Column -->
+                        <div class="col-lg-6">
+                            <div class="about-us-hero-content">
+
+                                <p class="about-us-hero-tagline" id="aboutUsHeroTagline"><span class="section-2-dot"
+                                        aria-hidden="true"></span> Reliability in Every Ride 
+
+                                </p>
+                                <h1 class="about-us-hero-heading" id="aboutUsHeroHeading">Legacy of Trust <br>for Modern Elevators
+
+                                   </h1>
+                            </div>
+                        </div>
+
+                        <!-- Right Column -->
+                        <div class="col-lg-6">
+                            <div class="about-us-hero-description">
+                                <p class="about-us-hero-text" id="aboutUsHeroText">
+                                    Recognised as the best elevator company, SNEHA ELEV8R, a flagship brand of the Sneha
+                                    Group, represents Telangana’s growing strength in the lift manufacturing sector.
+                                    Committed to delivering safe, reliable, and high-quality vertical mobility, Sneha
+                                    Elev8r combines engineering expertise with a deep understanding of real-world
+                                    building needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+    <!-- Video Section -->
+    <!-- <section class="video-scroll-wrapper">
+        <div class="video-pin-spacer" aria-hidden="true"></div>
+        <div class="video-stage stage-1">
+            <video class="scroll-video" autoplay muted loop playsinline>
+                <source src="img/video.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section> -->
+
+
+
+
+    <!-- Infinite Auto Scroll Strip -->
+    <!-- <section class="infinite-marquee mt-5" aria-label="Key highlights">
+        <div class="marquee">
+            <div class="marquee__track" aria-hidden="true">
+                <div class="marquee__group">
+                    <span class="marquee__item">Safety-First Engineering</span>
+                    <span class="marquee__sep" aria-hidden="true"><i class="fas fa-star"></i></span>
+                    <span class="marquee__item">Trusted Installations</span>
+                    <span class="marquee__sep" aria-hidden="true"><i class="fas fa-star"></i></span>
+                    <span class="marquee__item">Future-Ready Technology</span>
+                    <span class="marquee__sep" aria-hidden="true"><i class="fas fa-star"></i></span>
+                    <span class="marquee__item">Precision Manufacturing</span>
+                    <span class="marquee__sep" aria-hidden="true"><i class="fas fa-star"></i></span>
+                    <span class="marquee__item">Reliable Service Support</span>
+                    <span class="marquee__sep" aria-hidden="true"><i class="fas fa-star"></i></span>
+                </div>
+                <div class="marquee__group">
+                    <span class="marquee__item">Safety-First Engineering</span>
+                    <span class="marquee__sep" aria-hidden="true"><i class="fas fa-star"></i></span>
+                    <span class="marquee__item">Trusted Installations</span>
+                    <span class="marquee__sep" aria-hidden="true"><i class="fas fa-star"></i></span>
+                    <span class="marquee__item">Future-Ready Technology</span>
+                    <span class="marquee__sep" aria-hidden="true"><i class="fas fa-star"></i></span>
+                    <span class="marquee__item">Precision Manufacturing</span>
+                    <span class="marquee__sep" aria-hidden="true"><i class="fas fa-star"></i></span>
+                    <span class="marquee__item">Reliable Service Support</span>
+                    <span class="marquee__sep" aria-hidden="true"><i class="fas fa-star"></i></span>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+
+    <div class="container-fluid">
+        <!-- Company Overview Section (same spacing as About Us hero) -->
+        <section class="about-company-section">
+            <div class="container-fluid page-width">
+                <div class="elevator-services-wrapper about-company-wrapper">
+                    <div class="row align-items-start about-company-top">
+                        <div class="col-lg-5">
+                            <p class="about-company-tagline"><span class="section-2-dot" aria-hidden="true"></span> Who
+                                We
+                                Are</p>
+                            <h2 class="about-company-heading">Smart Engineering For <br />Trusted Elevator Solutions
+                            </h2>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="about-company-description">
+                                <p>
+                                    With strong roots in Telangana and Andhra Pradesh, and a growing presence in
+                                    Hyderabad,
+                                    Vijayawada, Visakhapatnam, and Nellore, we partner with leading builders,
+                                    developers,
+                                    corporates, and homeowners across India. Our portfolio includes premium home
+                                    elevators,
+                                    elevator maintenance, and solutions for residential apartments, commercial
+                                    buildings,
+                                    hospitals, and industrial complexes. As a lift manufacturing company, we provide
+                                    customised solutions to suit the space, usage, and budget, without compromising on
+                                    quality or safety. Powered by advanced mechanical and microprocessor technology, our
+                                    elevators are designed to withstand harsh climates and inconsistent power supply.
+                                    Our focus extends beyond installation. We are driven by responsive service,
+                                    dependable
+                                    support, and lasting relationships built on trust.
+                                    At Sneha Elev8rs, being the lift manufacturing company is not just about technology.
+                                    It's about people, safety, and commitment.
+
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row about-company-stats">
+
+
+                        <div class="col-6 col-lg about-stat reveal-heading" id="aboutStat1" data-reveal-delay="0.7">
+                            <div class="about-stat-number"><span class="about-stat-count" data-target="12">0</span><span
+                                    class="about-stat-plus">+</span></div>
+                            <div class="about-stat-label">Years of <br />Engineering Excellence</div>
+                        </div>
+                        <div class="col-6 col-lg about-stat reveal-heading" id="aboutStat2" data-reveal-delay="0.7">
+                            <div class="about-stat-number"><span class="about-stat-count"
+                                    data-target="1500">0</span><span class="about-stat-plus">+</span></div>
+                            <div class="about-stat-label">Elevators installed<br /> across South India
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg about-stat     reveal-heading" id="aboutStat3" data-reveal-delay="0.7">
+                            <div class="about-stat-number"><span class="about-stat-count" data-target="8">0</span><span
+                                    class="about-stat-plus">+</span></div>
+                            <div class="about-stat-label">Dedicated service &<br /> support locations</div>
+                        </div>
+                        <div class="col-6 col-lg about-stat reveal-heading" id="aboutStat4" data-reveal-delay="0.7">
+                            <div class="about-stat-number"><span class="about-stat-count" data-target="50">0</span><span
+                                    class="about-stat-plus">+</span></div>
+                            <div class="about-stat-label">Skilled engineers & <br />certified technicians
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg about-stat reveal-heading" id="aboutStat5" data-reveal-delay="0.7">
+                            <div class="about-stat-number"><span class="about-stat-count"
+                                    data-target="100">0</span><span class="about-stat-plus">+</span></div>
+                            <div class="about-stat-label">Customer-focused, <br />safety-driven approach
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+
+
+    <!-- Our Approach Section -->
+    <section class="about-approach-section page-width">
+        <div class="container-fluid">
+            <div class="elevator-services-wrapper about-approach-wrapper">
+                <p class="about-approach-tagline" id="aboutApproachTagline"> <span class="section-2-dot"
+                        aria-hidden="true"></span> Our Approach</p>
+                <h2 class="about-approach-heading" id="aboutApproachHeading">From Concept To Completion,<br /> Driven By
+                    Commitment
+                </h2>
+                <div class="about-approach-description">
+                    <p class="about-approach-text" id="aboutApproachText">
+                        <span class="text-line">At Sneha Elev8r,our approach is built on clarity, precision, and
+                            accountability. Every project for lift </span>
+                        <span class="text-line">manufacturing begins with understanding the
+                            space,usage needs, and long-term expectations.</span>
+                        <span class="text-line"> From consultation and design
+                            planning to manufacturing, installation, and ongoing support,</span>
+                        <span class="text-line"> follows a structured process guided by engineering discipline and each
+                            stage safety standards.</span>
+                        <span class="text-line">
+
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Mission & Vision Section -->
+    <section class="mission-vision-section">
+        <div class="container-fluid">
+            <!-- Top Section: Mission (Left) + Image (Right) -->
+            <div class="mission-vision-row mission-vision-top">
+
+
+                <div class="mission-vision-text-block mission-block">
+                    <h2 class="mission-vision-heading reveal-heading" id="missionHeading" data-reveal-delay="0.7">Our
+                        Mission</h2>
+                    <p class="mission-vision-text reveal-heading" id="missionText" data-reveal-delay="0.7">
+                        As a trusted lift manufacturing company, our mission is to:
+                    <ul class="mission-vision-text reveal-heading" id="missionList" data-reveal-delay="0.8">
+                        <li> <p>Design and manufacture high-quality, customised home elevators and
+                            passenger lift solutions
+                            that meet global safety and performance standards.</p>
+                        </li>
+                        <li><p>Deliver end-to-end elevator services - from installation to responsive
+                            elevator maintenance and support.</p></li>
+                        <li><p>Leverage advanced mechanical and microprocessor technology to ensure safety, comfort, and
+                            energy efficiency.</p></li>
+                        <li><p>Build long-lasting relationships with homeowners, builders, developers, and corporates
+                            through dependable service and transparent practices.
+                        </p></li>
+                        <li><p>Continuously evolve as one of the best elevator companies, focused on
+                            innovation,
+                            reliability, and customer satisfaction.
+                        </p></li>
+                    </ul>
+
+                    </p>
+                </div>
+                <div class="mission-vision-image-block">
+                    <div class="auto-scroll-image-wrapper reveal-heading" id="missionImageWrapper"
+                        data-reveal-delay="0.7">
+                        <img src="img/mission.png" alt="Elevator" class="auto-scroll-image" id="missionImage">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section: Image (Left) + Vision (Right) -->
+            <div class="mission-vision-row mission-vision-bottom">
+
+
+                <div class="mission-vision-image-block">
+                    <div class="auto-scroll-image-wrapper reveal-heading" id="visionImageWrapper"
+                        data-reveal-delay="1.1">
+                        <img src="img/vision.png" alt="Elevator" class="auto-scroll-image reveal-heading"
+                            id="visionImage" data-reveal-delay="1.2">
+                    </div>
+                </div>
+
+                <div class="mission-vision-text-block vision-block">
+                    <h2 class="mission-vision-heading reveal-heading" id="visionHeading" data-reveal-delay="1.2">Our
+                        Vision</h2>
+                    <p class="mission-vision-text reveal-heading" id="visionText" data-reveal-delay="1.3">
+                        To position Sneha Elev8r as one of the best lift manufacturing companies in
+                        India, delivering
+                        safe, innovative, and reliable elevator solutions. We aspire to set new benchmarks in home
+                        elevators, commercial elevators, elevator maintenance, and customer service,
+                        driven by
+                        engineering excellence and long-term trust.
+
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <!-- Founder's Message Section -->
+    <section class="founders-message-section page-width">
+        <div class="container-fluid">
+            <div class="elevator-services-wrapper founders-message-wrapper">
+                <div class="row align-items-center">
+                    <!-- Left Column: Text Content -->
+                    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                        <div class="founders-message-content">
+                            <p class="founders-message-tagline reveal-heading" id="foundersMessageTagline"
+                                data-reveal-delay="0.7"><span class="section-2-dot" aria-hidden="true"></span>
+                                Leadership & Vision</p>
+                            <h2 class="founders-message-heading reveal-heading" id="foundersMessageHeading"
+                                data-reveal-delay="0.8">Founder's Message</h2>
+
+                            <p class="founders-message-text reveal-heading" id="foundersMessageText"
+                                data-reveal-delay="0.9">
+                                What began with a focused presence in villa projects has steadily evolved into
+                                large-scale
+                                commercial installations. Today, we are proud to be entrusted with bulk orders, a clear
+                                reflection of the confidence our customers place in our capabilities, reliability, and
+                                execution standards. This progress has reinforced our position as a dependable and
+                                established name in the market.
+                                At the core of Sneha Elevators are the values of safety and reliability. Every system we
+                                deliver is engineered with a clear priority-ensuring long-term performance, operational
+                                safety, and peace of mind. While we continuously adopt the latest technologies and
+                                innovations to enhance efficiency and user experience, we never compromise on the
+                                fundamental reliability of our products.
+                            </p>
+                            <div class="founders-message-author reveal-heading" id="foundersMessageAuthor"
+                                data-reveal-delay="1.0">
+                                <p class="founders-message-name" id="foundersMessageName">Vaibhav Reddy</p>
+                                <p class="founders-message-title" id="foundersMessageTitle">Managing Director</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Image with Background Logo -->
+                    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                        <div class="founders-message-image-wrapper">
+
+                            <img src="img/founder.png" alt="Founder" class="founders-message-image reveal-heading"
+                                id="foundersMessageImage" data-reveal-delay="1.0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Safety Standards & Certifications Section -->
+     <section class="about-certifications-section p-0">
+        <div class="container-fluid page-width">
+            <div class="elevator-services-wrapper about-certifications-wrapper">
+                <div class="row align-items-start about-certifications-header">
+                    <div class="about-certifications col-lg-6">
+                        <p class="about-certifications-tagline reveal-heading"> <span class="section-2-dot"
+                                aria-hidden="true"></span>
+                            Safety & Certification</p>
+                        <h2 class="about-certifications-heading reveal-heading">Safety & Trust Built<br /> Into Every
+                            Ride
+                        </h2>
+                    </div>
+                    <div class="col-lg-6">
+                        <p class="about-certifications-intro    reveal-heading">
+                            Our commitment to safety goes beyond compliance. Designed to meet regulatory standards and
+                            tested for real-world conditions, we prioritise passenger protection, operational
+                            reliability, and long-term safety.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row about-certifications-grid">
+                    <div class="col-lg-6">
+                        <article class="about-cert-card reveal-heading" id="certCard1" data-reveal-delay="1.0">
+                            <div class="about-cert-media">
+                                <a href="img/certi2.png" class="lightbox-link">
+                                    <img src="img/certi2.png" alt="Safety Certificate" class="about-cert-img">
+                                </a>
+                            </div>
+                            <!-- <h3 class="about-cert-title reveal-heading">Global Safety Certificate</h3>
+                            <p class="about-cert-text reveal-heading">Lorem Ipsum is a dummy text Lorem Ipsum is a dummy
+                                text Lorem
+                                Ipsum is a dummy text</p> -->
+                        </article>
+                    </div>
+                    <div class="col-lg-6">
+                        <article class="about-cert-card reveal-heading" id="certCard2" data-reveal-delay="1.1">
+                            <div class="about-cert-media">
+                                <a href="img/certi-1.png" class="lightbox-link">
+                                    <img src="img/certi-1.png" alt="Quality Certificate" class="about-cert-img">
+                                </a>
+                            </div>
+                            <!-- <h3 class="about-cert-title reveal-heading">Global Safety Certificate</h3>
+                            <p class="about-cert-text reveal-heading">Lorem Ipsum is a dummy text Lorem Ipsum is a dummy
+                                text Lorem
+                                Ipsum is a dummy text</p> -->
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+
+
+    <!-- Consultation Banner Section -->
+    <section class="consultation-banner-section">
+        <div class="consultation-banner-background">
+            <img src="img/aboutus-clouser.png" alt="about-us-footer" class="consultation-banner-image">
+        </div>
+        <div class="container">
+            <div class="consultation-banner-wrapper reveal-heading" id="consultationBannerWrapper"
+                data-reveal-delay="0.7">
+                <div class="consultation-banner-content reveal-heading" id="consultationBannerContent"
+                    data-reveal-delay="0.7">
+                    <h2 class="consultation-banner-heading reveal-heading" id="consultationBannerHeading"
+                        data-reveal-delay="0.7">Let's Build The Right Solution Together
+                    </h2>
+                    <p class="consultation-banner-description reveal-heading" id="consultationBannerDescription"
+                        data-reveal-delay="0.8"></p>
+                    <a href="contact.html" class="consultation-banner-cta reveal-heading" id="consultationBannerCta"
+                        data-reveal-delay="0.9">Book a Consultation
+                        <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="site-footer">
+        <div class="container-fluid page-width">
+            <div class="row">
+                <div class="col-12 text-center footer-logo-section">
+                    <img src="img/full-logo.png" alt="Sneha Elev8r" class="footer-logo">
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="footer-wrapper">
+                <div class="row footer-content">
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-4">
+                        <h5 class="footer-heading">Reach us</h5>
+                        <div class="footer-contact">
+                            <div class="contact-item">
+                                <i class="fas fa-phone-alt fa-flip-horizontal"></i>
+                                <span><a href="tel:+919100812345">+91 91008 12345</a></span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div class="contact-emails">
+                                    <span><a href="mailto:sales@snehaelev8r.com">sales@snehaelev8r.com</a></span>
+                                    <span><a href="mailto:info@snehaelev8r.com">info@snehaelev8r.com</a></span>
+                                </div>
+                            </div>
+                           <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                               <span> D.No : 2-40/30/1, Road No. 5,<br> Jubilee Gardens, Kondapur,<br> Hyderabad -
+                                    500084, Telangana, India.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 mb-4">
+                        <h5 class="footer-heading">Company</h5>
+                        <ul class="footer-links">
+                            <li><a href="aboutus.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="blogs.html">Blogs</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 mb-4">
+                        <h5 class="footer-heading">Legal</h5>
+                        <ul class="footer-links">
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 mb-4">
+                        <h5 class="footer-heading">Quick Links</h5>
+                        <ul class="footer-links">
+                            <!-- <li><a href="Careers.html">Careers</a></li> -->
+                            <li><a href="services.html">Services</a></li>
+                            <!-- <li><a href="projects.html">Projects</a></li> -->
+                        </ul>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-3 col-md-12 mb-4">
+                        <div class="contact-form-wrapper">
+                            <h5 class="footer-heading">Contact us</h5>
+                            <form class="footer-contact-form">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="tel" class="form-control" placeholder="Phone number" required>
+                                </div>
+                                <button type="submit" class="btn btn-submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        //  Show header on page load
+        window.addEventListener('load', function () {
+            const mainHeader = document.getElementById('mainHeader');
+            if (mainHeader) {
+                mainHeader.classList.add('fade-in');
+            }
+        });
+    </script>
+    <script src="js/lightbox.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/common.js"></script>
+
+    <!-- Sticky Enquire Now Button -->
+    <div class="sticky-enquire">
+        <a href="contact.html" class="enquire-sticky-btn">Enquire Now</a>
+    </div>
+
+    <script src="js/loader.js"></script>
+</body>
+
+</html>
