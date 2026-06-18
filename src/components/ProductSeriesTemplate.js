@@ -14,6 +14,7 @@ export default function ProductSeriesTemplate({
   features,
   specifications,
   spaces,
+  personalisationHead,
   personalisationChoices,
   safetyIntroText,
   safetyFeatures,
@@ -22,6 +23,26 @@ export default function ProductSeriesTemplate({
   const containerRef = useRef(null);
   const [activeSpaceIdx, setActiveSpaceIdx] = useState(0);
   const [activeChoiceIdx, setActiveChoiceIdx] = useState(0);
+
+  // Default personalisation choices when none are passed from parent
+  const defaultVLChoices = [
+    { title: "Brushed Steel", image: "/img/vl-choice-1.png" },
+    { title: "Oak Finish", image: "/img/vl-choice-2.png" },
+    { title: "Warm LED Lighting", image: "/img/vl-choice-3.png" },
+  ];
+
+  const defaultSLChoices = [
+    { title: "Glossy White", image: "/img/sl-choice-1.png" },
+    { title: "Glass Panel", image: "/img/sl-choice-2.png" },
+    { title: "Cool LED Lighting", image: "/img/sl-choice-3.png" },
+  ];
+
+  const choices =
+    personalisationChoices && personalisationChoices.length
+      ? personalisationChoices
+      : seriesName && seriesName.toLowerCase().includes("vl")
+      ? defaultVLChoices
+      : defaultSLChoices;
 
   // 1. Initial GSAP state setup (runs instantly on mount to prevent any flash/glitch)
   useLayoutEffect(() => {
@@ -182,10 +203,10 @@ export default function ProductSeriesTemplate({
   // Automatic transition for personalisation choices mobile carousel
   useEffect(() => {
     const timer = setInterval(() => {
-      setActiveChoiceIdx((prev) => (prev + 1) % personalisationChoices.length);
+      setActiveChoiceIdx((prev) => (prev + 1) % choices.length);
     }, 4500);
     return () => clearInterval(timer);
-  }, [personalisationChoices.length]);
+  }, [choices.length]);
 
   return (
     <div ref={containerRef} style={{ width: "100%", overflowX: "hidden" }}>
@@ -399,11 +420,7 @@ export default function ProductSeriesTemplate({
               </div>
               <div className="col-lg-7">
                 <p className="section-description reveal-heading" id="personalisationChoicesDescription" data-reveal-delay="0.6">
-                  With the {seriesName}, you don't just choose an elevator, you shape it. Select from a
-                  range of cabin materials, textures, lighting styles, and panel finishes to match your
-                  space perfectly. We work closely with you to ensure your machine room with gearless
-                  drive elevator blends beautifully with your building while delivering dependable
-                  performance.
+                 {personalisationHead}
                 </p>
               </div>
             </div>
@@ -412,7 +429,7 @@ export default function ProductSeriesTemplate({
           {/* Desktop/Tablet Choices Grid (All active/fully opaque as requested) */}
           <div className="personalisation-carousel page-width d-none d-md-block" style={{ marginTop: "40px" }}>
             <div className="row justify-content-center">
-              {personalisationChoices.map((choice, idx) => (
+              {choices.map((choice, idx) => (
                 <div
                   className="col-lg-4 col-md-6 mb-4 choice-card-anim"
                   key={idx}
@@ -436,7 +453,7 @@ export default function ProductSeriesTemplate({
           <div className="personalisation-carousel page-width d-block d-md-none" style={{ marginTop: "40px" }}>
             <div id="personalisationMobileCarousel" className="carousel slide" data-bs-touch="true">
               <div className="carousel-inner">
-                {personalisationChoices.map((choice, idx) => (
+                {choices.map((choice, idx) => (
                   <div className={`carousel-item ${activeChoiceIdx === idx ? "active" : ""}`} key={idx}>
                     <div className="choice-card" style={{ display: "block" }}>
                       <div className="image-wrapper">
@@ -448,7 +465,7 @@ export default function ProductSeriesTemplate({
                 ))}
               </div>
               <div className="carousel-indicators">
-                {personalisationChoices.map((_, idx) => (
+                {choices.map((_, idx) => (
                   <button
                     key={idx}
                     type="button"

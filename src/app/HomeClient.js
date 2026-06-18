@@ -464,7 +464,7 @@ export default function HomeClient() {
           <h2 className="text-white">
             Best elevator company combining engineering excellence with thoughtful designs.
           </h2>
-          <h1>SAFE AND SOUND ALL AROUND</h1>
+          <h1>SAFE AND SOUND, ALL AROUND</h1>
           <Link href="/products/vlseries" className="btn">
             Explore Our Elevator Solutions
           </Link>
@@ -480,7 +480,7 @@ export default function HomeClient() {
                 <span className="section-2-dot" aria-hidden="true"></span>Complete Vertical Mobility Solutions
               </p>
               <h2 className="section-2-heading" id="section2Heading">
-                Engineered for Homes, Businesses & Beyond
+                Built in Telangana.Trusted Across South India.
               </h2>
               <p className="section-2-para" id="section2Para">
                 Powered by 20+ years of engineering excellence, our solutions elevate the way people
@@ -511,13 +511,24 @@ export default function HomeClient() {
                       <br /> Elevators
                     </h2>
                     <p className="elevator-category-description">
-                      Experience the perfect blend of comfort, style, and advanced technology with
-                      our residential elevators. Thoughtfully engineered for modern living spaces.
+                     Experience the perfect blend of comfort, style, and advanced technology with
+                      our residential elevators. Choose from the VL Series and RM Series, engineered for homes from low to high rise buildings. Thoughtfully engineered for modern living spaces.
                       Designed with a compact footprint, they seamlessly integrate into your
                       interiors without compromising space, while their sleek aesthetics enhance the
                       overall look of your home. Every ride is smooth, quiet, and energy-efficient,
                       ensuring minimal power consumption alongside maximum performance.
+                    
                     </p>
+
+                      <div className="residential-buttons-grid">
+                      <Link href="/products/vlseries" className="residential-button">
+                       Explore VL Series
+                      </Link>
+                      <Link href="/products/rmgseries" className="residential-button">
+                        Explore RM Series
+                      </Link>
+                    </div>
+
                     <Link href="/contact" className="elevator-category-link">
                       Enquire Now <i className="fas fa-arrow-right"></i>
                     </Link>
@@ -588,7 +599,7 @@ export default function HomeClient() {
                     <div className="elevator-category-top-line">
                       <span className="elevator-category-red-line"></span>
                       <p className="elevator-category-tagline" id="tagline03">
-                        SAFE, HYGIENIC & VIBRATION-FREE
+                       Engineered for Care, Built for Reliability
                       </p>
                     </div>
                     <h2 className="elevator-category-heading" id="heading03">
@@ -597,12 +608,7 @@ export default function HomeClient() {
                       Elevators
                     </h2>
                     <p className="elevator-category-description">
-                      Purpose-built for healthcare environments, our hospital elevators prioritize
-                      safety, hygiene, and precision in every movement. Designed to meet the
-                      critical demands of hospitals and medical facilities, they ensure smooth and
-                      stable transport of patients, stretchers, and medical equipment. With
-                      vibration-free performance and ultra-quiet operation, these elevators create
-                      a calm and comfortable experience for both patients and staff.
+                    Designed for hospitals, nursing homes, and diagnostic centres, our elevators provide smooth and reliable transportation for patients, stretchers, beds, attendants, and medical equipment. Quiet operation and spacious cabins ensure safe and comfortable movement when it matters most.<br/>Use ‘Lifts’ across Residential, Commercial, Hospital & Goods Lift.
                     </p>
                     <Link href="/contact" className="elevator-category-link">
                       Enquire Now <i className="fas fa-arrow-right"></i>
@@ -670,7 +676,7 @@ export default function HomeClient() {
           <div className="features-grid-wrapper">
             <div className="features-section-header">
               <p className="section-2-tagline">
-                <span className="section-2-dot" aria-hidden="true"></span>Engineering Excellence. Human Commitment.
+                <span className="section-2-dot" aria-hidden="true"></span>Engineered with Precision, Delivered with Trust.
               </p>
               <h2 className="features-grid-heading" id="featuresHeading">
                 Why Choose Us
@@ -704,10 +710,10 @@ export default function HomeClient() {
                 <div className="service-icon">
                   <img src="/img/home-page-icon-2.png" alt="Fully Automated icon" />
                 </div>
-                <h3 className="feature-title">Fully Automated</h3>
+                <h3 className="feature-title"> Quality assurance</h3>
                 <p className="feature-description">
-                  Designed with modern technology for smooth and effortless operation to deliver
-                  consistent performance with reliable automation.
+                 Stringent quality checks and reliable manufacturing practices ensure superior product performance.
+
                 </p>
               </div>
 
@@ -742,7 +748,7 @@ export default function HomeClient() {
                 </p>
               </div>
 
-              {/* Card 4: Affordable Price */}
+              {/* Card 4: Competitive Pricing */}
               <div
                 className={`feature-card ${activeFeature === "bottom-right" ? "hovered" : ""}`}
                 data-position="bottom-right"
@@ -750,12 +756,11 @@ export default function HomeClient() {
                 onMouseLeave={() => setActiveFeature(null)}
               >
                 <div className="service-icon">
-                  <img src="/img/home-page-icon-4.png" alt="Affordable Price icon" />
+                  <img src="/img/home-page-icon-4.png" alt="Competitive Pricing icon" />
                 </div>
-                <h3 className="feature-title">Affordable Price</h3>
+                <h3 className="feature-title">Competitive Pricing</h3>
                 <p className="feature-description">
-                  Competitively priced solutions that combine performance, durability, and
-                  long-term value.
+                 Best value through optimized manufacturing processes and reduced intermediary costs.
                 </p>
               </div>
             </div>

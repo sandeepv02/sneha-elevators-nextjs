@@ -31,7 +31,7 @@ export default function AboutClient() {
 
             const targets = {
               excellence: 12,
-              installations: 1500,
+              installations: 3500,
               locations: 8,
               engineers: 50,
               satisfaction: 100,
@@ -330,19 +330,12 @@ export default function AboutClient() {
               <div className="col-lg-7">
                 <div className="about-company-description reveal-heading" data-reveal-delay="0.5">
                   <p>
-                    With strong roots in Telangana and Andhra Pradesh, and a growing presence in
-                    Hyderabad, Vijayawada, Visakhapatnam, and Nellore, we partner with leading
-                    builders, developers, corporates, and homeowners across India. Our portfolio
-                    includes premium home elevators, elevator maintenance, and solutions for
-                    residential apartments, commercial buildings, hospitals, and industrial
-                    complexes. As a lift manufacturing company, we provide customised solutions to
-                    suit the space, usage, and budget, without compromising on quality or safety.
-                    Powered by advanced mechanical and microprocessor technology, our elevators are
-                    designed to withstand harsh climates and inconsistent power supply. Our focus
-                    extends beyond installation. We are driven by responsive service, dependable
-                    support, and lasting relationships built on trust. At Sneha Elev8rs, being the
-                    lift manufacturing company is not just about technology. It's about people,
-                    safety, and commitment.
+                   Sneha Elev8r has been building and installing elevators across South India since 2017. Based in Telangana, we serve Hyderabad, Vijayawada, Visakhapatnam, Nellore, Warangal, Nizamabad, and Bengaluru.
+
+We specialize in home lifts, residential, commercial elevators and hospital elevators, backed by reliable service and OEM (Original Equipment Manufacturer) spare parts.
+
+With over 3,500 + elevators installed, we continue to grow through quality engineering, reliable maintenance support and lasting customer trust.
+
                   </p>
                 </div>
               </div>

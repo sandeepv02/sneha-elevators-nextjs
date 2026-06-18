@@ -46,6 +46,10 @@ const vlSpaces = [
   { image: "/img/vl-upscale-homes.png", title: "Upscale homes" }
 ];
 
+const vlPersonalisationhead = [
+  "With the VL Series, you don't just choose an elevator, you shape it. Pick from a range of cabin materials, textures, lighting styles and panel finishes to match your space. Built as a machine roomless (MRL) lift, the VL Series fits cleanly into your building and gives you a dependable, energy efficient ride."
+];
+
 const vlPersonalisation = [
   { image: "/img/stainless.png", title: "Stainless steel or mild steel (MS) cabin finishes" },
   { image: "/img/automatic.png", title: "Convert manual lifts to auto lifts." },
@@ -76,11 +80,13 @@ export default function VLSeriesPage() {
       seriesName="VL SERIES"
       heroImage="/img/vl-series-home-banner.png"
       highlightsTitle="Smart, space-efficient elevators for modern buildings"
-      highlightsDescription="VL Series, especially designed for low-rise residential and commercial buildings where space management, comfort & energy efficiency are key requirements. Built as a machine room less elevator, it eliminates the need for a separate machine room, reducing civil work & utilising space efficiently."
+      highlightsDescription="The VL Series is designed for low to highrise residential and commercial buildings where space, comfort and energy efficiency matter. As a machine roomless (MRL) lift, it removes the need for a separate machine room, reduces civil work and uses floor space efficiently."
       features={vlFeatures}
       specifications={vlSpecifications}
       spaces={vlSpaces}
+
       personalisationChoices={vlPersonalisation}
+      personalisationHead={vlPersonalisationhead}
       safetyIntroText="With its compact design, energy-conscious functioning, and trustworthy performance, the VL Series stands out as a dependable machine room with gearless drive elevator solution engineered for long-term value."
       safetyFeatures={vlSafetyFeatures}
     />

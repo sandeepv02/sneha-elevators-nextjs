@@ -46,6 +46,10 @@ const slSpaces = [
   { image: "/img/sl-clinics.png", title: "Clinics" }
 ];
 
+const slPersonalisationhead = [
+  "With the SL Series, you don't just choose an elevator, you shape it. Choose cabin materials, textures, lighting and panel finishes to suit your home. Engineered as a Home/Villas lift, the SL Series installs without a separate machine room, even in existing structures."
+];
+
 const slPersonalisation = [
   { image: "/img/stainless.png", title: "Stainless steel or mild steel (MS) cabin finishes" },
   { image: "/img/automatic.png", title: "Convert manual lifts to automatic lifts." },
@@ -86,11 +90,12 @@ export default function SLSeriesPage() {
       seriesName="SL SERIES"
       heroImage="/img/Sl-series-hero.png"
       highlightsTitle="Elegance meets comfort for modern living"
-      highlightsDescription="SL Series is exclusively developed for villas and existing structures with space constraints. Designed as one of the best residential elevators, the SL Series combines compact construction with efficient performance. Engineered as a machine room less elevator, the SL Series doesn't need a space room, and its motor is installed within the hoistway, either at the bottom or at the top of the shaft. This gives the flexibility to fit these elevators in existing structures, including pitless residential elevator applications. SL Series is highly energy efficient as it consumes nearly 30% less power compared to traditional systems. It operates on a single-phase power supply and requires minimal maintenance, making it an economic and ecological choice for homeowners. It can be installed outdoors or indoors using an MS structure, which gives it an advantage for projects seeking a villa home lift in Hyderabad."
+      highlightsDescription="The SL Series is built for Home / Villlas and existing structures where space is limited. As a machine roomless (MRL) & Pitless lift, it installs without a separate machine room, with the motor housed inside the hoistway. It runs on single-phase power, uses around 30% less energy than conventional systems."
       features={slFeatures}
       specifications={slSpecifications}
       spaces={slSpaces}
       personalisationChoices={slPersonalisation}
+      personalisationHead={slPersonalisationhead}
       safetyIntroText=""
       safetyFeatures={slSafetyFeatures}
     />

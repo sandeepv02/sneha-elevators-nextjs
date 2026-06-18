@@ -850,6 +850,40 @@ a.nav-link:active {
     aspect-ratio: 1/1;
 }
 
+/* Residential buttons grid placed above the Enquire Now link */
+.residential-buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 16px 0;
+    width: 70%;
+}
+
+.residential-button {
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    justify-content: center;
+    padding: 8px 16px;
+    background: #ED3435;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.18s ease, transform 0.12s ease;
+}
+
+.residential-button:hover {
+    background: #c72022;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 576px) {
+    .residential-buttons-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Mobile responsive for elevator sections */
 @media (max-width: 991.98px) {
     .elevator-category-section {
@@ -6118,12 +6152,16 @@ p#builtForSpacesHeading {
     max-width: 90%;
     margin: 0 auto;
 }
-
+.dropdown-item.active, .dropdown-item:active {
+    color: var(--bs-dropdown-link-active-color);
+    text-decoration: none;
+    background-color: unset !important;
+}
 .product-hero-title {
     /* font-size: 36px; */
     font-family: 'Mosvita', sans-serif;
     font-weight: 700;
-    color: #ED3435;
+    color: white;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -9549,7 +9587,7 @@ h2.section-5-heading {
 
         .enquire-sticky-btn {
             display: inline-block;
-            background-color: #dc3545;
+            background-color: #ed3435;
             /* Red background */
             color: white;
             padding: 10px 20px;
