@@ -4701,7 +4701,9 @@ feature */
     --bs-gutter-x: 2rem;
   
 }
-
+img.door-type-image {
+    border: 1px solid black;
+}
 .founders-message-tagline {
     font-size: 0.9rem;
     color: #dc3545;

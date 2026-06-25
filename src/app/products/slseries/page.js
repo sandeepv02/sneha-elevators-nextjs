@@ -81,8 +81,8 @@ const slPersonalisationheadDuplicate = [
 ];
 
 const doorTypesGallery = [
-  { image: "/img/doortype-1.jpeg" },
-  { image: "/img/doortype-2.jpeg" }
+  { image: "/img/lop.png" },
+  { image: "/img/cop.png" }
 ];
 
 const slSafetyFeatures = [
