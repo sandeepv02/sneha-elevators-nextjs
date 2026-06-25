@@ -40,18 +40,27 @@ const slSpecifications = [
 const slSpaces = [
   { image: "/img/sl-villas.png", title: "Villas" },
   { image: "/img/sl-Duplexes.png", title: "Duplexes" },
-  { image: "/img/sl-clinics.png", title: "Clinics" }
+ 
+  { image: "/img/sl-clinics.png", title: "Hospitals" }
 ];
 
-const slCategories = [
+const slPortraitSpaces = [
   { image: "/img/sl-villas.png", title: "Villas" },
   { image: "/img/sl-Duplexes.png", title: "Duplexes" },
   { image: "/img/sl-clinics.png", title: "Clinics" },
   { image: "/img/sl-Retrofits.png", title: "Retrofits" },
-  { image: "/img/vl-Office.jpeg", title: "Offices" },
-  { image: "/img/vl-Boutique.jpeg", title: "Boutiques" },
-  { image: "/img/vl-upscale-homes.jpeg", title: "Upscale Homes" },
-  { image: "/img/urbanx.png", title: "Urban Spaces" }
+  { image: "/img/sl-series-block.png", title: "Home Lift Interior" },
+  { image: "/img/image-14.jpg", title: "Modern Lobby" },
+  { image: "/img/image-15.png", title: "Residential Entrance" },
+  { image: "/img/image-18.png", title: "Condo Interior" },
+  { image: "/img/image-19.png", title: "Compact Shaft" },
+  { image: "/img/image-21.png", title: "Minimal Cabin" },
+  { image: "/img/image-22.png", title: "Stylish Finish" },
+  { image: "/img/image-23.jpg", title: "Stairwell Integration" },
+  { image: "/img/image-24.png", title: "Contemporary Hall" },
+  { image: "/img/image-25.png", title: "Panoramic Door" },
+  { image: "/img/image-26.png", title: "Premium Panel" },
+  { image: "/img/image-27.png", title: "Elegant Cabin" },
 ];
 
 const slPersonalisationhead = [
@@ -59,15 +68,24 @@ const slPersonalisationhead = [
 ]
 
 const slPersonalisation = [
-  { image: "/img/glasscabin.jpeg" },
-  { image: "/img/stainlesssteel.png" },
-  { image: "/img/designerrosegold.png" }
+   { image: "/img/glasscabin.png", },
+  { image: "/img/stainlesssteel.png",  },
+  { image: "/img/designerrosegold.png", }
 ];
 const slPersonalisationDuplicate = [
   { image: "/img/doortype-1.jpeg" },
   { image: "/img/doortype-2.jpeg" },
   { image: "/img/doortype-3.jpeg" }
 ];
+const slPersonalisationheadDuplicate = [
+  "Choose from door types and premium finishes that create elegance in every entry."
+];
+
+const doorTypesGallery = [
+  { image: "/img/doortype-1.jpeg" },
+  { image: "/img/doortype-2.jpeg" }
+];
+
 const slSafetyFeatures = [
   {
     icon: "/img/sensor-icon.png",
@@ -101,15 +119,20 @@ export default function SLSeriesPage() {
     <ProductSeriesTemplate
       seriesName="SL SERIES"
       heroImage="/img/Sl-series-hero.png"
+      heroSubheading="Home Lifts"
+      heroParagraph="Designed for vilas,duplexes,retrofits,clinics."
+      
       highlightsTitle="Elegance meets comfort for modern living"
       highlightsDescription="The SL Series is built for Home / Villlas and existing structures where space is limited. As a machine roomless (MRL) & Pitless lift, it installs without a separate machine room, with the motor housed inside the hoistway. It runs on single-phase power, uses around 30% less energy than conventional systems."
       features={slFeatures}
       specifications={slSpecifications}
       spaces={slSpaces}
+      portraitSpaces={slPortraitSpaces}
       personalisationChoices={slPersonalisation}
       personalisationChoicesDuplicate={slPersonalisationDuplicate}
-      categories={slCategories}
       personalisationHead={slPersonalisationhead}
+       personalisationHeadDuplicate={slPersonalisationheadDuplicate}
+      doorTypesGallery={doorTypesGallery}
       safetyIntroText=""
       safetyFeatures={slSafetyFeatures}
     />

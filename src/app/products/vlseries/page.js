@@ -51,9 +51,24 @@ const vlPersonalisationhead = [
 ];
 
 const vlPersonalisation = [
-  { image: "/img/stainless.png", title: "Stainless steel" },
-  { image: "/img/automatic.png", title: "Customisable" },
-  { image: "/img/funtional.png", title: "Functional and aesthetic lighting options" }
+  { image: "/img/glasscabin.png", },
+  { image: "/img/stainlesssteel.png",  },
+  { image: "/img/designerrosegold.png", }
+];
+
+const vlPersonalisationDuplicate = [
+  { image: "/img/doortype-1.jpeg" },
+  { image: "/img/doortype-2.jpeg" },
+  { image: "/img/doortype-3.jpeg" }
+];
+
+const vlPersonalisationheadDuplicate = [
+  "Choose from door types and premium finishes that create elegance in every entry."
+];
+
+const doorTypesGallery = [
+  { image: "/img/doortype-1.jpeg" },
+  { image: "/img/doortype-2.jpeg" }
 ];
 
 const vlSafetyFeatures = [
@@ -79,14 +94,18 @@ export default function VLSeriesPage() {
     <ProductSeriesTemplate
       seriesName="VL SERIES"
       heroImage="/img/vl-series-home-banner.png"
-      highlightsTitle="Smart, space-efficient elevators for modern buildings"
+      heroSubheading="Machine Room Less"
+      heroParagraph="Perfect for upscale homes, boutique offices, and low to high-rise buildings."
       highlightsDescription="The VL Series is designed for low to highrise residential and commercial buildings where space, comfort and energy efficiency matter. As a machine roomless (MRL) lift, it removes the need for a separate machine room, reduces civil work and uses floor space efficiently."
       features={vlFeatures}
       specifications={vlSpecifications}
       spaces={vlSpaces}
 
       personalisationChoices={vlPersonalisation}
+      personalisationChoicesDuplicate={vlPersonalisationDuplicate}
       personalisationHead={vlPersonalisationhead}
+      personalisationHeadDuplicate={vlPersonalisationheadDuplicate}
+      doorTypesGallery={doorTypesGallery}
       safetyIntroText="With its compact design, energy-conscious functioning, and trustworthy performance, the VL Series stands out as a dependable machine room with gearless drive elevator solution engineered for long-term value."
       safetyFeatures={vlSafetyFeatures}
     />

@@ -9,15 +9,19 @@ import { usePreloader } from "@/components/PreloaderContext";
 export default function ProductSeriesTemplate({
   seriesName,
   heroImage,
+  heroSubheading,
+  heroParagraph,
   highlightsTitle,
   highlightsDescription,
   features,
   specifications,
   spaces,
   personalisationHead,
+  personalisationHeadDuplicate,
   personalisationChoices,
   personalisationChoicesDuplicate,
-  categories,
+  portraitSpaces,
+  doorTypesGallery,
   safetyIntroText,
   safetyFeatures,
 }) {
@@ -25,6 +29,17 @@ export default function ProductSeriesTemplate({
   const containerRef = useRef(null);
   const [activeSpaceIdx, setActiveSpaceIdx] = useState(0);
   const [activeChoiceIdx, setActiveChoiceIdx] = useState(0);
+  const portraitTrackRef = useRef(null);
+
+  const scrollPortrait = (dir = "next") => {
+    const el = portraitTrackRef.current;
+    if (!el) return;
+    const card = el.querySelector(".portrait-space-card");
+    const gap = 20; // matches CSS gap
+    const cardWidth = card ? Math.round(card.getBoundingClientRect().width + gap) : Math.round(el.clientWidth / 5);
+    const amt = dir === "next" ? cardWidth : -cardWidth;
+    el.scrollBy({ left: amt, behavior: "smooth" });
+  };
 
   // Default personalisation choices when none are passed from parent
   const defaultVLChoices = [
@@ -51,7 +66,10 @@ export default function ProductSeriesTemplate({
       ? personalisationChoicesDuplicate
       : choices;
 
-  const categoryItems = categories && categories.length ? categories : [];
+  const portraitSpacesList =
+    portraitSpaces && portraitSpaces.length
+      ? portraitSpaces
+      : spaces;
 
   // 1. Initial GSAP state setup (runs instantly on mount to prevent any flash/glitch)
   useLayoutEffect(() => {
@@ -106,6 +124,7 @@ export default function ProductSeriesTemplate({
                 clipPath: "inset(0% 0 0 0)",
                 duration: 1.2,
                 delay: delay,
+
                 ease: "power3.out",
               });
             });
@@ -136,6 +155,16 @@ export default function ProductSeriesTemplate({
           <h1 className="product-hero-title reveal-heading" id="productHeroTitle" data-reveal-delay="0.1">
             {seriesName}
           </h1>
+          {heroSubheading && (
+            <h2 className="product-hero-subheading reveal-heading" id="productHeroSubheading" data-reveal-delay="0.2">
+              {heroSubheading}
+            </h2>
+          )}
+          {heroParagraph && (
+            <p className="product-hero-paragraph reveal-heading" id="productHeroParagraph" data-reveal-delay="0.25">
+              {heroParagraph}
+            </p>
+          )}
           <div className="product-hero-cta reveal-heading" id="productHeroCta" data-reveal-delay="0.3">
             <Link href="/contact" className="product-cta-btn">
               Book a Free Consultation <i className="fas fa-arrow-right"></i>
@@ -343,47 +372,6 @@ export default function ProductSeriesTemplate({
         </div>
       </section>
 
-      {/* Category Carousel Section */}
-      {categoryItems.length > 0 && (
-        <section className="category-carousel-section">
-          <div className="container-fluid">
-            <div className="category-carousel-wrapper">
-              <div className="built-for-spaces-header">
-                <p className="section-2-tagline reveal-heading" data-reveal-delay="0.6">
-                  <span className="section-2-dot" aria-hidden="true"></span>
-                  Categories
-                </p>
-                <h2 className="built-for-spaces-heading reveal-heading" data-reveal-delay="0.6">
-                  Explore By Category
-                </h2>
-              </div>
-
-              <div className="category-grid desktop-category-grid d-none d-md-grid">
-                {categoryItems.map((item, idx) => (
-                  <div className="category-card" key={idx}>
-                    <div className="category-image-container">
-                      <img src={item.image} alt={item.title} className="category-image" />
-                      <div className="category-tag">{item.title}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="category-grid mobile-category-grid d-grid d-md-none">
-                {categoryItems.map((item, idx) => (
-                  <div className="category-card" key={idx}>
-                    <div className="category-image-container">
-                      <img src={item.image} alt={item.title} className="category-image" />
-                      <div className="category-tag">{item.title}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* Personalisation Choices Section */}
       <section className="personalisation-choices-section container-fluid">
         <div className="personalisation-choices">
@@ -395,8 +383,8 @@ export default function ProductSeriesTemplate({
                     <span className="section-2-dot" aria-hidden="true"></span>Personalisation Choices
                   </p>
                   <h2 className="section-title reveal-heading" id="personalisationChoicesHeading" data-reveal-delay="0.6">
-                    Tailored To Match
-                    <br /> Your Architecture
+                    Personalised Interiors
+                    <br /> for Elevated Experiences
                   </h2>
                 </div>
               </div>
@@ -466,22 +454,16 @@ export default function ProductSeriesTemplate({
       <section className="personalisation-choices-section personalisation-choices-section-duplicate container-fluid">
         <div className="personalisation-choices personalisation-choices-duplicate">
           <div className="page-width">
-            <div className="row align-items-center personal" style={{ padding: "0 15px" }}>
-              <div className="col-lg-5">
+            <div className=" justify-content-center personal" style={{ padding: "0 15px" }}>
+              <div className="text-center">
                 <div className="personalisation-header">
                   <p className="section-2-tagline reveal-heading" data-reveal-delay="0.6">
-                    <span className="section-2-dot" aria-hidden="true"></span>Personalisation Choices
+                    <span className="section-2-dot" aria-hidden="true"></span>Elegance in Every Entry
                   </p>
                   <h2 className="section-title reveal-heading" data-reveal-delay="0.6">
-                    Tailored To Match
-                    <br /> Your Architecture
+                    Door Types
                   </h2>
                 </div>
-              </div>
-              <div className="col-lg-7">
-                <p className="section-description reveal-heading" data-reveal-delay="0.6">
-                  {personalisationHead}
-                </p>
               </div>
             </div>
           </div>
@@ -532,6 +514,82 @@ export default function ProductSeriesTemplate({
                     aria-label={`Slide ${idx + 1}`}
                   ></button>
                 ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Portrait Spaces Section */}
+      <section className="portrait-spaces-section">
+        <div className="container-fluid">
+          <div className="portrait-spaces-wrapper">
+            <div className="portrait-spaces-header">
+              <p className="section-2-tagline reveal-heading" data-reveal-delay="0.6">
+                <span className="section-2-dot" aria-hidden="true"></span>
+                Designed for Every Space
+              </p>
+              <h2 className="portrait-spaces-heading reveal-heading" data-reveal-delay="0.6">
+                Designer Sheets
+              </h2>
+            </div>
+
+            <div className="portrait-spaces-track-wrapper">
+              <button
+                type="button"
+                className="spaces-nav spaces-nav-left d-none d-md-flex"
+                aria-label="Previous"
+                onClick={() => scrollPortrait("prev")}
+              >
+                <i className="fas fa-chevron-left"></i>
+              </button>
+
+              <div className="portrait-spaces-track" ref={portraitTrackRef}>
+                {portraitSpacesList.map((space, idx) => (
+                  <div className="portrait-space-card reveal-heading" key={idx} data-reveal-delay={0.3 + idx * 0.1}>
+                    <div className="portrait-space-image-container">
+                      <img src={space.image} alt={space.title} className="portrait-space-image" />
+                    </div>
+                    <div className="portrait-space-title">{space.title}</div>
+                  </div>
+                ))}
+              </div>
+
+              <button
+                type="button"
+                className="spaces-nav spaces-nav-right d-none d-md-flex"
+                aria-label="Next"
+                onClick={() => scrollPortrait("next")}
+              >
+                <i className="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Door Types Gallery Section */}
+      <section className="door-types-gallery-section">
+        <div className="container-fluid">
+          <div className="page-width">
+            <div className="portrait-spaces-header">
+              <p className="section-2-tagline reveal-heading" data-reveal-delay="0.6">
+                <span className="section-2-dot" aria-hidden="true"></span>Smart Control Solutions
+              </p>
+              <h2 className="portrait-spaces-heading reveal-heading" data-reveal-delay="0.6">
+                Lop and Cop
+              </h2>
+            </div>
+            <div className="row" style={{ marginTop: "40px" }}>
+              <div className="col-12 col-md-6">
+                {doorTypesGallery && doorTypesGallery[0] && (
+                  <img src={doorTypesGallery[0].image} alt="Door Type 1" className="door-type-image" style={{ width: "100%", height: "auto" }} />
+                )}
+              </div>
+              <div className="col-12 col-md-6">
+                {doorTypesGallery && doorTypesGallery[1] && (
+                  <img src={doorTypesGallery[1].image} alt="Door Type 2" className="door-type-image" style={{ width: "100%", height: "auto" }} />
+                )}
               </div>
             </div>
           </div>

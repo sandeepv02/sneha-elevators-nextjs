@@ -50,9 +50,24 @@ const rmgPersonalisationhead = [
 ];
 
 const rmgPersonalisation = [
-  { image: "/img/stainless.png", title: "Stainless steel or mild steel (MS) cabin finishes" },
-  { image: "/img/automatic.png", title: "Convert manual lifts to auto lifts." },
-  { image: "/img/funtional.png", title: "Functional and aesthetic lighting options" }
+  { image: "/img/glasscabin.png", },
+  { image: "/img/stainlesssteel.png",  },
+  { image: "/img/designerrosegold.png", }
+];
+
+const rmgPersonalisationDuplicate = [
+  { image: "/img/doortype-1.jpeg" },
+  { image: "/img/doortype-2.jpeg" },
+  { image: "/img/doortype-3.jpeg" }
+];
+
+const rmgPersonalisationheadDuplicate = [
+  "Choose from door types and premium finishes that create elegance in every entry."
+];
+
+const doorTypesGallery = [
+  { image: "/img/doortype-1.jpeg" },
+  { image: "/img/doortype-2.jpeg" }
 ];
 
 const rmgSafetyFeatures = [
@@ -88,6 +103,8 @@ export default function RMGSeriesPage() {
     <ProductSeriesTemplate
       seriesName="RMG SERIES"
       heroImage="/img/Rm-series-hero.png"
+      heroSubheading="Machine Room Less"
+      heroParagraph="Ideal for low to high-rise buildings,economical,residential and commercial spaces."
       highlightsTitle="Performance Meets Efficiency"
       highlightsDescription="The RMG Series is designed for low to high rise buildings where long-term value matters. Featuring a gearless traction drive, it delivers smooth, quiet travel with minimal operating costs. Engineered for reliable performance under regular daily use, it is a trusted choice for homeowners, builders, and developers."
       features={rmgFeatures}
@@ -95,6 +112,9 @@ export default function RMGSeriesPage() {
       spaces={rmgSpaces}
       personalisationHead={rmgPersonalisationhead}
       personalisationChoices={rmgPersonalisation}
+      personalisationChoicesDuplicate={rmgPersonalisationDuplicate}
+      personalisationHeadDuplicate={rmgPersonalisationheadDuplicate}
+      doorTypesGallery={doorTypesGallery}
       safetyIntroText=""
       safetyFeatures={rmgSafetyFeatures}
     />

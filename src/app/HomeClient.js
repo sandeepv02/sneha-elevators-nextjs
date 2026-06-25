@@ -942,7 +942,7 @@ export default function HomeClient() {
               </button>
 
               <div className="testimonials-content">
-                <div className="row align-items-center">
+                <div className="row align-items-stretch">
                   <div className="col-lg-6">
                     <div className="testimonials-image-container">
                       <img

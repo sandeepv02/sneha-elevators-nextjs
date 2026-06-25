@@ -95,7 +95,7 @@ export default function AboutClient() {
 
       revealElements.forEach((el) => {
         const parent = el.closest(
-          "section, .about-us-hero-section, .about-company-section, .about-approach-section, .mission-vision-section, .founders-message-section, .about-certifications-section, .consultation-banner-section"
+          "section, .about-us-hero-section, .about-company-section, .about-approach-section, .mission-vision-section, .founders-message-section, .mission-values-section, .about-certifications-section, .consultation-banner-section"
         );
         if (parent) {
           sections.add(parent);
@@ -468,6 +468,86 @@ With over 3,500 + elevators installed, we continue to grow through quality engin
           </div>
         </div>
       </section>
+ {/* map section*/}
+      <section className="mission-values-section page-width">
+        <div className="container-fluid">
+          <div className="elevator-services-wrapper mission-values-wrapper">
+            <div className="row align-items-center">
+              <div className="col-lg-8 col-md-12 mb-4 mb-lg-0">
+                <div className="mission-values-image-wrapper reveal-heading" id="missionValuesImageWrapper" data-reveal-delay="0.7">
+                  <img
+                    src="/img/map.png"
+                    alt="Our Mission & Values"
+                    className="mission-values-image"
+                  />
+                </div>
+              </div>
+              <div className="col-lg-4 col-md-12">
+                <div className="mission-values-content">
+                  <p className="mission-values-tagline reveal-heading" id="missionValuesTagline" data-reveal-delay="0.6">
+                    <span className="section-2-dot" aria-hidden="true"></span> Driven By Purpose
+                  </p>
+                  <h2 className="mission-values-heading reveal-heading" id="missionValuesHeading" data-reveal-delay="0.7">
+                   Presence Across
+                  </h2>
+
+                  <div className="gridformat-map">
+ <p className="mission-values-text-map reveal-heading" id="missionValuesText" data-reveal-delay="0.8">
+                       TELANGANA
+                  </p>
+                  <ul className="mission-values-list-map reveal-heading" id="missionValuesList" data-reveal-delay="0.9">
+                    <li>
+                     Hyderabad
+                    </li>
+                    <li>
+                    Warangal
+                    </li>
+                    <li>
+                   Other Districts
+                    </li>
+                  
+                  </ul>
+                    <p className="mission-values-text-map reveal-heading" id="missionValuesText" data-reveal-delay="0.8">
+                       ANDHRA PRADESH
+                  </p>
+                  <ul className="mission-values-list-map reveal-heading" id="missionValuesList" data-reveal-delay="0.9">
+                    <li>
+                     Vijayawada
+                    </li>
+                    <li>
+                    Visakhapatnam
+                    </li>
+                    <li>
+                   Nellore
+                    </li>
+                   <li>
+                  Kurnool
+                    </li>
+                     <li>
+                Other Districts
+                    </li>
+                  </ul>
+                    <p className="mission-values-text-map reveal-heading" id="missionValuesText" data-reveal-delay="0.8">
+                       KARNATAKA
+                  </p>
+                  <ul className="mission-values-list-map reveal-heading" id="missionValuesList" data-reveal-delay="0.9">
+                    <li>
+                     Bengaluru
+                    </li>
+                    <li>
+                 Other Districts
+                    </li>
+                  
+                  
+                  </ul>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Founder's Message Section */}
       <section className="founders-message-section page-width">
@@ -513,6 +593,7 @@ With over 3,500 + elevators installed, we continue to grow through quality engin
         </div>
       </section>
 
+     
       {/* Safety & Certifications */}
       <section className="about-certifications-section">
         <div className="container-fluid page-width">
