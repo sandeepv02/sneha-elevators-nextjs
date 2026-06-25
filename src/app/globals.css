@@ -4610,6 +4610,7 @@ feature */
     color: #7B7F80; */
     margin: 0;
     padding: 0px 50px;
+    
 }
 
 .mission-vision-text li {
@@ -4677,6 +4678,7 @@ feature */
     .mission-vision-text {
         font-size: 16px;
         padding: 0px;
+        list-style:none;
     }
 }
 
@@ -6179,6 +6181,129 @@ p#builtForSpacesHeading {
         background-color: #ff4d4d;
     }
 
+    .category-carousel-section {
+        background-color: #FFFFFF;
+        padding: 60px 0 40px;
+    }
+    .category-carousel-wrapper {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .category-grid {
+        width: 100%;
+        gap: 20px;
+        margin-top: 40px;
+    }
+    .desktop-category-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+    .mobile-category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .category-card {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: 18px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .category-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.16);
+    }
+    .category-image-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    .category-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+    .category-card:hover .category-image {
+        transform: scale(1.03);
+    }
+    .category-tag {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.55);
+        color: #fff;
+        padding: 12px 16px;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+    }
+    .category-card.active {
+        opacity: 1;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+    }
+    .category-image-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    .category-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    .category-tag {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #dc3545;
+        color: #ffffff;
+        padding: 10px 16px;
+        border-radius: 0 0 8px 0;
+        font-size: 14px;
+        font-weight: 600;
+        font-family: 'DM Sans', sans-serif;
+        z-index: 2;
+    }
+    .category-carousel-mobile {
+        display: block;
+        margin-top: 32px;
+    }
+    .category-carousel-mobile-controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+    .category-carousel-mobile-wrapper {
+        display: flex;
+        gap: 12px;
+        width: calc(100% - 120px);
+    }
+    .category-carousel-mobile .category-card {
+        width: 46%;
+        height: 220px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+    }
+    .category-carousel-mobile .category-card:not(.mobile-visible) {
+        display: none;
+    }
+    .category-carousel-mobile .category-card:hover,
+    .category-carousel-mobile .category-card.active:hover,
+    .category-carousel-mobile .category-card.active {
+        transform: none;
+    }
+    .category-carousel-mobile .category-tag {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+
     .built-for-spaces-scroll-wrapper {
         gap: 20px;
         padding: 0;
@@ -7341,9 +7466,7 @@ p#builtForSpacesHeading {
 }
 
 .image-wrapper {
-    background: white;
-
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+   
     transition: transform 0.3s ease;
 }
 

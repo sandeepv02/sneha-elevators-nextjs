@@ -40,20 +40,34 @@ const slSpecifications = [
 const slSpaces = [
   { image: "/img/sl-villas.png", title: "Villas" },
   { image: "/img/sl-Duplexes.png", title: "Duplexes" },
-  { image: "/img/sl-Retrofits.png", title: "Retrofits" },
   { image: "/img/sl-clinics.png", title: "Clinics" }
+];
+
+const slCategories = [
+  { image: "/img/sl-villas.png", title: "Villas" },
+  { image: "/img/sl-Duplexes.png", title: "Duplexes" },
+  { image: "/img/sl-clinics.png", title: "Clinics" },
+  { image: "/img/sl-Retrofits.png", title: "Retrofits" },
+  { image: "/img/vl-Office.jpeg", title: "Offices" },
+  { image: "/img/vl-Boutique.jpeg", title: "Boutiques" },
+  { image: "/img/vl-upscale-homes.jpeg", title: "Upscale Homes" },
+  { image: "/img/urbanx.png", title: "Urban Spaces" }
 ];
 
 const slPersonalisationhead = [
   "With the SL Series, you don't just choose an elevator, you shape it. Choose cabin materials, textures, lighting and panel finishes to suit your home. Engineered as a Home/Villas lift, the SL Series installs without a separate machine room, even in existing structures."
-];
+]
 
 const slPersonalisation = [
-  { image: "/img/stainless.png", title: "Stainless steel or mild steel (MS) cabin finishes" },
-  { image: "/img/automatic.png", title: "Convert manual lifts to automatic lifts." },
-  { image: "/img/funtional.png", title: "Functional and aesthetic lighting options" }
+  { image: "/img/glasscabin.jpeg" },
+  { image: "/img/stainlesssteel.png" },
+  { image: "/img/designerrosegold.png" }
 ];
-
+const slPersonalisationDuplicate = [
+  { image: "/img/doortype-1.jpeg" },
+  { image: "/img/doortype-2.jpeg" },
+  { image: "/img/doortype-3.jpeg" }
+];
 const slSafetyFeatures = [
   {
     icon: "/img/sensor-icon.png",
@@ -93,6 +107,8 @@ export default function SLSeriesPage() {
       specifications={slSpecifications}
       spaces={slSpaces}
       personalisationChoices={slPersonalisation}
+      personalisationChoicesDuplicate={slPersonalisationDuplicate}
+      categories={slCategories}
       personalisationHead={slPersonalisationhead}
       safetyIntroText=""
       safetyFeatures={slSafetyFeatures}

@@ -466,7 +466,7 @@ export default function HomeClient() {
       <section className="hero-section">
         <picture>
           <source media="(max-width: 767px)" srcSet="/img/hero-product.jpeg" />
-          <img src="/img/hero-bg.png" alt="Hero Background" className="hero-bg" id="heroBg" />
+          <img src="/img/hero-bg.jpeg" alt="Hero Background" className="hero-bg" id="heroBg" />
         </picture>
         <div className="hero-content" id="heroContent">
           <h2 className="text-white">

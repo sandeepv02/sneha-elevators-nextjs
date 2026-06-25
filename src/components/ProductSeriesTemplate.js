@@ -16,6 +16,8 @@ export default function ProductSeriesTemplate({
   spaces,
   personalisationHead,
   personalisationChoices,
+  personalisationChoicesDuplicate,
+  categories,
   safetyIntroText,
   safetyFeatures,
 }) {
@@ -43,6 +45,13 @@ export default function ProductSeriesTemplate({
       : seriesName && seriesName.toLowerCase().includes("vl")
       ? defaultVLChoices
       : defaultSLChoices;
+
+  const duplicateChoices =
+    personalisationChoicesDuplicate && personalisationChoicesDuplicate.length
+      ? personalisationChoicesDuplicate
+      : choices;
+
+  const categoryItems = categories && categories.length ? categories : [];
 
   // 1. Initial GSAP state setup (runs instantly on mount to prevent any flash/glitch)
   useLayoutEffect(() => {
@@ -334,6 +343,47 @@ export default function ProductSeriesTemplate({
         </div>
       </section>
 
+      {/* Category Carousel Section */}
+      {categoryItems.length > 0 && (
+        <section className="category-carousel-section">
+          <div className="container-fluid">
+            <div className="category-carousel-wrapper">
+              <div className="built-for-spaces-header">
+                <p className="section-2-tagline reveal-heading" data-reveal-delay="0.6">
+                  <span className="section-2-dot" aria-hidden="true"></span>
+                  Categories
+                </p>
+                <h2 className="built-for-spaces-heading reveal-heading" data-reveal-delay="0.6">
+                  Explore By Category
+                </h2>
+              </div>
+
+              <div className="category-grid desktop-category-grid d-none d-md-grid">
+                {categoryItems.map((item, idx) => (
+                  <div className="category-card" key={idx}>
+                    <div className="category-image-container">
+                      <img src={item.image} alt={item.title} className="category-image" />
+                      <div className="category-tag">{item.title}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="category-grid mobile-category-grid d-grid d-md-none">
+                {categoryItems.map((item, idx) => (
+                  <div className="category-card" key={idx}>
+                    <div className="category-image-container">
+                      <img src={item.image} alt={item.title} className="category-image" />
+                      <div className="category-tag">{item.title}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Personalisation Choices Section */}
       <section className="personalisation-choices-section container-fluid">
         <div className="personalisation-choices">
@@ -438,7 +488,7 @@ export default function ProductSeriesTemplate({
 
           <div className="personalisation-carousel page-width d-none d-md-block" style={{ marginTop: "40px" }}>
             <div className="row justify-content-center">
-              {choices.map((choice, idx) => (
+              {duplicateChoices.map((choice, idx) => (
                 <div
                   className="col-lg-4 col-md-6 mb-4 choice-card-anim"
                   key={`duplicate-${idx}`}
@@ -449,9 +499,9 @@ export default function ProductSeriesTemplate({
                 >
                   <div className="choice-card">
                     <div className="image-wrapper">
-                      <img src={choice.image} alt={choice.title} className="choice-img" />
+                      <img src={choice.image} alt={choice.title || `choice-${idx}`} className="choice-img" />
                     </div>
-                    <p className="choice-title">{choice.title}</p>
+                    {choice.title && <p className="choice-title">{choice.title}</p>}
                   </div>
                 </div>
               ))}

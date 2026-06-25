@@ -394,7 +394,7 @@ With over 3,500 + elevators installed, we continue to grow through quality engin
                 
               </h2>
               <ul className="mission-vision-text reveal-heading" id="missionList" data-reveal-delay="0.8">
-                <li>
+                <li style={{ listStyleType: "none" }}>
                   <p>
                   To build a trusted, future-ready mobility brand that elevates everyday living through safety, quality, and engineering excellence.
                   </p>
@@ -548,14 +548,15 @@ With over 3,500 + elevators installed, we continue to grow through quality engin
               <div className="col-lg-6">
                 <article className="about-cert-card reveal-heading" id="certCard2" data-reveal-delay="1.1">
                   <div className="about-cert-media">
+                    
                     <img
-                      src="/img/certi-1.png"
+                      src="/img/certi-3.jpeg"
                       alt="Quality Certificate"
                       className="about-cert-img"
                     />
                     <br></br>
                      <img
-                      src="/img/certi-3.jpeg"
+                      src="/img/certi-1.png"
                       alt="Quality Certificate"
                       className="about-cert-img"
                     />
