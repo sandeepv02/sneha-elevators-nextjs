@@ -34,16 +34,16 @@ const vlFeatures = [
 const vlSpecifications = [
   { title: "Capacity", value: "4 - 30 Pax (272-2040kg)" },
   { title: "Speed", value: "0.5 m/sec to 2.5 m/sec" },
-  { title: "PIT", value: "Min 1000 mm" },
-  { title: "Overhead", value: "3000 mm" },
-  { title: "No. Of Stops", value: "25 stops" }
+  { title: "Pit", value: "1000 mm - 2500 mm" },
+  { title: "Overhead", value: "3000 mm - 6000 mm" },
+  { title: "No. of Stops", value: "2-25 stops" }
 ];
 
 const vlSpaces = [
-  { image: "/img/vl-High-rise-building.png", title: "High rise building" },
-  { image: "/img/vl-Boutique.png", title: "Boutique" },
-  { image: "/img/vl-Office.png", title: "Office" },
-  { image: "/img/vl-upscale-homes.png", title: "Upscale homes" }
+  { image: "/img/vl-High-rise-building.png", title: "High-rise building" },
+  { image: "/img/vl-Boutique.jpeg", title: "Commercial Complexes" },
+  { image: "/img/vl-Office.jpeg", title: "Office" },
+  { image: "/img/vl-upscale-homes.jpeg", title:"Residential" }
 ];
 
 const vlPersonalisationhead = [
@@ -51,8 +51,8 @@ const vlPersonalisationhead = [
 ];
 
 const vlPersonalisation = [
-  { image: "/img/stainless.png", title: "Stainless steel or mild steel (MS) cabin finishes" },
-  { image: "/img/automatic.png", title: "Convert manual lifts to auto lifts." },
+  { image: "/img/stainless.png", title: "Stainless steel" },
+  { image: "/img/automatic.png", title: "Customisable" },
   { image: "/img/funtional.png", title: "Functional and aesthetic lighting options" }
 ];
 

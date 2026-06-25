@@ -34,9 +34,7 @@ const slFeatures = [
 const slSpecifications = [
   { title: "Capacity", value: "Up to 4 Persons (68-272kg)" },
   { title: "Speed", value: "0.5 m/sec" },
-  { title: "PIT", value: "Min 150 mm" },
-  { title: "Overhead", value: "Min 2800 mm" },
-  { title: "No. Of Stops", value: "4 stops" }
+ 
 ];
 
 const slSpaces = [

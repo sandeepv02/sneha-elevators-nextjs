@@ -16,27 +16,35 @@ export default function HomeClient() {
 
   const testimonials = [
     {
-      text: "Sneha Elevators provided excellent service from start to finish. The installation was done smoothly, with good quality materials and proper safety standards. A special appreciation to Site Engineer T.Siva Krishna—he was very knowledgeable, responsive, and ensured everything was completed on time without any issues. Overall, a reliable and professional team. I would definitely recommend Sneha Elevators.",
-      name: "Mark",
-      date: "13/03/2026",
-      rating: 4,
+      text: "Highly recommend Sneha Lift for anyone looking for durable and stylish elevators. We've used their services and are extremely satisfied with the smooth operation and safety sensors. A trustworthy team that delivers exactly what they promise.We recommend this lift with high admiration and appreciation.we would confidently recommend their services to anyone looking for a dependable elevator solution",
+      name: "swathi constructions",
+      date: "6/06/2026",
+      rating: 5,
       image: "/img/testimonialsone.png",
       avatar: "/img/neha.png",
     },
     {
-      text: "We are Happy to Install SNEHA ELEV 8R elevator at our House. We are enjoying the use of elevator. It is really good to use, the Ambience is beautiful. All my family & relatives expressed the same.",
-      name: "Devanand",
-      date: "2/01/2026",
-      rating: 4,
+      text: "Sneha Elevators provided excellent service from start to finish. The installation was done smoothly, with good quality materials and proper safety standards. A special appreciation to Site Engineer T. Siva Krishna—he was very knowledgeable, responsive, and ensured everything was completed on time without any issues. Overall, a reliable and professional team. I would definitely recommend Sneha Elevators.",
+      name: "Mark",
+      date: "17/01/2026",
+      rating: 5,
       image: "/img/testimonialstwo.png",
       avatar: "/img/Aarav.png",
     },
     {
-      text: "One of the best homegrown elevator brands in India known for reliability and value for money. Very happy with their support and elevators performance. Decided to install second lift with elva8r.",
-      name: "Abhishek",
-      date: "26/04/2026",
+      text: "Sneha Elevators have installed a lift in our commercial building in WARANGAL about 6 months back.It is working excellent without any complaints.We are very happy with the performance.We will plan second lift soon.Sneha Elevators is highly recommended for quality and service.Appreciate their commitment and responsibility towards customers.It’s since 8 months after commissioning till now no problems encountered.",
+      name: "sirish vaddiraj",
+      date: "12/05/2026",
       rating: 5,
       image: "/img/testimonialsthree.png",
+      avatar: "/img/kiran.png",
+    },
+    {
+      text: "We ordered one number of Sneha lift for our Mycon developers apartment in Eluru. The version is of full vision automatic 8 passengers roomed type. The process from ordering to commissioning was very smooth. The staff are very friendly and cooperative.The material quality is excellent on par with international brands and the performance is outstanding & smooth. Service is up to the mark. Above all, commissioning is on time.",
+      name: "Srinivasula Venkatakrishna",
+      date: "26/05/2026",
+      rating: 5,
+      image: "/img/testimonialsfour.png",
       avatar: "/img/kiran.png",
     },
   ];
@@ -457,7 +465,7 @@ export default function HomeClient() {
       {/* Hero Section */}
       <section className="hero-section">
         <picture>
-          <source media="(max-width: 767px)" srcSet="/img/hero-product.png" />
+          <source media="(max-width: 767px)" srcSet="/img/hero-product.jpeg" />
           <img src="/img/hero-bg.png" alt="Hero Background" className="hero-bg" id="heroBg" />
         </picture>
         <div className="hero-content" id="heroContent">
@@ -480,10 +488,10 @@ export default function HomeClient() {
                 <span className="section-2-dot" aria-hidden="true"></span>Complete Vertical Mobility Solutions
               </p>
               <h2 className="section-2-heading" id="section2Heading">
-                Built in Telangana.Trusted Across South India.
+                Built in Telangana.Trusted Across India.
               </h2>
               <p className="section-2-para" id="section2Para">
-                Powered by 20+ years of engineering excellence, our solutions elevate the way people
+                Powered by our engineering excellence, our solutions elevate the way people
                 move, live, and experience their spaces.
               </p>
             </div>
@@ -508,7 +516,7 @@ export default function HomeClient() {
                     </div>
                     <h2 className="elevator-category-heading" id="heading01">
                       Residential
-                      <br /> Elevators
+                      <br /> Lifts
                     </h2>
                     <p className="elevator-category-description">
                      Experience the perfect blend of comfort, style, and advanced technology with
@@ -537,7 +545,7 @@ export default function HomeClient() {
               </div>
               <div className="col-lg-6">
                 <div className="elevator-image-container">
-                  <img src="/img/residential-elevators.png" alt="Residential Elevator" id="image01" />
+                  <img src="/img/residential-elevators.jpeg" alt="Residential Elevator" id="image01" />
                 </div>
               </div>
             </div>
@@ -552,7 +560,7 @@ export default function HomeClient() {
             <div className="row align-items-center">
               <div className="col-lg-6 order-2 order-lg-1">
                 <div className="elevator-image-container">
-                  <img src="/img/commercial-elevators.png" alt="Commercial Elevator" id="image02" />
+                  <img src="/img/commercial-elevators.jpeg" alt="Commercial Elevator" id="image02" />
                 </div>
               </div>
               <div className="col-lg-6 order-1 order-lg-2">
@@ -566,15 +574,14 @@ export default function HomeClient() {
                       </p>
                     </div>
                     <h2 className="elevator-category-heading" id="heading02">
-                      Commercial <br /> Elevators
+                      Commercial <br /> Lifts
                     </h2>
                     <p className="elevator-category-description">
                       Built to perform in demanding, high-traffic environments, our commercial
                       elevators deliver unmatched durability, efficiency, and reliability. Ideal
                       for offices, retail spaces, and business complexes, they are designed to
                       handle continuous usage while maintaining smooth and consistent operation.
-                      Engineered with robust materials and advanced technology, these elevators
-                      ensure long-lasting performance with minimal downtime.
+                    
                     </p>
                     <Link href="/contact" className="elevator-category-link">
                       Enquire Now <i className="fas fa-arrow-right"></i>
@@ -605,7 +612,7 @@ export default function HomeClient() {
                     <h2 className="elevator-category-heading" id="heading03">
                       Hospital
                       <br />
-                      Elevators
+                      Lifts
                     </h2>
                     <p className="elevator-category-description">
                     Designed for hospitals, nursing homes, and diagnostic centres, our elevators provide smooth and reliable transportation for patients, stretchers, beds, attendants, and medical equipment. Quiet operation and spacious cabins ensure safe and comfortable movement when it matters most.<br/>Use ‘Lifts’ across Residential, Commercial, Hospital & Goods Lift.
@@ -618,7 +625,7 @@ export default function HomeClient() {
               </div>
               <div className="col-lg-6">
                 <div className="elevator-image-container">
-                  <img src="/img/Hospital-elevators.png" alt="Hospital Elevator" id="image03" />
+                  <img src="/img/Hospital-elevators.jpeg" alt="Hospital Elevator" id="image03" />
                 </div>
               </div>
             </div>
@@ -633,7 +640,7 @@ export default function HomeClient() {
             <div className="row align-items-center">
               <div className="col-lg-6 order-2 order-lg-1">
                 <div className="elevator-image-container">
-                  <img src="/img/goods-lifts.png" alt="Goods Lift" id="image04" />
+                  <img src="/img/goods-lifts.jpeg" alt="Goods Lift" id="image04" />
                 </div>
               </div>
               <div className="col-lg-6 order-1 order-lg-2">
@@ -712,8 +719,8 @@ export default function HomeClient() {
                 </div>
                 <h3 className="feature-title"> Quality assurance</h3>
                 <p className="feature-description">
-                 Stringent quality checks and reliable manufacturing practices ensure superior product performance.
-
+               
+ Quality-driven manufacturing and comprehensive testing ensure smooth, dependable operation for years to come.
                 </p>
               </div>
 
@@ -743,8 +750,7 @@ export default function HomeClient() {
                 </div>
                 <h3 className="feature-title">Safety & Security</h3>
                 <p className="feature-description">
-                  Advanced safety systems, sensor-based doors, and automatic rescue features for
-                  secure and dependable movement.
+                Advanced safety systems, sensor-based doors, and automatic rescue features for secure and dependable movement. ARD - Automatic Rescue Device, <br></br>OSG - Over Speed Governer.
                 </p>
               </div>
 

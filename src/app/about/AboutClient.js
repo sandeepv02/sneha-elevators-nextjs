@@ -299,7 +299,7 @@ export default function AboutClient() {
                       id="aboutUsHeroText"
                       data-reveal-delay="0.5"
                     >
-                      Recognised as the best elevator company, SNEHA ELEV8R, a flagship brand of the
+                      Recognised as the best elevator company, Sneha Elev8r, a flagship brand of the
                       Sneha Group, represents Telangana’s growing strength in the lift
                       manufacturing sector. Committed to delivering safe, reliable, and
                       high-quality vertical mobility, Sneha Elev8r combines engineering expertise
@@ -318,7 +318,7 @@ export default function AboutClient() {
         <div className="container-fluid page-width">
           <div className="elevator-services-wrapper about-company-wrapper">
             <div className="row align-items-start about-company-top">
-              <div className="col-lg-5">
+              <div className="col-lg-6">
                 <p className="about-company-tagline reveal-heading" data-reveal-delay="0.1">
                   <span className="section-2-dot" aria-hidden="true"></span> Who We Are
                 </p>
@@ -327,7 +327,7 @@ export default function AboutClient() {
                   Trusted Elevator Solutions
                 </h2>
               </div>
-              <div className="col-lg-7">
+              <div className="col-lg-6">
                 <div className="about-company-description reveal-heading" data-reveal-delay="0.5">
                   <p>
                    Sneha Elev8r has been building and installing elevators across South India since 2017. Based in Telangana, we serve Hyderabad, Vijayawada, Visakhapatnam, Nellore, Warangal, Nizamabad, and Bengaluru.
@@ -341,59 +341,7 @@ With over 3,500 + elevators installed, we continue to grow through quality engin
               </div>
             </div>
 
-            {/* Dynamic Counters Row */}
-            <div className="row about-company-stats" ref={statsRef}>
-              <div className="col-6 col-lg about-stat reveal-heading" data-reveal-delay="0.7">
-                <div className="about-stat-number">
-                  <span className="about-stat-count">{stats.excellence}</span>
-                  <span className="about-stat-plus">+</span>
-                </div>
-                <div className="about-stat-label">
-                  Years of <br />
-                  Engineering Excellence
-                </div>
-              </div>
-              <div className="col-6 col-lg about-stat reveal-heading" data-reveal-delay="0.7">
-                <div className="about-stat-number">
-                  <span className="about-stat-count">{stats.installations}</span>
-                  <span className="about-stat-plus">+</span>
-                </div>
-                <div className="about-stat-label">
-                  Elevators installed
-                  <br /> across South India
-                </div>
-              </div>
-              <div className="col-6 col-lg about-stat reveal-heading" data-reveal-delay="0.7">
-                <div className="about-stat-number">
-                  <span className="about-stat-count">{stats.locations}</span>
-                  <span className="about-stat-plus">+</span>
-                </div>
-                <div className="about-stat-label">
-                  Dedicated service &
-                  <br /> support locations
-                </div>
-              </div>
-              <div className="col-6 col-lg about-stat reveal-heading" data-reveal-delay="0.7">
-                <div className="about-stat-number">
-                  <span className="about-stat-count">{stats.engineers}</span>
-                  <span className="about-stat-plus">+</span>
-                </div>
-                <div className="about-stat-label">
-                  Skilled engineers & <br />
-                  certified technicians
-                </div>
-              </div>
-              <div className="col-6 col-lg about-stat reveal-heading" data-reveal-delay="0.7">
-                <div className="about-stat-number">
-                  <span className="about-stat-count">{stats.satisfaction}</span>
-                  <span className="about-stat-plus">%</span>
-                </div>
-                <div className="about-stat-label">
-                  Customer-focused, <br />
-                  safety-driven approach
-                </div>
-              </div>
-            </div>
+           
           </div>
         </div>
       </section>
@@ -442,44 +390,22 @@ With over 3,500 + elevators installed, we continue to grow through quality engin
           {/* Top Section: Mission */}
           <div className="mission-vision-row mission-vision-top">
             <div className="mission-vision-text-block mission-block">
-              <h2 className="mission-vision-heading reveal-heading" id="missionHeading" data-reveal-delay="0.7">Our Mission</h2>
+              <h2 className="mission-vision-heading reveal-heading" id="missionHeading" data-reveal-delay="0.7">Our Vision
+                
+              </h2>
               <ul className="mission-vision-text reveal-heading" id="missionList" data-reveal-delay="0.8">
                 <li>
                   <p>
-                    Design and manufacture high-quality, customised home elevators and passenger
-                    lift solutions that meet global safety and performance standards.
+                  To build a trusted, future-ready mobility brand that elevates everyday living through safety, quality, and engineering excellence.
                   </p>
                 </li>
-                <li>
-                  <p>
-                    Deliver end-to-end elevator services - from installation to responsive elevator
-                    maintenance and support.
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    Leverage advanced mechanical and microprocessor technology to ensure safety,
-                    comfort, and energy efficiency.
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    Build long-lasting relationships with homeowners, builders, developers, and
-                    corporates through dependable service and transparent practices.
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    Continuously evolve as one of the best elevator companies, focused on
-                    innovation, reliability, and customer satisfaction.
-                  </p>
-                </li>
+              
               </ul>
             </div>
             <div className="mission-vision-image-block">
               <div className="auto-scroll-image-wrapper reveal-heading" id="missionImageWrapper" data-reveal-delay="0.7">
                 <img
-                  src="/img/mission.png"
+                  src="/img/vision.png"
                   alt="Elevator Mission"
                   className="auto-scroll-image"
                   id="missionImage"
@@ -493,7 +419,7 @@ With over 3,500 + elevators installed, we continue to grow through quality engin
             <div className="mission-vision-image-block">
               <div className="auto-scroll-image-wrapper reveal-heading" id="visionImageWrapper" data-reveal-delay="1.1">
                 <img
-                  src="/img/vision.png"
+                  src="/img/mission.png"
                   alt="Elevator Vision"
                   className="auto-scroll-image reveal-heading"
                   id="visionImage"
@@ -502,13 +428,42 @@ With over 3,500 + elevators installed, we continue to grow through quality engin
               </div>
             </div>
             <div className="mission-vision-text-block vision-block">
-              <h2 className="mission-vision-heading reveal-heading" id="visionHeading" data-reveal-delay="1.2">Our Vision</h2>
-              <p className="mission-vision-text reveal-heading" id="visionText" data-reveal-delay="1.3">
-                To position Sneha Elev8r as one of the best lift manufacturing companies in India,
-                delivering safe, innovative, and reliable elevator solutions. We aspire to set new
-                benchmarks in home elevators, commercial elevators, elevator maintenance, and
-                customer service, driven by engineering excellence and long-term trust.
-              </p>
+              <h2 className="mission-vision-heading reveal-heading" id="visionHeading" data-reveal-delay="1.2">Our Mission</h2>
+              <div className="mission-vision-text reveal-heading" id="visionText" data-reveal-delay="1.3">
+                <p>
+                  To deliver safe, reliable, and innovative elevator solutions that ensure seamless mobility for homes and commercial spaces, designed for today, built for tomorrow.
+                </p>
+                <p>
+                  We provide complete elevator solutions defined by:
+                </p>
+                <ul className="mission-vision-text reveal-heading" id="missionList" data-reveal-delay="0.8">
+                  <li>
+                    <p>
+                      High standards of Safety, Reliability & Quality
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Contemporary aesthetics aligned with modern architectural trends
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Flexibility in design to suit diverse project requirements
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Efficient installation and responsive service support
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Advanced, future-ready technology
+                    </p>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -598,9 +553,16 @@ With over 3,500 + elevators installed, we continue to grow through quality engin
                       alt="Quality Certificate"
                       className="about-cert-img"
                     />
+                    <br></br>
+                     <img
+                      src="/img/certi-3.jpeg"
+                      alt="Quality Certificate"
+                      className="about-cert-img"
+                    />
                   </div>
                 </article>
               </div>
+              
             </div>
           </div>
         </div>

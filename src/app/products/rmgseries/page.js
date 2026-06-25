@@ -34,8 +34,8 @@ const rmgFeatures = [
 const rmgSpecifications = [
   { title: "Capacity", value: "4 - 30 Pax (272-2040kg)" },
   { title: "Speed", value: "0.63 m/sec to 2.5 m/sec" },
-  { title: "PIT", value: "1000 mm" },
-  { title: "Overhead", value: "3900 mm" },
+  { title: "PIT", value: "1000 mm - 2500 mm" },
+  { title: "Overhead", value: "3900 mm - 6000 mm" },
   { title: "No. Of Stops", value: "25 stops" }
 ];
 

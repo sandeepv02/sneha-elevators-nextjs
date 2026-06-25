@@ -63,6 +63,7 @@ body {
 
 .testimonial-avatar{
     width:23%;
+    display:none;
 }
 
 /* Mobile Responsive Typography */
@@ -397,6 +398,51 @@ a.nav-link:active {
 /* Header fade in state */
 .main-header.fade-in {
     opacity: 1;
+}
+
+/* Ringing phone icon animation for service button */
+.service-btn .ringing-phone {
+    display: inline-block;
+    margin-right: 0.5rem;
+    color: inherit;
+    line-height: 1;
+    transform-origin: center;
+    animation: ring-shake 1.2s ease-in-out infinite;
+}
+
+.service-btn .ringing-phone::after {
+    content: "";
+    position: absolute;
+    margin-left: 10px;
+    margin-top: -6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid rgba(237,52,53,0.8);
+    background: transparent;
+    opacity: 0;
+    animation: ring-wave 1.2s ease-out infinite;
+}
+
+@keyframes ring-shake {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(-12deg); }
+    40% { transform: rotate(8deg); }
+    60% { transform: rotate(-6deg); }
+    80% { transform: rotate(4deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes ring-wave {
+    0% { transform: scale(0.6); opacity: 0.6; }
+    100% { transform: scale(2.6); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .service-btn .ringing-phone,
+    .service-btn .ringing-phone::after {
+        animation: none !important;
+    }
 }
 
 /* Mobile responsive for hero */
@@ -2458,6 +2504,17 @@ feature */
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.service-item:hover {
+    opacity: 1 !important;
+}
+
+.service-item:hover .service-title,
+.service-item:hover .service-description {
+    color: #000000 !important;
 }
 
 .service-title {
@@ -2643,7 +2700,7 @@ feature */
     border-radius: 0 8px 8px 0;
     padding: 33px;
     position: relative;
-    min-height: 460px;
+   height :100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -2710,7 +2767,7 @@ feature */
     border-radius: 0 8px 8px 0;
     padding: 33px;
     position: relative;
-    min-height: 460px;
+  
     display: none;
     /* Hide all cards by default */
     flex-direction: column;
@@ -4600,7 +4657,13 @@ feature */
     .mission-vision-text-block {
         padding: 30px 20px;
     }
-
+.space-image {
+    object-fit: unset;
+    width: 100%;
+    height: 100%;
+    transition: none;
+    transform: none;
+}
     .mission-vision-image-block {
         min-height: 276px !important;
     }
@@ -4786,7 +4849,7 @@ section.safety-trust-section {
     overflow: hidden;
     background: #f5f5f5;
     box-shadow: 0 18px 50px rgba(0, 0, 0, 0.10);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+   
     position: relative;
 }
 
@@ -4797,16 +4860,15 @@ section.safety-trust-section {
     transform: scale(1);
     transition: transform 0.3s ease;
     will-change: transform;
+    border-radius: 14px;
 }
 
 .about-cert-media:hover {
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.15);
+ 
     transform: translateY(-4px);
 }
 
-.about-cert-media:hover .about-cert-img {
-    transform: scale(1.05);
-}
+
 
 .about-cert-title {
     margin: 18px 0 8px 0;
@@ -5836,47 +5898,90 @@ section.safety-trust-section {
     position: relative;
 }
 
+.built-for-spaces-desktop-carousel {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.built-for-spaces-carousel-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+}
+
 .built-for-spaces-mobile-carousel {
     display: none;
 }
 
-.built-for-spaces-scroll-wrapper {
-    display: flex;
-    gap: 30px;
-    width: max-content;
-    padding: 0;
-    align-items: center;
-    justify-content: flex-start;
-    will-change: transform;
-}
-
 .space-card {
-    flex: 0 0 auto;
-    width: 600px;
+    display: none;
+    width: calc(50% - 15px);
+    min-width: 320px;
     height: 300px;
     border-radius: 12px;
     overflow: hidden;
     position: relative;
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-    transition: transform 0.35s ease, box-shadow 0.35s ease, opacity 0.35s ease;
-    transform: scale(0.9);
-    opacity: 0.75;
+    transition: box-shadow 0.35s ease, opacity 0.35s ease;
+    opacity: 0.9;
+}
+
+.space-card.desktop-visible {
+    display: block;
+}
+
+.space-card.active {
+    display: block;
+    opacity: 1;
+    z-index: 5;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+.space-card:not(.active) {
+    transform: none;
+    opacity: 0.9;
+}
+
+.spaces-nav {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    color: #000;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.spaces-nav:hover {
+    background: rgba(0, 0, 0, 0.05);
+    transform: scale(1.03);
+}
+
+.spaces-nav-left,
+.spaces-nav-right {
+    flex: 0 0 auto;
 }
 
 .space-card.is-active {
-    transform: scale(1.03);
-    height: 330px;
     opacity: 1;
     z-index: 5;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
 }
 
 .space-card:hover {
-    transform: scale(0.93);
+    transform: none;
 }
 
 .space-card.is-active:hover {
-    transform: scale(1.08);
+    transform: none;
 }
 
 .space-image-container {
@@ -5890,12 +5995,12 @@ section.safety-trust-section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
-    transform: scale(1.05);
+    transition: none;
+    transform: none;
 }
 
 .space-card:hover .space-image {
-    transform: scale(1.05);
+    transform: none;
 }
 
 .space-tag {
@@ -7162,6 +7267,10 @@ p#builtForSpacesHeading {
     margin: 0 auto;
     background-color: #F2F2F2;
     padding: 60px 0px;
+}
+
+.personalisation-choices-duplicate {
+    background-color: #FFFFFF !important;
 }
 
 .personal {
@@ -8890,14 +8999,14 @@ ul.job-list {
 }
 
 .service-btn {
-    background: #e53935;
+    background: #ed3435;;
     color: #fff;
     padding: 6px 16px;
     text-decoration: none;
     font-weight: 600;
     border-radius: 4px;
     font-family: 'DM Sans', sans-serif;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .service-cards {

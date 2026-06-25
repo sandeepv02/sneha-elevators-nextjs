@@ -94,21 +94,21 @@ export default function Navbar() {
                   <li>
                     <Link
                       className={`dropdown-item ${
-                        pathname === "/products/vlseries" ? "active" : ""
-                      }`}
-                      href="/products/vlseries"
-                    >
-                      VL Series
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className={`dropdown-item ${
                         pathname === "/products/slseries" ? "active" : ""
                       }`}
                       href="/products/slseries"
                     >
                       SL Series
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className={`dropdown-item ${
+                        pathname === "/products/vlseries" ? "active" : ""
+                      }`}
+                      href="/products/vlseries"
+                    >
+                      VL Series
                     </Link>
                   </li>
                   <li>

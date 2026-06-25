@@ -210,6 +210,9 @@ export default function ServicesClient() {
   useEffect(() => {
     if (!isCompleted) return;
 
+    let rafId = null;
+    let isMounted = true;
+
     // Stats Count Up
     const statsObserver = new IntersectionObserver(
       (entries) => {
@@ -220,21 +223,24 @@ export default function ServicesClient() {
             const targets = { trust: 95, experience: 10, supported: 500 };
 
             const animate = (timestamp) => {
+              if (!isMounted) return;
               const elapsed = timestamp - start;
               const progress = Math.min(elapsed / duration, 1);
               const easeProgress = progress * (2 - progress);
 
-              setStats({
-                trust: Math.floor(easeProgress * targets.trust),
-                experience: Math.floor(easeProgress * targets.experience),
-                supported: Math.floor(easeProgress * targets.supported),
-              });
+              if (isMounted) {
+                setStats({
+                  trust: Math.floor(easeProgress * targets.trust),
+                  experience: Math.floor(easeProgress * targets.experience),
+                  supported: Math.floor(easeProgress * targets.supported),
+                });
+              }
 
               if (progress < 1) {
-                requestAnimationFrame(animate);
+                rafId = requestAnimationFrame(animate);
               }
             };
-            requestAnimationFrame(animate);
+            rafId = requestAnimationFrame(animate);
             statsObserver.disconnect();
           }
         });
@@ -267,8 +273,12 @@ export default function ServicesClient() {
     handleTextScroll(); // init
 
     return () => {
+      isMounted = false;
       statsObserver.disconnect();
       window.removeEventListener("scroll", handleTextScroll);
+      if (rafId) {
+        window.cancelAnimationFrame(rafId);
+      }
     };
   }, [isCompleted]);
 
@@ -407,28 +417,9 @@ export default function ServicesClient() {
         </section>
       </div>
 
-      {/* Video Zoom Section */}
-      <section
-        ref={videoSectionRef}
-        className="video-scroll-wrapper"
-      >
-        <div ref={videoSpacerRef} className="video-pin-spacer" aria-hidden="true"></div>
-        <div
-          ref={videoStageRef}
-          className="video-stage stage-1"
-        >
-          <video
-            ref={videoRef}
-            className="scroll-video"
-            autoPlay
-            muted
-            loop
-            playsInline
-          >
-            <source src="/img/services-video.mp4" type="video/mp4" />
-          </video>
-        </div>
-      </section>
+
+    
+
 
       {/* Services Approach Section with grey-to-black scroll lines */}
       <section className="services-approach-section">
@@ -455,47 +446,7 @@ export default function ServicesClient() {
                 </span>
               </p>
 
-              {/* Dynamic Counters */}
-              <div className="row services-company-stats" ref={statsRef}>
-                <div className="col-6 col-lg-3 about-stat">
-                  <div className="about-stat-number">
-                    <span className="about-stat-count">{stats.trust}</span>
-                    <span className="about-stat-plus">%</span>
-                  </div>
-                  <div className="about-stat-label">
-                    customer trust &<br /> satisfaction
-                  </div>
-                </div>
-                <div className="col-6 col-lg-3 about-stat">
-                  <div className="about-stat-number">
-                    <span className="about-stat-count">{stats.experience}</span>
-                    <span className="about-stat-plus">+</span>
-                  </div>
-                  <div className="about-stat-label">
-                    Years of <br />
-                    service experience
-                  </div>
-                </div>
-                <div className="col-6 col-lg-3 about-stat">
-                  <div className="about-stat-number">
-                    <span className="about-stat-count">{stats.supported}</span>
-                    <span className="about-stat-plus">+</span>
-                  </div>
-                  <div className="about-stat-label">
-                    Elevators reliably <br /> Supported
-                  </div>
-                </div>
-                <div className="col-6 col-lg-3 about-stat">
-                  <div className="about-stat-number">
-                    <span className="about-stat-count">24</span>
-                    <span className="about-stat-suffix">/7</span>
-                  </div>
-                  <div className="about-stat-label">
-                    support for <br />
-                    uninterrupted operation
-                  </div>
-                </div>
-              </div>
+            
             </div>
           </div>
         </div>
@@ -507,19 +458,20 @@ export default function ServicesClient() {
           <div className="services-combo container-fluid">
             <div className="service-header">
               <div className="service-title">
-                <span className="service-subtitle">
+                <div className="service-subtitle">
                   <p className="section-2-tagline">
                     <span className="section-2-dot"></span>Our Services
                   </p>
-                </span>
+                </div>
                 <h2>
                   End-to-end Elevator
                   <br />
                   Service Solutions
                 </h2>
               </div>
-              <Link href="/contact" className="service-btn">
-                Request Service
+              <Link href="tel:7731877318" className="service-btn">
+                <i className="fas fa-phone ringing-phone" aria-hidden="true"></i>{' '}
+                7731877318 - 24/7 service
               </Link>
             </div>
 
@@ -622,92 +574,7 @@ export default function ServicesClient() {
         </div>
       </div>
 
-      {/* Timeline Scroll Process Section */}
-      <div className="page-width" style={{ marginTop: "80px" }}>
-        <section className="trusted-timeline">
-          <div className="container-fluid">
-            <div className="timeline-container">
-              {/* Left Column (Sticky behavior matching original desktop css) */}
-              <div className="timeline-left">
-                <div className="sticky" style={{ position: "sticky", top: "120px" }}>
-                  <p className="section-2-tagline">
-                    <span className="section-2-dot"></span>Our Service Process
-                  </p>
-                  <h2>
-                    Committed to performance <br />
-                    at every step
-                  </h2>
-                  <p style={{ marginTop: "15px", opacity: 0.8 }}>
-                    At Sneha Elev8r, we follow a structured and transparent approach to ensure every
-                    elevator we support operates safely, efficiently, and without interruption. From
-                    the first inspection to ongoing support, every step is handled with precision
-                    and accountability.
-                  </p>
-                </div>
-              </div>
-
-              {/* Right Column containing steps scroll triggers */}
-              <div className="timeline-right">
-                <div className="timeline-line">
-                  <ol className="timeline-items">
-                    <li className={`timeline-item ${activeTimelineStep === 0 ? "active" : ""}`}>
-                      <span className="dot" aria-hidden="true"></span>
-                      <div className="timeline-content">
-                        <h3>1.System Evaluation</h3>
-                        <p>
-                          Once you contact us, our technical team performs a detailed evaluation of
-                           your elevator system. We review operational performance, safety
-                          conditions, usage patterns, and potential areas of improvement to gain a
-                          complete understanding of your system’s requirements.
-                        </p>
-                      </div>
-                    </li>
-
-                    <li className={`timeline-item ${activeTimelineStep === 1 ? "active" : ""}`}>
-                      <span className="dot" aria-hidden="true"></span>
-                      <div className="timeline-content">
-                        <h3>2.Tailored Service Plan</h3>
-                        <p>
-                          Based on our assessment, we recommend a service or maintenance plan
-                          designed specifically for your elevator type and usage. Our proposals
-                          outline the scope of work, timelines, and costs, ensuring full
-                          transparency and informed decision-making.
-                        </p>
-                      </div>
-                    </li>
-
-                    <li className={`timeline-item ${activeTimelineStep === 2 ? "active" : ""}`}>
-                      <span className="dot" aria-hidden="true"></span>
-                      <div className="timeline-content">
-                        <h3>3.Professional Service Execution</h3>
-                        <p>
-                          Our trained and certified technicians carry out maintenance, repairs, or
-                          upgrades using industry-approved methods and genuine components. Every
-                          task is performed with careful attention to safety, efficiency, and
-                          long-term reliability.
-                        </p>
-                      </div>
-                    </li>
-
-                    <li className={`timeline-item ${activeTimelineStep === 3 ? "active" : ""}`}>
-                      <span className="dot" aria-hidden="true"></span>
-                      <div className="timeline-content">
-                        <h3>4.Ongoing Support & Care</h3>
-                        <p>
-                          Our commitment continues even after the service is completed. We provide
-                          continued monitoring, scheduled checks, and responsive support to ensure
-                          your elevator remains dependable and performs at its best over time.
-                        </p>
-                      </div>
-                    </li>
-                  </ol>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-
+   
       {/* Closing Call to Action Banner */}
       <section className="consultation-banner-section mt-3" style={{ marginTop: "60px" }}>
         <div className="consultation-banner-background">

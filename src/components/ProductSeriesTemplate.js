@@ -105,100 +105,10 @@ export default function ProductSeriesTemplate({
         });
       });
 
-      // 7. Fits Seamlessly Into These Spaces: GSAP Horizontal Pin Scroll (Desktop only)
-      const builtForSpacesSection = document.getElementById("builtForSpacesSection");
-      const scrollContainer = document.getElementById("builtForSpacesScrollContainer");
-      const scrollWrapper = document.getElementById("builtForSpacesScrollWrapper");
-
-      if (builtForSpacesSection && scrollContainer && scrollWrapper) {
-        const mm = gsap.matchMedia();
-
-        mm.add("(min-width: 769px)", () => {
-          const cards = scrollWrapper.querySelectorAll(".space-card");
-          if (cards.length === 0) return;
-
-          const cardWidth = cards[0].offsetWidth || 300;
-          const gap = 30;
-          const totalWidth = (cardWidth + gap) * (cards.length - 1);
-          const containerWidth = scrollContainer.offsetWidth || window.innerWidth;
-          const padding = Math.max(containerWidth / 2 - cardWidth / 2, 0);
-
-          scrollWrapper.style.paddingLeft = `${padding}px`;
-          scrollWrapper.style.paddingRight = `${padding}px`;
-
-          gsap.set(scrollWrapper, { x: 0 });
-
-          const updateActiveCard = () => {
-            const viewportCenter = window.innerWidth / 2;
-            let closestCard = null;
-            let closestDistance = Infinity;
-
-            cards.forEach((card) => {
-              const rect = card.getBoundingClientRect();
-              const cardCenter = rect.left + rect.width / 2;
-              const distance = Math.abs(viewportCenter - cardCenter);
-              if (distance < closestDistance) {
-                closestDistance = distance;
-                closestCard = card;
-              }
-            });
-
-            cards.forEach((card) => {
-              card.classList.toggle("is-active", card === closestCard);
-            });
-          };
-
-          gsap.to(scrollWrapper, {
-            x: -totalWidth,
-            ease: "none",
-            scrollTrigger: {
-              trigger: builtForSpacesSection,
-              start: "top top",
-              end: () => `+=${totalWidth + containerWidth}`,
-              pin: builtForSpacesSection,
-              scrub: 1,
-              anticipatePin: 1,
-              invalidateOnRefresh: true,
-              pinSpacing: true,
-              onUpdate: updateActiveCard,
-              onRefresh: updateActiveCard,
-            },
-          });
-
-          updateActiveCard();
-
-          return () => {
-            scrollWrapper.style.paddingLeft = "0px";
-            scrollWrapper.style.paddingRight = "0px";
-          };
-        });
-
-        // Recalculate ScrollTriggers on window resize
-        let resizeTimer;
-        const onResize = () => {
-          clearTimeout(resizeTimer);
-          resizeTimer = setTimeout(() => {
-            ScrollTrigger.refresh();
-          }, 250);
-        };
-        window.addEventListener("resize", onResize, { passive: true });
-        return () => {
-          window.removeEventListener("resize", onResize);
-          mm.revert();
-        };
-      }
     }, containerRef);
 
     return () => ctx.revert();
   }, [isCompleted]);
-
-  // Automatic transition for built-for-spaces mobile carousel
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveSpaceIdx((prev) => (prev + 1) % spaces.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, [spaces.length]);
 
   // Automatic transition for personalisation choices mobile carousel
   useEffect(() => {
@@ -356,18 +266,40 @@ export default function ProductSeriesTemplate({
               <h2 className="built-for-spaces-heading reveal-heading" data-reveal-delay="0.6">Fits Seamlessly Into These Spaces</h2>
             </div>
 
-            {/* Desktop Scroll list (GSAP ScrollTrigger Pins and Animates horizontally) */}
-            <div className="built-for-spaces-scroll-container d-none d-md-block" id="builtForSpacesScrollContainer">
-              <div className="built-for-spaces-scroll-wrapper" id="builtForSpacesScrollWrapper">
-                {spaces.map((space, idx) => (
-                  <div className="space-card" key={idx}>
-                    <div className="space-image-container">
-                      <img src={space.image} alt={space.title} className="space-image" />
-                      <div className="space-tag">{space.title}</div>
+            {/* Desktop Carousel with arrows */}
+            <div className="built-for-spaces-desktop-carousel d-none d-md-flex align-items-center justify-content-between" id="builtForSpacesDesktopCarousel">
+              <button
+                type="button"
+                className="spaces-nav spaces-nav-left"
+                onClick={() => setActiveSpaceIdx((prev) => (prev - 1 + spaces.length) % spaces.length)}
+                aria-label="Previous space"
+              >
+                <i className="fas fa-chevron-left"></i>
+              </button>
+              <div className="built-for-spaces-carousel-wrapper">
+                {spaces.map((space, idx) => {
+                  const isVisible = idx === activeSpaceIdx || idx === (activeSpaceIdx + 1) % spaces.length;
+                  return (
+                    <div
+                      className={`space-card ${activeSpaceIdx === idx ? "active" : ""} ${isVisible ? "desktop-visible" : ""}`}
+                      key={idx}
+                    >
+                      <div className="space-image-container">
+                        <img src={space.image} alt={space.title} className="space-image" />
+                        <div className="space-tag">{space.title}</div>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
+              <button
+                type="button"
+                className="spaces-nav spaces-nav-right"
+                onClick={() => setActiveSpaceIdx((prev) => (prev + 1) % spaces.length)}
+                aria-label="Next space"
+              >
+                <i className="fas fa-chevron-right"></i>
+              </button>
             </div>
 
             {/* Mobile Carousel List */}
@@ -468,6 +400,82 @@ export default function ProductSeriesTemplate({
                 {choices.map((_, idx) => (
                   <button
                     key={idx}
+                    type="button"
+                    className={activeChoiceIdx === idx ? "active" : ""}
+                    onClick={() => setActiveChoiceIdx(idx)}
+                    aria-label={`Slide ${idx + 1}`}
+                  ></button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Personalisation Choices Section Duplicate */}
+      <section className="personalisation-choices-section personalisation-choices-section-duplicate container-fluid">
+        <div className="personalisation-choices personalisation-choices-duplicate">
+          <div className="page-width">
+            <div className="row align-items-center personal" style={{ padding: "0 15px" }}>
+              <div className="col-lg-5">
+                <div className="personalisation-header">
+                  <p className="section-2-tagline reveal-heading" data-reveal-delay="0.6">
+                    <span className="section-2-dot" aria-hidden="true"></span>Personalisation Choices
+                  </p>
+                  <h2 className="section-title reveal-heading" data-reveal-delay="0.6">
+                    Tailored To Match
+                    <br /> Your Architecture
+                  </h2>
+                </div>
+              </div>
+              <div className="col-lg-7">
+                <p className="section-description reveal-heading" data-reveal-delay="0.6">
+                  {personalisationHead}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="personalisation-carousel page-width d-none d-md-block" style={{ marginTop: "40px" }}>
+            <div className="row justify-content-center">
+              {choices.map((choice, idx) => (
+                <div
+                  className="col-lg-4 col-md-6 mb-4 choice-card-anim"
+                  key={`duplicate-${idx}`}
+                  style={{
+                    opacity: 1,
+                    transition: "opacity 0.6s ease",
+                  }}
+                >
+                  <div className="choice-card">
+                    <div className="image-wrapper">
+                      <img src={choice.image} alt={choice.title} className="choice-img" />
+                    </div>
+                    <p className="choice-title">{choice.title}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="personalisation-carousel page-width d-block d-md-none" style={{ marginTop: "40px" }}>
+            <div id="personalisationMobileCarouselDuplicate" className="carousel slide" data-bs-touch="true">
+              <div className="carousel-inner">
+                {choices.map((choice, idx) => (
+                  <div className={`carousel-item ${activeChoiceIdx === idx ? "active" : ""}`} key={`duplicate-mobile-${idx}`}>
+                    <div className="choice-card" style={{ display: "block" }}>
+                      <div className="image-wrapper">
+                        <img src={choice.image} alt={choice.title} className="choice-img" />
+                      </div>
+                      <p className="choice-title">{choice.title}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="carousel-indicators">
+                {choices.map((_, idx) => (
+                  <button
+                    key={`duplicate-indicator-${idx}`}
                     type="button"
                     className={activeChoiceIdx === idx ? "active" : ""}
                     onClick={() => setActiveChoiceIdx(idx)}
