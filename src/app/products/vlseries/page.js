@@ -62,6 +62,23 @@ const vlPersonalisationDuplicate = [
   { image: "/img/doortype-3.jpeg" }
 ];
 
+const vlPortraitSpaces = [
+  { image: "/img/colors_Black Hairline.jpg", title: "Black Hairline" },
+  { image: "/img/colors_Black Mirror.jpg", title: "Black Mirror" },
+  { image: "/img/colors_Bronze Hairline.jpg", title: "Bronze Hairline" },
+  { image: "/img/colors_Bronze Mirror.jpg", title: "Bronze Mirror" },
+  { image: "/img/colors_Champagne Hairline.jpg", title: "Champagne Hairline" },
+  { image: "/img/colors_Gold Hairline.jpg", title: "Gold Hairline" },
+  { image: "/img/colors_Gold Linen.jpg", title: "Gold Linen" },
+  { image: "/img/colors_Gold Mirror.jpg", title: "Gold Mirror" },
+  { image: "/img/colors_Gold Sand Blast.jpg", title: "Gold Sand Blast" },
+  { image: "/img/colors_Rose Gold Hairline.jpeg", title: "Rose Gold Hairline" },
+  { image: "/img/colors_Rose Gold Sand Blast.jpg", title: "Rose Gold Sand Blast" },
+  { image: "/img/colors_Silver Hairline.jpg", title: "colors_Silver Hairline" },
+  { image: "/img/colors_Silver Leather Finish.jpg", title: "Silver Leather Finish" },
+  { image: "/img/colors_Silver Linen.jpg", title: "Silver Linen" },
+  
+];
 const vlPersonalisationheadDuplicate = [
   "Choose from door types and premium finishes that create elegance in every entry."
 ];
@@ -100,7 +117,7 @@ export default function VLSeriesPage() {
       features={vlFeatures}
       specifications={vlSpecifications}
       spaces={vlSpaces}
-
+      portraitSpaces={vlPortraitSpaces}
       personalisationChoices={vlPersonalisation}
       personalisationChoicesDuplicate={vlPersonalisationDuplicate}
       personalisationHead={vlPersonalisationhead}

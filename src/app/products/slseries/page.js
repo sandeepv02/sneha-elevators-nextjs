@@ -45,22 +45,21 @@ const slSpaces = [
 ];
 
 const slPortraitSpaces = [
-  { image: "/img/sl-villas.png", title: "Villas" },
-  { image: "/img/sl-Duplexes.png", title: "Duplexes" },
-  { image: "/img/sl-clinics.png", title: "Clinics" },
-  { image: "/img/sl-Retrofits.png", title: "Retrofits" },
-  { image: "/img/sl-series-block.png", title: "Home Lift Interior" },
-  { image: "/img/image-14.jpg", title: "Modern Lobby" },
-  { image: "/img/image-15.png", title: "Residential Entrance" },
-  { image: "/img/image-18.png", title: "Condo Interior" },
-  { image: "/img/image-19.png", title: "Compact Shaft" },
-  { image: "/img/image-21.png", title: "Minimal Cabin" },
-  { image: "/img/image-22.png", title: "Stylish Finish" },
-  { image: "/img/image-23.jpg", title: "Stairwell Integration" },
-  { image: "/img/image-24.png", title: "Contemporary Hall" },
-  { image: "/img/image-25.png", title: "Panoramic Door" },
-  { image: "/img/image-26.png", title: "Premium Panel" },
-  { image: "/img/image-27.png", title: "Elegant Cabin" },
+  { image: "/img/colors_Black Hairline.jpg", title: "Black Hairline" },
+  { image: "/img/colors_Black Mirror.jpg", title: "Black Mirror" },
+  { image: "/img/colors_Bronze Hairline.jpg", title: "Bronze Hairline" },
+  { image: "/img/colors_Bronze Mirror.jpg", title: "Bronze Mirror" },
+  { image: "/img/colors_Champagne Hairline.jpg", title: "Champagne Hairline" },
+  { image: "/img/colors_Gold Hairline.jpg", title: "Gold Hairline" },
+  { image: "/img/colors_Gold Linen.jpg", title: "Gold Linen" },
+  { image: "/img/colors_Gold Mirror.jpg", title: "Gold Mirror" },
+  { image: "/img/colors_Gold Sand Blast.jpg", title: "Gold Sand Blast" },
+  { image: "/img/colors_Rose Gold Hairline.jpeg", title: "Rose Gold Hairline" },
+  { image: "/img/colors_Rose Gold Sand Blast.jpg", title: "Rose Gold Sand Blast" },
+  { image: "/img/colors_Silver Hairline.jpg", title: "colors_Silver Hairline" },
+  { image: "/img/colors_Silver Leather Finish.jpg", title: "Silver Leather Finish" },
+  { image: "/img/colors_Silver Linen.jpg", title: "Silver Linen" },
+  
 ];
 
 const slPersonalisationhead = [

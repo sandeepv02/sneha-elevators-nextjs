@@ -49,6 +49,8 @@ const rmgPersonalisationhead = [
   "With the RMG Series, you don't just choose an elevator, you shape it. Select from a range of cabin materials, textures, lighting styles, and panel finishes to match your space perfectly. We work closely with you to ensure your machine room with gearless drive elevator blends beautifully with your building while delivering dependable performance."
 ];
 
+
+
 const rmgPersonalisation = [
   { image: "/img/glasscabin.png", },
   { image: "/img/stainlesssteel.png",  },
@@ -60,7 +62,23 @@ const rmgPersonalisationDuplicate = [
   { image: "/img/doortype-2.jpeg" },
   { image: "/img/doortype-3.jpeg" }
 ];
-
+const rmgPortraitSpaces = [
+  { image: "/img/colors_Black Hairline.jpg", title: "Black Hairline" },
+  { image: "/img/colors_Black Mirror.jpg", title: "Black Mirror" },
+  { image: "/img/colors_Bronze Hairline.jpg", title: "Bronze Hairline" },
+  { image: "/img/colors_Bronze Mirror.jpg", title: "Bronze Mirror" },
+  { image: "/img/colors_Champagne Hairline.jpg", title: "Champagne Hairline" },
+  { image: "/img/colors_Gold Hairline.jpg", title: "Gold Hairline" },
+  { image: "/img/colors_Gold Linen.jpg", title: "Gold Linen" },
+  { image: "/img/colors_Gold Mirror.jpg", title: "Gold Mirror" },
+  { image: "/img/colors_Gold Sand Blast.jpg", title: "Gold Sand Blast" },
+  { image: "/img/colors_Rose Gold Hairline.jpeg", title: "Rose Gold Hairline" },
+  { image: "/img/colors_Rose Gold Sand Blast.jpg", title: "Rose Gold Sand Blast" },
+  { image: "/img/colors_Silver Hairline.jpg", title: "colors_Silver Hairline" },
+  { image: "/img/colors_Silver Leather Finish.jpg", title: "Silver Leather Finish" },
+  { image: "/img/colors_Silver Linen.jpg", title: "Silver Linen" },
+  
+];
 const rmgPersonalisationheadDuplicate = [
   "Choose from door types and premium finishes that create elegance in every entry."
 ];
@@ -110,6 +128,7 @@ export default function RMGSeriesPage() {
       features={rmgFeatures}
       specifications={rmgSpecifications}
       spaces={rmgSpaces}
+      portraitSpaces={rmgPortraitSpaces}
       personalisationHead={rmgPersonalisationhead}
       personalisationChoices={rmgPersonalisation}
       personalisationChoicesDuplicate={rmgPersonalisationDuplicate}
