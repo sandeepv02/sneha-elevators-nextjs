@@ -58,9 +58,9 @@ const rmgPersonalisation = [
 ];
 
 const rmgPersonalisationDuplicate = [
-  { image: "/img/doortype-1.jpeg" },
-  { image: "/img/doortype-2.jpeg" },
-  { image: "/img/doortype-3.jpeg" }
+  { image: "/img/doortype-1.jpeg" ,title:"Big Vision Glass Door " },
+  { image: "/img/doortype-2.jpeg" , title:"Small Vision Door" },
+  { image: "/img/doortype-3.jpeg" ,title:"Pain Stainless Steel Door" }
 ];
 const rmgPortraitSpaces = [
   { image: "/img/colors_Black Hairline.jpg", title: "Black Hairline" },

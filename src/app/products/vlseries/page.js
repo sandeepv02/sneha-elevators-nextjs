@@ -57,9 +57,9 @@ const vlPersonalisation = [
 ];
 
 const vlPersonalisationDuplicate = [
-  { image: "/img/doortype-1.jpeg" },
-  { image: "/img/doortype-2.jpeg" },
-  { image: "/img/doortype-3.jpeg" }
+{ image: "/img/doortype-1.jpeg" ,title:"Big Vision Glass Door " },
+  { image: "/img/doortype-2.jpeg" , title:"Small Vision Door" },
+  { image: "/img/doortype-3.jpeg" ,title:"Pain Stainless Steel Door" }
 ];
 
 const vlPortraitSpaces = [
