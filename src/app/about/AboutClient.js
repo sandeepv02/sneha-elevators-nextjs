@@ -10,6 +10,8 @@ export default function AboutClient() {
   const { isCompleted } = usePreloader();
   const containerRef = useRef(null);
   const statsRef = useRef(null);
+  const factorySectionRef = useRef(null);
+  const factoryImageRef = useRef(null);
   const [stats, setStats] = useState({
     excellence: 0,
     installations: 0,
@@ -123,6 +125,50 @@ export default function AboutClient() {
           once: true,
         });
       });
+
+      // Factory Image Scroll Reveal Animation
+      if (factorySectionRef.current && factoryImageRef.current) {
+        const isMobile = window.innerWidth <= 768;
+        const startWidth = isMobile ? "70%" : "50%";
+        const startHeight = isMobile ? "60vh" : "80vh";
+        const startRadius = isMobile ? "16px" : "24px";
+
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: factorySectionRef.current,
+            start: "top top",
+            end: "+=150%",
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+          }
+        })
+        .fromTo(factoryImageRef.current, 
+          {
+            width: startWidth,
+            height: startHeight,
+            borderRadius: startRadius,
+          },
+          {
+            width: "70%",
+            height: "85vh",
+            borderRadius: "16px",
+            ease: "none",
+          }
+        )
+        .to(factoryImageRef.current, {
+          width: "80%",
+          height: "90vh",
+          borderRadius: "8px",
+          ease: "none",
+        })
+        .to(factoryImageRef.current, {
+          width: "100%",
+          height: "100vh",
+          borderRadius: "0px",
+          ease: "none",
+        });
+      }
     }, containerRef);
 
     return () => ctx.revert();
@@ -312,6 +358,18 @@ export default function AboutClient() {
           </div>
         </section>
       </div>
+
+      {/* Factory Image Reveal Section */}
+      <section className="factory-reveal-section" ref={factorySectionRef}>
+        <div className="factory-image-container">
+          <img
+            ref={factoryImageRef}
+            src="/img/about-factory-image.png"
+            alt="Sneha Elev8r Factory"
+            className="about-factory-image"
+          />
+        </div>
+      </section>
 
       {/* Company Overview Section */}
       <section className="about-company-section">
