@@ -129,46 +129,56 @@ export default function AboutClient() {
       // Factory Image Scroll Reveal Animation
       if (factorySectionRef.current && factoryImageRef.current) {
         const isMobile = window.innerWidth <= 768;
-        const startWidth = isMobile ? "70%" : "50%";
-        const startHeight = isMobile ? "60vh" : "80vh";
-        const startRadius = isMobile ? "16px" : "24px";
-
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: factorySectionRef.current,
-            start: "top top",
-            end: "+=150%",
-            scrub: true,
-            pin: true,
-            anticipatePin: 1,
-          }
-        })
-        .fromTo(factoryImageRef.current, 
-          {
-            width: startWidth,
-            height: startHeight,
-            borderRadius: startRadius,
-          },
-          {
+        if (isMobile) {
+          // Static image on mobile: set initial size and skip animation
+          gsap.set(factoryImageRef.current, {
             width: "70%",
-            height: "85vh",
+            height: "60vh",
             borderRadius: "16px",
-            ease: "none",
-          }
-        )
-        .to(factoryImageRef.current, {
-          width: "80%",
-          height: "90vh",
-          borderRadius: "8px",
-          ease: "none",
-        })
-        .to(factoryImageRef.current, {
-          width: "100%",
-          height: "100vh",
-          borderRadius: "0px",
-          ease: "none",
-        });
+          });
+        } else {
+          const startWidth = "50%";
+          const startHeight = "80vh";
+          const startRadius = "24px";
+          gsap.timeline({
+            scrollTrigger: {
+              trigger: factorySectionRef.current,
+              start: "top top",
+              end: "+=150%",
+              scrub: true,
+              pin: true,
+              anticipatePin: 1,
+            },
+          })
+            .fromTo(
+              factoryImageRef.current,
+              {
+                width: startWidth,
+                height: startHeight,
+                borderRadius: startRadius,
+              },
+              {
+                width: "70%",
+                height: "85vh",
+                borderRadius: "16px",
+                ease: "none",
+              }
+            )
+            .to(factoryImageRef.current, {
+              width: "80%",
+              height: "90vh",
+              borderRadius: "8px",
+              ease: "none",
+            })
+            .to(factoryImageRef.current, {
+              width: "100%",
+              height: "100vh",
+              borderRadius: "0px",
+              ease: "none",
+            });
+        }
       }
+
     }, containerRef);
 
     return () => ctx.revert();
@@ -388,18 +398,18 @@ export default function AboutClient() {
               <div className="col-lg-6">
                 <div className="about-company-description reveal-heading" data-reveal-delay="0.5">
                   <p>
-                   Sneha Elev8r has been building and installing elevators across South India since 2017. Based in Telangana, we serve Hyderabad, Vijayawada, Visakhapatnam, Nellore, Warangal, Nizamabad, and Bengaluru.
+                    Sneha Elev8r has been building and installing elevators across South India since 2017. Based in Telangana, we serve Hyderabad, Vijayawada, Visakhapatnam, Nellore, Warangal, Nizamabad, and Bengaluru.
 
-We specialize in home lifts, residential, commercial elevators and hospital elevators, backed by reliable service and OEM (Original Equipment Manufacturer) spare parts.
+                    We specialize in home lifts, residential, commercial elevators and hospital elevators, backed by reliable service and OEM (Original Equipment Manufacturer) spare parts.
 
-With over 3,500 + elevators installed, we continue to grow through quality engineering, reliable maintenance support and lasting customer trust.
+                    With over 3,500 + elevators installed, we continue to grow through quality engineering, reliable maintenance support and lasting customer trust.
 
                   </p>
                 </div>
               </div>
             </div>
 
-           
+
           </div>
         </div>
       </section>
@@ -449,15 +459,15 @@ With over 3,500 + elevators installed, we continue to grow through quality engin
           <div className="mission-vision-row mission-vision-top">
             <div className="mission-vision-text-block mission-block">
               <h2 className="mission-vision-heading reveal-heading" id="missionHeading" data-reveal-delay="0.7">Our Vision
-                
+
               </h2>
               <ul className="mission-vision-text reveal-heading" id="missionList" data-reveal-delay="0.8">
                 <li style={{ listStyleType: "none" }}>
                   <p>
-                  To build a trusted, future-ready mobility brand that elevates everyday living through safety, quality, and engineering excellence.
+                    To build a trusted, future-ready mobility brand that elevates everyday living through safety, quality, and engineering excellence.
                   </p>
                 </li>
-              
+
               </ul>
             </div>
             <div className="mission-vision-image-block">
@@ -526,7 +536,7 @@ With over 3,500 + elevators installed, we continue to grow through quality engin
           </div>
         </div>
       </section>
- {/* map section*/}
+      {/* map section*/}
       <section className="mission-values-section page-width">
         <div className="container-fluid">
           <div className="elevator-services-wrapper mission-values-wrapper">
@@ -546,60 +556,60 @@ With over 3,500 + elevators installed, we continue to grow through quality engin
                     <span className="section-2-dot" aria-hidden="true"></span> Driven By Purpose
                   </p>
                   <h2 className="mission-values-heading reveal-heading" id="missionValuesHeading" data-reveal-delay="0.7">
-                   Presence Across
+                    Presence Across
                   </h2>
 
                   <div className="gridformat-map">
- <p className="mission-values-text-map reveal-heading" id="missionValuesText" data-reveal-delay="0.8">
-                       TELANGANA
-                  </p>
-                  <ul className="mission-values-list-map reveal-heading" id="missionValuesList" data-reveal-delay="0.9">
-                    <li>
-                     Hyderabad
-                    </li>
-                    <li>
-                    Warangal
-                    </li>
-                    <li>
-                   Other Districts
-                    </li>
-                  
-                  </ul>
                     <p className="mission-values-text-map reveal-heading" id="missionValuesText" data-reveal-delay="0.8">
-                       ANDHRA PRADESH
-                  </p>
-                  <ul className="mission-values-list-map reveal-heading" id="missionValuesList" data-reveal-delay="0.9">
-                    <li>
-                     Vijayawada
-                    </li>
-                    <li>
-                    Visakhapatnam
-                    </li>
-                    <li>
-                   Nellore
-                    </li>
-                   <li>
-                  Kurnool
-                    </li>
-                     <li>
-                Other Districts
-                    </li>
-                  </ul>
+                      TELANGANA
+                    </p>
+                    <ul className="mission-values-list-map reveal-heading" id="missionValuesList" data-reveal-delay="0.9">
+                      <li>
+                        Hyderabad
+                      </li>
+                      <li>
+                        Warangal
+                      </li>
+                      <li>
+                        Other Districts
+                      </li>
+
+                    </ul>
                     <p className="mission-values-text-map reveal-heading" id="missionValuesText" data-reveal-delay="0.8">
-                       KARNATAKA
-                  </p>
-                  <ul className="mission-values-list-map reveal-heading" id="missionValuesList" data-reveal-delay="0.9">
-                    <li>
-                     Bengaluru
-                    </li>
-                    <li>
-                 Other Districts
-                    </li>
-                  
-                  
-                  </ul>
+                      ANDHRA PRADESH
+                    </p>
+                    <ul className="mission-values-list-map reveal-heading" id="missionValuesList" data-reveal-delay="0.9">
+                      <li>
+                        Vijayawada
+                      </li>
+                      <li>
+                        Visakhapatnam
+                      </li>
+                      <li>
+                        Nellore
+                      </li>
+                      <li>
+                        Kurnool
+                      </li>
+                      <li>
+                        Other Districts
+                      </li>
+                    </ul>
+                    <p className="mission-values-text-map reveal-heading" id="missionValuesText" data-reveal-delay="0.8">
+                      KARNATAKA
+                    </p>
+                    <ul className="mission-values-list-map reveal-heading" id="missionValuesList" data-reveal-delay="0.9">
+                      <li>
+                        Bengaluru
+                      </li>
+                      <li>
+                        Other Districts
+                      </li>
+
+
+                    </ul>
                   </div>
-                 
+
                 </div>
               </div>
             </div>
@@ -651,7 +661,7 @@ With over 3,500 + elevators installed, we continue to grow through quality engin
         </div>
       </section>
 
-     
+
       {/* Safety & Certifications */}
       <section className="about-certifications-section">
         <div className="container-fluid page-width">
@@ -687,14 +697,14 @@ With over 3,500 + elevators installed, we continue to grow through quality engin
               <div className="col-lg-6">
                 <article className="about-cert-card reveal-heading" id="certCard2" data-reveal-delay="1.1">
                   <div className="about-cert-media">
-                    
+
                     <img
                       src="/img/certi-3.jpeg"
                       alt="Quality Certificate"
                       className="about-cert-img"
                     />
                     <br></br>
-                     <img
+                    <img
                       src="/img/certi-1.png"
                       alt="Quality Certificate"
                       className="about-cert-img"
@@ -702,7 +712,7 @@ With over 3,500 + elevators installed, we continue to grow through quality engin
                   </div>
                 </article>
               </div>
-              
+
             </div>
           </div>
         </div>
