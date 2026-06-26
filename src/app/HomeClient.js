@@ -17,7 +17,7 @@ export default function HomeClient() {
   const testimonials = [
     {
       text: "Highly recommend Sneha Lift for anyone looking for durable and stylish elevators. We've used their services and are extremely satisfied with the smooth operation and safety sensors. A trustworthy team that delivers exactly what they promise.We recommend this lift with high admiration and appreciation.we would confidently recommend their services to anyone looking for a dependable elevator solution",
-      name: "swathi constructions",
+      name: "Swathi Constructions",
       date: "6/06/2026",
       rating: 5,
       image: "/img/testimonialsone.png",
@@ -26,15 +26,15 @@ export default function HomeClient() {
     {
       text: "Sneha Elevators provided excellent service from start to finish. The installation was done smoothly, with good quality materials and proper safety standards. A special appreciation to Site Engineer T. Siva Krishna—he was very knowledgeable, responsive, and ensured everything was completed on time without any issues. Overall, a reliable and professional team. I would definitely recommend Sneha Elevators.",
       name: "Mark",
-      date: "17/01/2026",
+      date: "17/09/2025",
       rating: 5,
       image: "/img/testimonialstwo.png",
       avatar: "/img/Aarav.png",
     },
     {
       text: "Sneha Elevators have installed a lift in our commercial building in WARANGAL about 6 months back.It is working excellent without any complaints.We are very happy with the performance.We will plan second lift soon.Sneha Elevators is highly recommended for quality and service.Appreciate their commitment and responsibility towards customers.It’s since 8 months after commissioning till now no problems encountered.",
-      name: "sirish vaddiraj",
-      date: "12/05/2026",
+      name: "Sirish Vaddiraj",
+      date: "12/03/2024",
       rating: 5,
       image: "/img/testimonialsthree.png",
       avatar: "/img/kiran.png",
@@ -42,7 +42,7 @@ export default function HomeClient() {
     {
       text: "We ordered one number of Sneha lift for our Mycon developers apartment in Eluru. The version is of full vision automatic 8 passengers roomed type. The process from ordering to commissioning was very smooth. The staff are very friendly and cooperative.The material quality is excellent on par with international brands and the performance is outstanding & smooth. Service is up to the mark. Above all, commissioning is on time.",
       name: "Srinivasula Venkatakrishna",
-      date: "26/05/2026",
+      date: "26/08/2023",
       rating: 5,
       image: "/img/testimonialsfour.png",
       avatar: "/img/kiran.png",
