@@ -211,7 +211,7 @@ export default async function BlogDetailPage({ params }) {
             <h1 className="blog-detail-title">{blog.title}</h1>
 
             <div className="blog-detail-meta-row" style={{ display: "flex", gap: "20px", margin: "15px 0", color: "#888" }}>
-              <span className="blog-detail-category" style={{ textTransform: "uppercase", fontWeight: "bold", color: "#dc3545" }}>
+              <span className="blog-detail-category" style={{ textTransform: "uppercase" }}>
                 {blog.category || "Elevators"}
               </span>
               <span className="blog-detail-date">{formatDate(blog.datePosted || blog.createdAt)}</span>

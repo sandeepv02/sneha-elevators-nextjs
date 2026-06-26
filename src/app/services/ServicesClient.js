@@ -452,7 +452,52 @@ export default function ServicesClient() {
         </div>
       </section>
 
-      {/* End-to-end Services cards Section */}
+    
+
+      {/* Benefits of Servicing Section (Parallax visual match) */}
+      <div className="why-service-hero why-service-inline">
+        <div className="why-service-overlay"></div>
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-6 why-service">
+              <p className="Benefits-of-Servicing">
+                <span className="Benefits-of-Servicing-dot"></span>Benefits of Servicing With Us
+              </p>
+              <h2 className="section-5-heading">We Are With You Beyond Installation</h2>
+              <p className="section-5-para">
+                We go beyond routine maintenance to deliver reliable performance, enhanced safety,
+                and long-term value. Our service solutions are designed to keep your elevators
+                running efficiently while minimizing disruptions.
+              </p>
+            </div>
+            <div className="col-lg-6">
+              <ul className="why-list">
+                <li>
+                  <i className="fas fa-check"></i>Timely maintenance to reduce breakdowns and
+                  downtime
+                </li>
+                <li>
+                  <i className="fas fa-check"></i> Improved safety and compliance with current
+                  standards
+                </li>
+                <li>
+                  <i className="fas fa-check"></i>Extended equipment lifespan for better performance
+                </li>
+                <li>
+                  <i className="fas fa-check"></i> Quick response times and dependable technical
+                  support
+                </li>
+                <li>
+                  <i className="fas fa-check"></i> Transparent service processes and experienced
+                  professionals
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     {/* End-to-end Services cards Section */}
       <div className="page-width">
         <section className="service-section">
           <div className="services-combo container-fluid">
@@ -530,51 +575,6 @@ export default function ServicesClient() {
           </div>
         </section>
       </div>
-
-      {/* Benefits of Servicing Section (Parallax visual match) */}
-      <div className="why-service-hero why-service-inline">
-        <div className="why-service-overlay"></div>
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-6 why-service">
-              <p className="Benefits-of-Servicing">
-                <span className="Benefits-of-Servicing-dot"></span>Benefits of Servicing With Us
-              </p>
-              <h2 className="section-5-heading">We Are With You Beyond Installation</h2>
-              <p className="section-5-para">
-                We go beyond routine maintenance to deliver reliable performance, enhanced safety,
-                and long-term value. Our service solutions are designed to keep your elevators
-                running efficiently while minimizing disruptions.
-              </p>
-            </div>
-            <div className="col-lg-6">
-              <ul className="why-list">
-                <li>
-                  <i className="fas fa-check"></i>Timely maintenance to reduce breakdowns and
-                  downtime
-                </li>
-                <li>
-                  <i className="fas fa-check"></i> Improved safety and compliance with current
-                  standards
-                </li>
-                <li>
-                  <i className="fas fa-check"></i>Extended equipment lifespan for better performance
-                </li>
-                <li>
-                  <i className="fas fa-check"></i> Quick response times and dependable technical
-                  support
-                </li>
-                <li>
-                  <i className="fas fa-check"></i> Transparent service processes and experienced
-                  professionals
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-   
       {/* Closing Call to Action Banner */}
       <section className="consultation-banner-section mt-3" style={{ marginTop: "60px" }}>
         <div className="consultation-banner-background">
