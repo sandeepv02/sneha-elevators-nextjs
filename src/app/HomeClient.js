@@ -1024,7 +1024,7 @@ export default function HomeClient() {
           </p>
           <h2 className="blogs-heading">The Knowledge Hub</h2>
 
-          <div className="row blogs-grid-layout" style={{ marginTop: "40px" }}>
+          <div className="row blogs-grid-layout" >
             {blogs.map((blog) => {
               const slug = blog.slug || blog.blogUrl || "";
               const featuredImage = blog.featuredImage?.startsWith("http")

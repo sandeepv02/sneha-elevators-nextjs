@@ -952,7 +952,7 @@ a.nav-link:active {
 
 @media (max-width: 576px) {
     .residential-buttons-grid {
-        grid-template-columns: 1fr;
+        width:100%;
     }
 }
 
@@ -2252,8 +2252,12 @@ feature */
         grid-template-rows: auto;
         gap: 24px;
         padding: 0px 0;
+        padding-top: 24px;
     }
-
+    .service-title {
+        color: #000;
+        font-size: 20px !important;
+    }
     /* Hide central logo on mobile */
     .central-logo {
         display: none !important;
@@ -2610,7 +2614,7 @@ feature */
     }
 
     .elevator-services-list {
-        gap: 2rem;
+        gap: 24px;
     }
 
     .service-title {
@@ -2856,13 +2860,13 @@ feature */
 .testimonials-pagination {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
     margin-top: 20px;
 }
 
 .testimonial-dot {
-    width: 12px;
-    height: 12px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
     background-color: #d3d3d3;
     cursor: pointer;
@@ -2876,7 +2880,7 @@ feature */
 
 .testimonial-dot.active {
     background-color: #dc3545;
-    width: 30px;
+    width: 20px;
     border-radius: 6px;
 }
 
@@ -2884,6 +2888,9 @@ feature */
 @media (max-width: 768px) {
     .testimonials-section {
         padding: 0px 0;
+    }
+    .blogs-heading {
+        margin-bottom:24px !important;
     }
 
     .testimonials-wrapper {
@@ -3018,7 +3025,7 @@ feature */
 @media (max-width: 768px) {
     .clients-section {
         padding: 40px 0;
-        margin-top: 80px !important;
+        margin-top: 40px !important;
     }
 
     .clients-wrapper {
@@ -3725,9 +3732,7 @@ feature */
         min-height: 47vh;
     }
 
-    .about-approach-section {
-        padding: 30px 0 !important;
-    }
+   
 
     .about-us-hero-wrapper {
         max-width: 100%;
@@ -4947,8 +4952,10 @@ img.door-type-image {
     }
 
     .mission-values-image-wrapper {
-        min-height: 300px;
-        margin-bottom: 30px;
+        max-height: 100% !important;
+        min-height:0px;
+        /* margin-bottom: 30px; */
+        padding-top: 30px;
     }
 
     .mission-values-heading {
@@ -5294,7 +5301,7 @@ section.safety-trust-section {
     .founders-message-tagline {
         font-size: 0.85rem;
         margin-bottom: 14px;
-        padding-top: 30px;
+      
     }
 
     .founders-message-quote {
@@ -5763,6 +5770,8 @@ section.safety-trust-section {
         margin-bottom: 10px;
         font-weight: 100;
         color: black !important;
+        
+            font-family: Motiva, sans-serif;
     }
 
     .rm-feature-description {
@@ -6236,7 +6245,7 @@ section.safety-trust-section {
     }
 
     section.safety-trust-section {
-        padding-top: 12px;
+        padding-top: 30px;
     }
 
     .service-card h3 {
