@@ -369,34 +369,30 @@ export default function AboutClient() {
         </section>
       </div>
 
-      {/* Factory Image Reveal Section */}
-      <section className="factory-reveal-section" ref={factorySectionRef}>
-        <div className="factory-image-container">
-          <img
-            ref={factoryImageRef}
-            src="/img/about-factory-image.png"
-            alt="Sneha Elev8r Factory"
-            className="about-factory-image"
-          />
-        </div>
-      </section>
+   
 
       {/* Company Overview Section */}
       <section className="about-company-section">
         <div className="container-fluid page-width">
           <div className="elevator-services-wrapper about-company-wrapper">
             <div className="row align-items-start about-company-top">
+              <div className="col-lg-6 reveal-heading">
+                 <img
+            ref={factoryImageRef}
+            src="/img/about-factory-image.png"
+            alt="Sneha Elev8r Factory"
+            className="about-factory-image"
+          />
+              </div>
               <div className="col-lg-6">
-                <p className="about-company-tagline reveal-heading" data-reveal-delay="0.1">
+                <div className="about-company-description reveal-heading" data-reveal-delay="0.5">
+                 <p className="about-company-tagline reveal-heading" data-reveal-delay="0.1">
                   <span className="section-2-dot" aria-hidden="true"></span> Who We Are
                 </p>
                 <h2 className="about-company-heading reveal-heading" data-reveal-delay="0.3">
                   Smart Engineering For <br />
                   Trusted Elevator Solutions
                 </h2>
-              </div>
-              <div className="col-lg-6">
-                <div className="about-company-description reveal-heading" data-reveal-delay="0.5">
                   <p>
                     Sneha Elev8r has been building and installing elevators across South India since 2017. Based in Telangana, we serve Hyderabad, Vijayawada, Visakhapatnam, Nellore, Warangal, Nizamabad, and Bengaluru.
 

@@ -4224,7 +4224,7 @@ feature */
     font-weight: 700;
     color: #ED3435;
     margin: 0;
-
+margin-bottom: 16px;
 }
 
 .about-company-description p {
@@ -4232,7 +4232,7 @@ feature */
     font-family: 'DM Sans', sans-serif;
     color: #6c757d; */
 
-    margin: 0 0 14px 0;
+    margin: 0 0 8px 0;
     text-align: left;
 }
 
@@ -10100,14 +10100,12 @@ section#exploreSection {
 
 
 .about-factory-image {
-  display: block;
-  margin: 0 auto;
-  width: 50%; /* initial width, overridden by GSAP */
+  width: 93%; /* initial width, overridden by GSAP */
 }
 
 @media (max-width: 768px) {
   .about-factory-image {
-    width: 70%;
+    width: 100%;
   }
 }
 
