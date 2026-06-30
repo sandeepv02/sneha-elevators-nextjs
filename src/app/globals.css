@@ -4722,6 +4722,15 @@ margin-bottom: 16px;
         transition: none;
         transform: none;
     }
+    .blog-detail-body h3 {
+    font-size: 20px !important;
+}
+
+.blog-detail-body h2 {
+    font-size: 23px !important;
+    color: #ed3435;
+    font-weight: 600;
+}
 
     .mission-vision-image-block {
         min-height: 276px !important;
