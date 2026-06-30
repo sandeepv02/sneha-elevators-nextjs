@@ -615,7 +615,7 @@ export default function HomeClient() {
                       Lifts
                     </h2>
                     <p className="elevator-category-description">
-                    Designed for hospitals, nursing homes, and diagnostic centres, our elevators provide smooth and reliable transportation for patients, stretchers, beds, attendants, and medical equipment. Quiet operation and spacious cabins ensure safe and comfortable movement when it matters most.<br/>Use ‘Lifts’ across Residential, Commercial, Hospital & Goods Lift.
+                    Designed for hospitals, nursing homes, and diagnostic centres, our elevators provide smooth and reliable transportation for patients, stretchers, beds, attendants, and medical equipment. Quiet operation and spacious cabins ensure safe and comfortable movement when it matters most.
                     </p>
                     <Link href="/contact" className="elevator-category-link">
                       Enquire Now <i className="fas fa-arrow-right"></i>
