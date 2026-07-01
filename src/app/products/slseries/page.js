@@ -72,9 +72,9 @@ const slPersonalisation = [
   { image: "/img/designerrosegold.png", }
 ];
 const slPersonalisationDuplicate = [
-  { image: "/img/doortype-1.jpeg" ,title:"Big Vision Glass Door " },
+  { image: "/img/doortype-1.jpeg" ,title:" Pain Stainless Steel Door " },
   { image: "/img/doortype-2.jpeg" , title:"Small Vision Door" },
-  { image: "/img/doortype-3.jpeg" ,title:"Pain Stainless Steel Door" }
+  { image: "/img/doortype-3.jpeg" ,title:" Big Vision Glass Door " }
 ];
 const slPersonalisationheadDuplicate = [
   "Choose from door types and premium finishes that create elegance in every entry."
