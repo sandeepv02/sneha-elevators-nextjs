@@ -4745,7 +4745,7 @@ margin-bottom: 16px;
     .mission-vision-text {
         font-size: 16px;
         padding: 0px;
-        list-style: none;
+       
     }
 }
 
@@ -5777,7 +5777,7 @@ section.safety-trust-section {
     .rm-feature-title {
         font-size: 20px !important;
         margin-bottom: 10px;
-        font-weight: 100;
+        font-weight: 400;
         color: black !important;
         
             font-family: Motiva, sans-serif;
@@ -5848,7 +5848,7 @@ section.safety-trust-section {
 
     .safety-trust-card h3 {
         font-size: 20px !important;
-        font-weight: 100 !important;
+        font-weight: 400 !important;
         font-family: "mosvita", sans-serif !important;
     }
 
@@ -6254,7 +6254,7 @@ section.safety-trust-section {
     }
 
     section.safety-trust-section {
-        padding-top: 30px;
+        padding-top: 25px;
     }
 
     .service-card h3 {
@@ -6328,6 +6328,27 @@ section.safety-trust-section {
     .built-for-spaces-mobile-carousel {
         display: block;
         margin-top: 24px;
+        position: relative;
+    }
+
+    .built-for-spaces-mobile-carousel .built-for-spaces-mobile-nav {
+        position: absolute;
+        inset: 50% 0 auto 0;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 5;
+        pointer-events: none;
+        padding: 0 12px;
+    }
+
+    .built-for-spaces-mobile-carousel .built-for-spaces-mobile-nav .spaces-nav {
+        pointer-events: auto;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
     }
 
     .built-for-spaces-mobile-carousel .carousel-item {
@@ -6356,6 +6377,7 @@ section.safety-trust-section {
     .built-for-spaces-mobile-carousel .carousel-indicators {
         position: static;
         margin-top: 14px;
+       
     }
 
     .built-for-spaces-mobile-carousel .carousel-indicators button {
@@ -6574,7 +6596,7 @@ section.safety-trust-section {
     }
 
     .product-hero-subheading {
-        font-size: 18px;
+        font-size: 19px !important;
         margin-bottom: 12px;
         letter-spacing: 0.5px;
     }
@@ -7629,7 +7651,7 @@ section.safety-trust-section {
 .portrait-spaces-header {
     text-align: center;
     margin-bottom: 36px;
-    padding-top: 60px;
+    padding-top: 30px;
 }
 
 .portrait-spaces-heading {
@@ -7710,16 +7732,21 @@ section.safety-trust-section {
 
 @media (max-width: 768px) {
     .portrait-spaces-section {
-        padding: 40px 0;
+        padding-top: 40px ;
+        padding-bottom:0px;
     }
-
+.portrait-spaces-header {
+    padding-top: 0px;
+}
     .portrait-spaces-track {
         display: flex;
-        overflow-x: auto;
-        gap: 16px;
-        padding-bottom: 12px;
+       
+        gap: 25px;
+        padding-bottom: 0px;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
+       
+   
     }
 
     .portrait-space-card {
@@ -7738,6 +7765,7 @@ section.safety-trust-section {
 .personalisation-carousel {
     display: block;
     margin-top: 24px;
+    position: relative;
 }
 
 .carousel.pointer-event {
@@ -7750,6 +7778,7 @@ section.safety-trust-section {
     align-items: stretch;
     overflow: hidden;
     padding-top: 35px;
+    position: relative;
 }
 
 .personalisation-carousel .carousel-item {
@@ -7769,6 +7798,37 @@ section.safety-trust-section {
 .personalisation-carousel .carousel-item-next.carousel-item-start,
 .personalisation-carousel .carousel-item-prev.carousel-item-end {
     transform: translateX(0);
+}
+
+.personalisation-carousel-mobile-nav {
+    position: absolute;
+    inset: 50% 0 auto 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    pointer-events: none;
+    padding: 0 8px;
+}
+
+.personalisation-carousel-mobile-nav button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: rgba(255, 255, 255, 0.95);
+    color: #ED3435;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    pointer-events: auto;
+}
+
+.personalisation-carousel-mobile-nav button:hover {
+    background: #ffffff;
 }
 
 .personalisation-carousel .carousel-indicators {
@@ -7823,6 +7883,9 @@ section.safety-trust-section {
         flex: 0 0 100%;
         max-width: 100%;
         display: block;
+    }
+    .personalisation-carousel .carousel-inner {
+        padding-top: 0px;
     }
 }
 
@@ -9591,10 +9654,13 @@ h2.section-5-heading {
 
     .safety-trust-card h3 {
         font-size: 20px !important;
-        font-weight: 100 !important;
+        font-weight: 400 !important;
         font-family: "mosvita", sans-serif !important;
     }
-
+img.door-type-image {
+    border: 1px solid #000;
+    margin-bottom: 16px;
+}
     .section-5-para {
         margin-bottom: 30px;
     }

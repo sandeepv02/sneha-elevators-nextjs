@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { usePreloader } from "@/components/PreloaderContext";
@@ -29,6 +29,7 @@ export default function ProductSeriesTemplate({
   const containerRef = useRef(null);
   const [activeSpaceIdx, setActiveSpaceIdx] = useState(0);
   const [activeChoiceIdx, setActiveChoiceIdx] = useState(0);
+  const [activeDuplicateChoiceIdx, setActiveDuplicateChoiceIdx] = useState(0);
   const portraitTrackRef = useRef(null);
 
   const scrollPortrait = (dir = "next") => {
@@ -70,6 +71,18 @@ export default function ProductSeriesTemplate({
     portraitSpaces && portraitSpaces.length
       ? portraitSpaces
       : spaces;
+
+  const changeChoice = (direction, isDuplicate = false) => {
+    const items = isDuplicate ? duplicateChoices : choices;
+    if (!items.length) return;
+
+    if (isDuplicate) {
+      setActiveDuplicateChoiceIdx((prev) => (prev + direction + items.length) % items.length);
+      return;
+    }
+
+    setActiveChoiceIdx((prev) => (prev + direction + items.length) % items.length);
+  };
 
   // 1. Initial GSAP state setup (runs instantly on mount to prevent any flash/glitch)
   useLayoutEffect(() => {
@@ -137,14 +150,6 @@ export default function ProductSeriesTemplate({
 
     return () => ctx.revert();
   }, [isCompleted]);
-
-  // Automatic transition for personalisation choices mobile carousel
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveChoiceIdx((prev) => (prev + 1) % choices.length);
-    }, 4500);
-    return () => clearInterval(timer);
-  }, [choices.length]);
 
   return (
     <div ref={containerRef} style={{ width: "100%", overflowX: "hidden" }}>
@@ -342,6 +347,24 @@ export default function ProductSeriesTemplate({
 
             {/* Mobile Carousel List */}
             <div className="built-for-spaces-mobile-carousel d-block d-md-none">
+              <div className="built-for-spaces-mobile-nav">
+                <button
+                  type="button"
+                  className="spaces-nav spaces-nav-left"
+                  onClick={() => setActiveSpaceIdx((prev) => (prev - 1 + spaces.length) % spaces.length)}
+                  aria-label="Previous space"
+                >
+                  <i className="fas fa-chevron-left"></i>
+                </button>
+                <button
+                  type="button"
+                  className="spaces-nav spaces-nav-right"
+                  onClick={() => setActiveSpaceIdx((prev) => (prev + 1) % spaces.length)}
+                  aria-label="Next space"
+                >
+                  <i className="fas fa-chevron-right"></i>
+                </button>
+              </div>
               <div id="builtForSpacesMobileCarousel" className="carousel slide" data-bs-touch="true">
                 <div className="carousel-inner">
                   {spaces.map((space, idx) => (
@@ -420,7 +443,15 @@ export default function ProductSeriesTemplate({
           </div>
 
           {/* Mobile Choices Carousel */}
-          <div className="personalisation-carousel page-width d-block d-md-none" style={{ marginTop: "40px" }}>
+          <div className="personalisation-carousel page-width d-block d-md-none" style={{ marginTop: "20px" }}>
+            <div className="personalisation-carousel-mobile-nav">
+              <button type="button" onClick={() => changeChoice(-1)} aria-label="Previous personalisation choice">
+                <i className="fas fa-chevron-left"></i>
+              </button>
+              <button type="button" onClick={() => changeChoice(1)} aria-label="Next personalisation choice">
+                <i className="fas fa-chevron-right"></i>
+              </button>
+            </div>
             <div id="personalisationMobileCarousel" className="carousel slide" data-bs-touch="true">
               <div className="carousel-inner">
                 {choices.map((choice, idx) => (
@@ -490,27 +521,35 @@ export default function ProductSeriesTemplate({
             </div>
           </div>
 
-          <div className="personalisation-carousel page-width d-block d-md-none" style={{ marginTop: "40px" }}>
+          <div className="personalisation-carousel page-width d-block d-md-none" style={{ marginTop: "20px" }}>
+            <div className="personalisation-carousel-mobile-nav">
+              <button type="button" onClick={() => changeChoice(-1, true)} aria-label="Previous door type">
+                <i className="fas fa-chevron-left"></i>
+              </button>
+              <button type="button" onClick={() => changeChoice(1, true)} aria-label="Next door type">
+                <i className="fas fa-chevron-right"></i>
+              </button>
+            </div>
             <div id="personalisationMobileCarouselDuplicate" className="carousel slide" data-bs-touch="true">
               <div className="carousel-inner">
-                {choices.map((choice, idx) => (
-                  <div className={`carousel-item ${activeChoiceIdx === idx ? "active" : ""}`} key={`duplicate-mobile-${idx}`}>
+                {duplicateChoices.map((choice, idx) => (
+                  <div className={`carousel-item ${activeDuplicateChoiceIdx === idx ? "active" : ""}`} key={`duplicate-mobile-${idx}`}>
                     <div className="choice-card" style={{ display: "block" }}>
                       <div className="image-wrapper">
-                        <img src={choice.image} alt={choice.title} className="choice-img" />
+                        <img src={choice.image} alt={choice.title || `choice-${idx}`} className="choice-img" />
                       </div>
-                      <p className="choice-title">{choice.title}</p>
+                      {choice.title && <p className="choice-title">{choice.title}</p>}
                     </div>
                   </div>
                 ))}
               </div>
               <div className="carousel-indicators">
-                {choices.map((_, idx) => (
+                {duplicateChoices.map((_, idx) => (
                   <button
                     key={`duplicate-indicator-${idx}`}
                     type="button"
-                    className={activeChoiceIdx === idx ? "active" : ""}
-                    onClick={() => setActiveChoiceIdx(idx)}
+                    className={activeDuplicateChoiceIdx === idx ? "active" : ""}
+                    onClick={() => setActiveDuplicateChoiceIdx(idx)}
                     aria-label={`Slide ${idx + 1}`}
                   ></button>
                 ))}
@@ -537,7 +576,7 @@ export default function ProductSeriesTemplate({
             <div className="portrait-spaces-track-wrapper">
               <button
                 type="button"
-                className="spaces-nav spaces-nav-left d-none d-md-flex"
+                className="spaces-nav spaces-nav-left d-flex"
                 aria-label="Previous"
                 onClick={() => scrollPortrait("prev")}
               >
@@ -557,7 +596,7 @@ export default function ProductSeriesTemplate({
 
               <button
                 type="button"
-                className="spaces-nav spaces-nav-right d-none d-md-flex"
+                className="spaces-nav spaces-nav-right d-flex"
                 aria-label="Next"
                 onClick={() => scrollPortrait("next")}
               >
@@ -569,7 +608,7 @@ export default function ProductSeriesTemplate({
       </section>
 
       {/* Door Types Gallery Section */}
-      <section className="door-types-gallery-section">
+      <section className="door-types-gallery-section" style={{ marginTop: "40px" }}>
         <div className="container-fluid">
           <div className="page-width">
             <div className="portrait-spaces-header">

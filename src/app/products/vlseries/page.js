@@ -112,6 +112,7 @@ export default function VLSeriesPage() {
       seriesName="VL SERIES"
       heroImage="/img/vl-series-home-banner.png"
       heroSubheading="Machine Room Less"
+       highlightsTitle="Smart, space-efficient elevators for modern buildings"
       heroParagraph="Perfect for upscale homes, boutique offices, and low to high-rise buildings."
       highlightsDescription="The VL Series is designed for low to highrise residential and commercial buildings where space, comfort and energy efficiency matter. As a machine roomless (MRL) lift, it removes the need for a separate machine room, reduces civil work and uses floor space efficiently."
       features={vlFeatures}
